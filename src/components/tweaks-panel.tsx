@@ -46,7 +46,7 @@ export function TweaksPanel() {
               <option>character</option><option>word</option><option>text</option>
             </select>
           </label>
-          {range('loaderDuration', 0.5, 8, 0.1, 's')}
+          {range('loaderDuration', 0.2, 8, 0.05, 's')}
           {range('loaderDelay', 0, 2, 0.05, 's')}
           <p className="tw-h">Stop-motion</p>
           {range('boilInterval', 80, 1200, 20, 'ms')}

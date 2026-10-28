@@ -31,12 +31,12 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { width: 'device-width', initialScale: 1 };
 
-// Runs before paint so the saved theme / language never flash. Dark is the default theme.
-const prePaint = `try{var s=JSON.parse(localStorage.getItem('${STORAGE_KEY}')||'{}');var d=document.documentElement;d.dataset.theme=s.theme||'dark';d.dataset.lang=s.lang||'en';}catch(e){document.documentElement.dataset.theme='dark';document.documentElement.dataset.lang='en';}`;
+// Runs before paint so the saved theme / language never flash. Light is the default theme.
+const prePaint = `try{var s=JSON.parse(localStorage.getItem('${STORAGE_KEY}')||'{}');var d=document.documentElement;d.dataset.theme=s.theme||'light';d.dataset.lang=s.lang||'en';}catch(e){document.documentElement.dataset.theme='light';document.documentElement.dataset.lang='en';}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" data-lang="en" className={fontVars} suppressHydrationWarning>
+    <html lang="en" data-theme="light" data-lang="en" className={fontVars} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: prePaint }} />
       </head>

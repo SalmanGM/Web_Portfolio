@@ -11,6 +11,8 @@ import { TweaksPanel } from './tweaks-panel';
 import { LightRays, Stars, SvgFilters } from './ui';
 import { Work } from './work';
 
+const SEEN_KEY = 'sb-seen';
+
 export function Portfolio() {
   return (
     <TweaksProvider>
@@ -24,7 +26,7 @@ function Site() {
   const root = useRef<HTMLDivElement>(null);
   const { tweaks } = useTweaks();
   const [lang, setLang] = useState<Lang>('en');
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
   const [connect, setConnect] = useState(false);
   const [cs, setCs] = useState(-1);
   const [busy, setBusy] = useState(false);
@@ -37,12 +39,17 @@ function Site() {
     const d = document.documentElement;
     const lg = (d.dataset.lang === 'ar' ? 'ar' : 'en') as Lang;
     setLang(lg);
-    setTheme(d.dataset.theme === 'light' ? 'light' : 'dark');
+    setTheme(d.dataset.theme === 'dark' ? 'dark' : 'light');
     if (root.current) root.current.dir = lg === 'ar' ? 'rtl' : 'ltr';
     d.lang = lg;
     const t = readTweakOverrides();
+    // The loader plays on a first visit only; returning visitors (within 7 days) go straight to the hero.
+    // With ?tweaks it always plays, so it can be tuned.
+    let seen = false;
+    try { seen = Date.now() - Number(localStorage.getItem(SEEN_KEY) || 0) < 7 * 864e5; localStorage.setItem(SEEN_KEY, String(Date.now())); } catch {}
+    const tuning = new URLSearchParams(location.search).has('tweaks');
     initEngine(root.current!, {
-      skipPreload: !t.showPreloader,
+      skipPreload: !t.showPreloader || (seen && !tuning),
       boilMs: t.boilInterval,
       textAnim: { animation: t.loaderAnimation, by: t.loaderBy, duration: t.loaderDuration, delay: t.loaderDelay }
     });

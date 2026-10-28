@@ -26,8 +26,8 @@ export type Tweaks = {
 export const DEFAULT_TWEAKS: Tweaks = {
   loaderAnimation: 'blurInUp',
   loaderBy: 'character',
-  loaderDuration: 2,
-  loaderDelay: 0.1,
+  loaderDuration: 0.55,
+  loaderDelay: 0.05,
   boilInterval: 180,
   strategyColor: '#7FD08A',
   researchColor: '#5CC8DC',

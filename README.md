@@ -13,6 +13,15 @@ npm start        # serves /out locally
 
 Open the site with `?tweaks` (e.g. `localhost:3000/?tweaks`) to get the dev-only Tweaks panel: loader animation, stop-motion speed, chapter colours, grain, stars, preloader and light rays. Changes are saved only in your browser; normal visitors always get the defaults in `src/lib/tweaks.tsx`.
 
+## Lab
+
+Sandbox pages for trying ideas before they reach the real page (not linked from the site, kept out of search):
+
+- `/lab/showcase` — the Mudad Payroll device film. Add `?edit` for a crop editor; copy the crops into `src/content/film.ts`.
+- `/lab/motion` — motion primitives on trial: word-by-word reveal, blur on scroll.
+
+The loader plays on a first visit only (7 days); open the site with `?tweaks` to always see it.
+
 ## Filling in content
 
 | What | Where |

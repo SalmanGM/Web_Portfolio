@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
         beats: [
           { h: 'Three steps and a bit of hoping', p: 'Running payroll took three steps, and most problems only showed up after you’d submitted. By then, fixing them meant support tickets and late salaries.' },
           { h: 'Two steps, warnings first', p: 'I folded the flow into two steps, added Autopayroll for companies that pay the same way every month, and moved the checks up front. Salary financing sits right where a company sees it can’t cover the run.' },
-          { h: 'Money before payday', k: 'Move', p: '[Body text to come]' },
+          { h: 'Money before payday', k: 'Move', p: 'Two problems sat right next to payroll. For financing, a company used to fill out a separate form for every provider. I replaced that with one standard request that goes to every eligible provider at once, so the offers come back side by side to compare. For early wage access, the hard part was settling up. Now, when a company runs its monthly payroll, the system deducts each employee’s early pay on its own and sends it to the provider with the payroll submission.' },
           { h: 'Calmer paydays', p: 'CSAT went from 79% to 82% and NPS from 43 to 50.9. Three steps became two, which is the number I’m proudest of.' }
         ]
       }
@@ -81,7 +81,7 @@ export const PROJECTS: Project[] = [
         beats: [
           { h: 'ثلاث خطوات وشيء من الأمل', p: 'كانت المسيرة ثلاث خطوات، ومعظم المشاكل لا تظهر إلا بعد الإرسال. وحينها يعني إصلاحها تذاكر دعم ورواتب متأخرة.' },
           { h: 'خطوتان، والتنبيه أولاً', p: 'اختصرت التدفق إلى خطوتين، وأضفت الرواتب التلقائية للمنشآت التي تدفع بالطريقة نفسها كل شهر، ونقلت الفحوصات إلى البداية. ويظهر تمويل الرواتب في اللحظة التي ترى فيها المنشأة أنها لا تستطيع تغطية المسيرة.' },
-          { h: 'المال قبل يوم الرواتب', k: 'الحل', p: '[النص لاحقاً]' },
+          { h: 'المال قبل يوم الرواتب', k: 'الحل', p: 'كانت هناك مشكلتان ملاصقتان لمسيرة الرواتب. في التمويل، كانت المنشأة تعبّئ نموذجاً منفصلاً لكل جهة تمويل، فاستبدلته بطلب موحّد يُرسل إلى جميع الجهات المؤهلة دفعة واحدة، لتعود العروض جنباً إلى جنب للمقارنة. وفي الأجر المكتسب المبكر، كانت التسوية هي الجزء الصعب. الآن، حين تشغّل المنشأة مسيرة رواتبها الشهرية، يخصم النظام تلقائياً ما صُرف لكل موظف مبكراً ويرسله إلى الجهة المزوّدة مع المسيرة نفسها.' },
           { h: 'أيام رواتب أهدأ', p: 'ارتفع رضا العملاء من 79% إلى 82%، وNPS من 43 إلى 50.9. وأصبحت الخطوات الثلاث خطوتين، وهو الرقم الذي أفخر به أكثر.' }
         ]
       }

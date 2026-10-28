@@ -15,7 +15,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 
-export type TextAnim = { animation: string; by: 'character' | 'word' | 'text'; duration: number; delay: number };
+// Registered at import, so components can create ScrollTriggers in their own effects,
+// which React runs before their parents' effects (where the engine starts).
+if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+
+export type TextAnim ={ animation: string; by: 'character' | 'word' | 'text'; duration: number; delay: number };
 
 type Engine = {
   root: HTMLElement | null;
@@ -55,6 +59,25 @@ export function initEngine(root: HTMLElement, opts: { skipPreload: boolean; text
   E.textAnim = opts.textAnim;
   E.boilMs = opts.boilMs;
   if (E.inited) { scan(); return; }
+  setupCore();
+  scan();
+  startBoil();
+  idle(makePaper);
+  // Fit the name only after fonts land (capped at 1.5s), then start the loader.
+  const fontsReady = Promise.race([document.fonts?.ready ?? Promise.resolve(), new Promise((r) => setTimeout(r, 1500))]);
+  fontsReady.then(() => { fit(); preload(); ScrollTrigger.refresh(); });
+}
+
+/** Smooth scroll + scroll effects only, no loader. Used by the /lab sandboxes. */
+export function initBasic(root: HTMLElement) {
+  E.root = root;
+  if (!E.inited) setupCore();
+  E.loaded = true;
+  scan();
+  document.fonts?.ready.then(() => ScrollTrigger.refresh());
+}
+
+function setupCore() {
   E.inited = true;
   E.reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   gsap.registerPlugin(ScrollTrigger);
@@ -72,12 +95,6 @@ export function initEngine(root: HTMLElement, opts: { skipPreload: boolean; text
   });
   const refit = () => { fit(); ScrollTrigger.refresh(); };
   document.fonts?.addEventListener('loadingdone', refit);
-  scan();
-  startBoil();
-  idle(makePaper);
-  // Fit the name only after fonts land (capped at 1.5s), then start the loader.
-  const fontsReady = Promise.race([document.fonts?.ready ?? Promise.resolve(), new Promise((r) => setTimeout(r, 1500))]);
-  fontsReady.then(() => { fit(); preload(); ScrollTrigger.refresh(); });
 }
 
 const idle = (fn: () => void) =>
@@ -187,6 +204,14 @@ export function scan() {
   q('[data-slam]').forEach((el) => {
     if (!once(el, 'slm') || reduce) return;
     gsap.fromTo(el, { y: 90, opacity: 0, scale: 0.97 }, { y: 0, opacity: 1, scale: 1, duration: 0.75, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
+  });
+  q('[data-blur]').forEach((el) => {
+    if (!once(el, 'blr') || reduce) return;
+    gsap.fromTo(el, { filter: 'blur(12px)', opacity: 0.15, y: 24 }, {
+      filter: 'blur(0px)', opacity: 1, y: 0, ease: 'none',
+      scrollTrigger: { trigger: el, start: 'top bottom', end: 'top 62%', scrub: 0.6 },
+      onComplete: () => { el.style.filter = ''; }
+    });
   });
   q('[data-pl-speed]').forEach((el) => {
     if (!once(el, 'plsd') || reduce) return;
@@ -331,18 +356,18 @@ function preload() {
   const fly = (a?: HTMLElement | null, b?: HTMLElement | null) => {
     if (!a || !b) return;
     const r1 = a.getBoundingClientRect(), r2 = b.getBoundingClientRect();
-    gsap.to(a, { x: r2.left - r1.left, y: r2.top - r1.top, scale: r1.width ? r2.width / r1.width : 1, duration: 1.05, ease: 'expo.inOut' });
+    gsap.to(a, { x: r2.left - r1.left, y: r2.top - r1.top, scale: r1.width ? r2.width / r1.width : 1, duration: 0.8, ease: 'expo.inOut' });
   };
   tl.to(o, { v: 100, duration: end + 0.1, ease: 'power2.inOut', onUpdate: () => {
       if (cnt) cnt.textContent = String(Math.round(o.v)).padStart(3, '0');
       if (bar) bar.style.transform = 'scaleX(' + o.v / 100 + ')';
     } }, 0)
-    .add(() => groups.forEach((g) => gsap.set(g, { clearProps: 'filter' })), end + 0.05)
-    .to(el.querySelectorAll('[data-pl-fade]'), { opacity: 0, duration: 0.3, ease: 'power2.in' }, end + 0.1)
-    .add(() => { fly(name, heroName); fly(aux, heroAux); }, end + 0.25)
-    .to(paper, { y: () => -(innerHeight + 80), rotation: -1.2, transformOrigin: '0% 100%', duration: 0.95, ease: 'power3.inOut' }, end + 0.25)
-    .add(markLoaded, end + 0.75)
-    .add(() => { reveal(); el.style.display = 'none'; lockScroll(false); }, end + 1.32);
+    .add(() => groups.forEach((g) => gsap.set(g, { clearProps: 'filter' })), end + 0.02)
+    .to(el.querySelectorAll('[data-pl-fade]'), { opacity: 0, duration: 0.25, ease: 'power2.in' }, end + 0.02)
+    .add(() => { fly(name, heroName); fly(aux, heroAux); }, end + 0.08)
+    .to(paper, { y: () => -(innerHeight + 80), rotation: -1.2, transformOrigin: '0% 100%', duration: 0.75, ease: 'power3.inOut' }, end + 0.08)
+    .add(markLoaded, end + 0.45)
+    .add(() => { reveal(); el.style.display = 'none'; lockScroll(false); }, end + 0.9);
   bleedIn();
 }
 

@@ -1,25 +1,34 @@
-# CODING AGENTS: READ THIS FIRST
+# Salman Binmandeel — Portfolio
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+The production build of the "Ink & Dune" portfolio (design v6 from Claude Design), in Next.js + React with GSAP, ScrollTrigger and Lenis.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Run it
 
-## What you should do — IMPORTANT
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static site in /out, deployable to any static host (Vercel, Netlify, GitHub Pages)
+npm start        # serves /out locally
+```
 
-**Read the chat transcripts first.** There are 2 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+Open the site with `?tweaks` (e.g. `localhost:3000/?tweaks`) to get the dev-only Tweaks panel: loader animation, stop-motion speed, chapter colours, grain, stars, preloader and light rays. Changes are saved only in your browser; normal visitors always get the defaults in `src/lib/tweaks.tsx`.
 
-**Read `project/Salman Portfolio v6.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Filling in content
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+| What | Where |
+|---|---|
+| Email, LinkedIn, Read.cv, Dribbble (still placeholders) | `src/content/site.ts` |
+| Screenshots, paintings, portrait, Mudad hero | drop files in `public/images/`, then set the path in `src/content/images.ts` |
+| Project and case study copy (EN + AR) | `src/content/projects.ts` |
+| Chapters, experience, capabilities, teams, principles | `src/content/sections.ts` |
 
-## About the design files
+Any image left as `null` renders as a dashed placeholder in the design's colours. The Mudad case study figures (`public/assets/mudad/`) are already in place; `hero-auto-payroll.webp` was never uploaded, so the case study hero is still a placeholder. The "Money before payday" beat body is still `[Body text to come]`.
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+## Structure
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+- `src/app/` — layout (self-hosted Google Fonts, pre-paint theme/language script) and global CSS (tokens + all section styles)
+- `src/components/` — preloader, nav, hero, work chapters, about / capabilities / contact, case study overlay, tweaks panel
+- `src/lib/engine.ts` — motion engine: scroll reveals, parallax, brush wipes, loader timeline, FLIP case study open/close, page peel, circle theme/language transition
+- `project/`, `chats/` — the original Claude Design handoff (prototype HTML, source assets, design transcripts). Not part of the build.
 
-## Bundle contents
-
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `# Awwwards Portfolio DesignerI can help you build this, but I need those asset` project files (HTML prototypes, assets, components)
+Both languages are always in the DOM and CSS hides the inactive one (`html[data-lang]`), so switching is instant and Arabic flips the layout to RTL.

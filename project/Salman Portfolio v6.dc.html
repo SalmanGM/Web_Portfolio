@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Salman Binmandeel · Product Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&amp;family=Grenze+Gotisch:wght@600;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Aref+Ruqaa:wght@400;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&amp;family=Noto+Naskh+Arabic:wght@400;500;600&amp;display=swap">
+<style>
+:root{--orn:rgba(45,28,12,.15);--rays:rgba(255,214,150,.55);--rays-blend:soft-light;--stamp:#17664F;--sky1:#E9D6B0;--sky2:#D9A877;--sky3:#A9B7A2;--sun:#F6DDA8;--l1:#CDB596;--l2:#8DA394;--l3:#567A6D;--l4:#21423C;--mist:rgba(239,226,200,.55);--fibre:#FBF7EE;--row:minmax(0,7fr) minmax(0,5fr);--bg:#EFE9DC;--bg2:#E4DCC9;--ink:#1B2420;--muted:#55605A;--red:#C42B1F;--red-sm:#B3261B;--green:#1E5A4B;--line:rgba(27,36,32,.15);--glass:rgba(244,239,228,.6);--sbg:var(--bg);--foot-bg:#173F35;--foot-ink:#EFE9DC;--foot-muted:#B5C9BF;--grain:.25;--grainf:none;--blot:.35;--display:'Grenze Gotisch',serif;--dw:800;--namef:'Bowlby One SC',sans-serif;--dcase:none;--dtrack:-.01em;--dlh:1;--serif:'Newsreader',serif;--sans:'Hanken Grotesk',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;--monosz:11px;--track:.09em;--pad:clamp(20px,4vw,64px);--hero:minmax(0,5fr) minmax(0,7fr);--hero3:minmax(0,5fr) minmax(0,6fr);--beat:minmax(0,5fr) minmax(0,7fr);--about:minmax(0,4fr) minmax(0,8fr);--exp:200px minmax(0,1.3fr) minmax(0,1fr) auto;--cols:repeat(3,minmax(0,1fr));--csgrid:170px minmax(0,1fr) 120px;--rail:flex;--navx:inline-flex;--q-off:12%}
+html[data-theme=dark]{--orn:rgba(255,236,210,.075);--rays:rgba(160,210,255,.22);--rays-blend:screen;--stamp:#3FAE8F;--sky1:#12272B;--sky2:#1A3A3D;--sky3:#2B4D48;--sun:#E8E2D0;--l1:#294744;--l2:#1F3B3B;--l3:#15302F;--l4:#0C1F21;--mist:rgba(11,26,29,.5);--fibre:#2A4744;--bg:#1A1916;--bg2:#23221E;--ink:#F1E8D6;--muted:#A9A595;--red:#E06A3C;--red-sm:#E06A3C;--green:#2F6F5E;--line:rgba(232,226,208,.14);--glass:rgba(26,25,22,.62);--foot-bg:#0A2A2A;--foot-ink:#E8E2D0;--foot-muted:#9DB8B0;--grain:.5;--grainf:invert(1);--blot:.2}
+html[data-lang=ar]{--display:'Aref Ruqaa',serif;--dw:700;--dcase:none;--dtrack:0;--dlh:1.3;--serif:'Amiri',serif;--sans:'Noto Naskh Arabic',serif;--mono:'Noto Naskh Arabic',serif;--monosz:13px;--track:0}
+html[data-lang=ar] [lang=en],html:not([data-lang=ar]) [lang=ar]{display:none !important}
+@media (max-width:1100px){:root{--cols:repeat(2,minmax(0,1fr));--csgrid:minmax(0,1fr);--rail:none}}
+@media (max-width:820px){:root{--ticket:none;--sky1:#E9D6B0;--sky2:#D9A877;--sky3:#A9B7A2;--sun:#F6DDA8;--l1:#CDB596;--l2:#8DA394;--l3:#567A6D;--l4:#21423C;--mist:rgba(239,226,200,.55);--fibre:#FBF7EE;--row:minmax(0,1fr);--hero:minmax(0,1fr);--hero3:minmax(0,1fr);--beat:minmax(0,1fr);--figcols:1;--about:minmax(0,1fr);--exp:minmax(0,1fr);--cols:minmax(0,1fr);--navx:none;--q-off:0%}}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto !important}.lenis.lenis-stopped{overflow:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;opacity:calc(var(--grain) * var(--gk,1));mix-blend-mode:overlay;background:url(assets/paper-hp.png) 0 0/900px auto repeat}
+[data-cs-paper]{position:fixed;inset:0;pointer-events:none;z-index:300;opacity:calc(var(--grain) * var(--gk,1));mix-blend-mode:overlay;background:url(assets/paper-hp.png) 0 0/900px auto repeat}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:299;opacity:calc(var(--blot) * var(--gk,1));mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='900'><filter id='b'><feTurbulence type='fractalNoise' baseFrequency='.006' numOctaves='4' seed='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45 0 0 0 0 .36 0 0 0 0 .2 0 0 0 .22 -.05'/></filter><rect width='100%' height='100%' filter='url(%23b)'/></svg>")}
+[data-paper]{background-image:var(--paperimg);background-size:640px}
+a{color:inherit;text-decoration:none}a:hover{color:var(--red-sm)}
+::selection{background:var(--red);color:var(--bg)}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+*{box-sizing:border-box}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="./site-engine.js"></script>
+<script src="./site-engine-v2.js"></script>
+<script src="./site-engine-v3.js"></script>
+<script src="./site-engine-v4.js"></script>
+<script src="./site-engine-v5.js"></script>
+<script src="./site-engine-v6.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div ref="{{ rootRef }}" dir="{{ textDir }}" style="position:relative;min-height:100vh;color:var(--ink);font-family:var(--sans);overflow-x:clip">
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="9" result="n2"></feTurbulence>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -9 0 0 0 6.9" result="holes"></feColorMatrix>
+    <feComposite in="d" in2="holes" operator="in"></feComposite>
+  </filter>
+  <filter id="stamp" x="-3%" y="-10%" width="106%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="4" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.1" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+  </filter>
+  <filter id="fibre" x="-2%" y="-60%" width="104%" height="220%"><feTurbulence type="fractalNoise" baseFrequency="0.05 1.6" numOctaves="3" seed="7" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter>
+  <filter id="tearEdge" x="-2%" y="-30%" width="104%" height="160%"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="2" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter>
+  <filter id="heat" x="-3%" y="-10%" width="106%" height="120%"><feTurbulence type="turbulence" baseFrequency="0.003 0.035" numOctaves="2" seed="5" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap><feGaussianBlur in="d" stdDeviation="1.1"></feGaussianBlur></filter>
+  <filter id="warp" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence type="fractalNoise" baseFrequency="0.0025 0.006" numOctaves="2" seed="9" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap><feGaussianBlur in="d" stdDeviation="0.7"></feGaussianBlur></filter>
+  <filter id="distress" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11" result="d0"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="d0" scale="1.4" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="4" result="n"></feTurbulence><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -16 0 0 0 12.4" result="m"></feColorMatrix><feComposite in="d" in2="m" operator="in"></feComposite></filter>
+  <filter id="bleed" x="-25%" y="-60%" width="150%" height="220%"><feGaussianBlur id="bleedBlur" in="SourceGraphic" stdDeviation="0" result="b"></feGaussianBlur><feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="3" result="t"></feTurbulence><feDisplacementMap id="bleedDisp" in="b" in2="t" scale="0" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap><feComponentTransfer in="d"><feFuncA type="linear" slope="5" intercept="-1.6"></feFuncA></feComponentTransfer></filter>
+  <filter id="rough" x="-5%" y="-10%" width="110%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="11" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="2" result="n2"></feTurbulence>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -9 0 0 0 7.3" result="holes"></feColorMatrix>
+    <feComposite in="d" in2="holes" operator="in"></feComposite>
+  </filter>
+</svg>
+
+<sc-if value="{{ showStars }}" hint-placeholder-val="{{ true }}">
+  <canvas data-stars="" aria-hidden="true" style="position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 296; display: none"></canvas>
+</sc-if>
+
+<!-- Preloader -->
+<div data-preloader="" style="position:fixed;inset:0;z-index:250;pointer-events:none">
+  <div data-pl-paper="" style="position:absolute;left:-2%;right:-2%;top:0;height:100%;background:var(--bg);pointer-events:auto;will-change:transform">
+    <svg viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:100%;width:100%;height:clamp(26px,3vw,44px);margin-top:-1px;overflow:visible;filter:drop-shadow(0 10px 10px rgba(0,0,0,.14))">
+      <path d="M0 0 H1200 V23.4 L1200 23.4 L1187 22.8 L1168 11.2 L1161 11.9 L1150 7.7 L1128 18.2 L1112 13.6 L1096 8.7 L1082 9.4 L1060 11.1 L1053 14.7 L1035 15.3 L1013 11.4 L996 13.1 L975 6.2 L968 10.5 L961 21.9 L945 37.8 L929 26.1 L909 7.7 L896 11.2 L886 10.5 L871 6.6 L853 22.7 L839 17.5 L822 15.8 L813 26.8 L795 16.9 L787 10.4 L766 19.9 L744 12.9 L735 22.0 L724 19.7 L712 25.5 L700 14.8 L680 11.5 L667 27.0 L645 25.4 L638 21.1 L630 8.4 L624 21.7 L607 29.2 L597 11.9 L580 27.3 L571 6.5 L551 26.1 L545 8.6 L524 11.2 L504 21.1 L490 11.1 L474 11.5 L468 22.7 L448 25.6 L428 9.0 L412 9.2 L396 27.9 L389 14.9 L381 8.4 L361 14.6 L350 18.9 L340 14.7 L319 17.1 L305 20.0 L285 25.9 L275 17.7 L264 14.0 L253 9.6 L239 20.6 L228 7.2 L207 15.3 L193 12.0 L186 22.0 L171 12.5 L158 9.4 L147 13.4 L135 26.1 L120 21.1 L99 30.9 L78 21.0 L71 21.6 L59 24.0 L43 17.9 L25 13.2 L11 10.6 L0 6.0 Z" style="fill:color-mix(in oklab,var(--bg) 82%,#fff)"></path>
+      <path d="M0 0 H1200 V20.4 L1200 18.0 L1187 17.8 L1168 6.5 L1161 7.9 L1150 3.5 L1128 13.7 L1112 9.1 L1096 4.0 L1082 4.2 L1060 6.1 L1053 9.8 L1035 10.1 L1013 5.7 L996 7.6 L975 0.2 L968 6.2 L961 17.4 L945 31.9 L929 20.2 L909 3.6 L896 8.0 L886 6.5 L871 1.0 L853 17.6 L839 12.3 L822 9.9 L813 21.4 L795 13.3 L787 6.7 L766 14.5 L744 9.6 L735 16.3 L724 14.3 L712 20.6 L700 9.7 L680 6.9 L667 22.7 L645 19.8 L638 16.4 L630 2.8 L624 17.9 L607 24.1 L597 7.6 L580 23.1 L571 2.9 L551 21.3 L545 4.9 L524 5.5 L504 15.6 L490 7.1 L474 6.5 L468 17.1 L448 22.3 L428 5.1 L412 3.4 L396 24.9 L389 11.5 L381 4.2 L361 11.5 L350 13.8 L340 9.0 L319 13.6 L305 16.4 L285 20.1 L275 12.6 L264 10.5 L253 6.2 L239 15.7 L228 4.2 L207 9.9 L193 7.2 L186 16.7 L171 9.1 L158 5.4 L147 8.3 L135 20.2 L120 16.5 L99 26.1 L78 15.7 L71 16.5 L59 18.8 L43 13.1 L25 9.9 L11 7.5 L0 1.2 Z" style="fill:var(--bg)"></path>
+    </svg>
+  </div>
+  <div data-pl-ui="" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:var(--pad)">
+    <div data-pl-fade="" style="display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">
+      <span><span lang="en">Selected work 2023–26</span><span lang="ar">أعمال مختارة 2023–26</span></span>
+      <span data-count="" dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:15px;letter-spacing:0;color:var(--red-sm)">000</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:clamp(8px,1.2vw,18px)">
+      <div data-pl-name="" lang="en" dir="ltr" aria-hidden="true" style="display:flex;white-space:nowrap;font-family:var(--namef);font-weight:400;text-transform:uppercase;font-size:11vw;line-height:.86;letter-spacing:.04em;font-kerning:normal;font-feature-settings:&quot;kern&quot; 1;color:var(--red);transform-origin:0 0"><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">S</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">A</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">L</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">M</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">A</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">N</span></span><span style="display:inline-block;width:.28em"></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">B</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">I</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">N</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">M</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">A</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">N</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">D</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">E</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">E</span></span><span style="display:inline-block;overflow:hidden;padding-bottom:.06em"><span data-pl-ch="" style="display:inline-block">L</span></span></div>
+      <div data-pl-name="" lang="ar" aria-hidden="true" style="overflow:hidden;white-space:nowrap;font-family:'Aref Ruqaa',serif;font-weight:700;font-size:11vw;line-height:1.25;color:var(--red);transform-origin:0 0"><span data-pl-ch="" style="display:inline-block;font-size:1.15em">سلمان بن منديل</span></div>
+      <span data-pl-aux="" style="rotate:-3deg;display:inline-flex;align-items:center;gap:.6em;padding:.55em 1em .5em;border:2.5px solid currentColor;border-radius:7px 9px 6px 10px;box-shadow:inset 0 0 0 3px var(--bg),inset 0 0 0 4.5px currentColor;font-family:var(--serif);font-weight:600;font-size:clamp(13px,1.05vw,16px);letter-spacing:.14em;text-transform:uppercase;line-height:1;color:var(--stamp);filter:url(#stamp);transform-origin:0 0"><span lang="en">Product Designer · Riyadh</span><span lang="ar">مصمم منتجات · الرياض</span></span>
+    </div>
+    <div data-pl-fade="" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
+      <span style="font-family:var(--serif);font-style:italic;font-size:clamp(16px,1.6vw,22px);color:var(--muted)"><span lang="en">Wetting the brush…</span><span lang="ar">نبلّل الفرشاة…</span></span>
+      <span style="flex:1;max-width:320px;height:1px;background:var(--line);position:relative;overflow:hidden"><span data-pl-bar="" style="position:absolute;inset:0;background:var(--red);transform:scaleX(0);transform-origin:left"></span></span>
+    </div>
+  </div>
+</div>
+
+<!-- Floating nav -->
+<nav aria-label="Primary" style="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:110;display:flex;align-items:center;gap:2px;padding:6px;border-radius:999px;background:color-mix(in oklab,var(--glass) 35%,transparent);backdrop-filter:blur(6px) saturate(1.4);-webkit-backdrop-filter:blur(6px) saturate(1.4);border:1px solid var(--line);box-shadow:0 12px 40px rgba(10,22,19,.14);font-family:var(--sans);font-size:13px;font-weight:500;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.3)">
+  <button onClick="{{ go }}" data-target="#top" data-sfx="" aria-label="Back to top" style="all:unset;cursor:pointer;width:34px;height:34px;border-radius:999px;background:var(--red);color:var(--bg);display:grid;place-items:center;font-family:'Amiri',serif;font-weight:700;font-size:17px;line-height:1;margin-inline-end:4px" style-active="transform:scale(.92)">س</button>
+  <button onClick="{{ go }}" data-target="#work" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s" style-hover="background:var(--line)"><span lang="en">Work</span><span lang="ar">أعمالي</span></button>
+  <button onClick="{{ go }}" data-target="#about" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s" style-hover="background:var(--line)"><span lang="en">About</span><span lang="ar">عنّي</span></button>
+  <button onClick="{{ go }}" data-target="#skills" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s;display:var(--navx)" style-hover="background:var(--line)"><span lang="en">Capabilities</span><span lang="ar">المهارات</span></button>
+  <button onClick="{{ go }}" data-target="#contact" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s" style-hover="background:var(--line)"><span lang="en">Contact</span><span lang="ar">تواصل</span></button>
+  <span aria-hidden="true" style="width:1px;height:20px;background:var(--line);margin:0 4px"></span>
+  <button onClick="{{ toggleLang }}" data-sfx="" aria-label="Switch language" style="all:unset;cursor:pointer;width:34px;height:34px;border-radius:999px;display:grid;place-items:center;font-size:14px;transition:background .25s" style-hover="background:var(--line)"><span lang="en" style="font-family:'Amiri',serif;font-size:18px;line-height:1">ع</span><span lang="ar" style="font-family:'JetBrains Mono',monospace;font-size:11px">EN</span></button>
+  <button onClick="{{ toggleTheme }}" data-sfx="" aria-label="Toggle dark mode" style="all:unset;cursor:pointer;width:34px;height:34px;border-radius:999px;display:grid;place-items:center;transition:background .25s" style-hover="background:var(--line)">
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.4"></circle><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"></path></svg>
+  </button>
+  
+</nav>
+
+
+
+<!-- ========== HERO ========== -->
+<div data-rays="" aria-hidden="true" style="position:fixed;inset:0;z-index:290;pointer-events:none;overflow:hidden"></div>
+<header id="top" data-screen-label="Hero" style="position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;padding:clamp(14px,2vw,28px) var(--pad) clamp(24px,3vw,44px);background:var(--bg);isolation:isolate">
+  <h1 data-fit="" aria-label="Salman Binmandeel" style="margin:0;font-family:var(--namef);font-weight:400;font-size:11vw;line-height:.86;letter-spacing:.04em;font-kerning:normal;font-feature-settings:&quot;kern&quot; 1;color:var(--red);white-space:nowrap;overflow:hidden;padding-top:.03em">
+    <span lang="en" data-hero-name="" style="display:inline-block;text-transform:uppercase;font-weight:400;font-style:normal"><span data-boil="" style="display:inline-block">S</span><span data-boil="" style="display:inline-block">a</span><span data-boil="" style="display:inline-block">l</span><span data-boil="" style="display:inline-block">m</span><span data-boil="" style="display:inline-block">a</span><span data-boil="" style="display:inline-block">n</span><span style="display:inline-block;white-space:pre"> </span><span data-boil="" style="display:inline-block">B</span><span data-boil="" style="display:inline-block">i</span><span data-boil="" style="display:inline-block">n</span><span data-boil="" style="display:inline-block">m</span><span data-boil="" style="display:inline-block">a</span><span data-boil="" style="display:inline-block">n</span><span data-boil="" style="display:inline-block">d</span><span data-boil="" style="display:inline-block">e</span><span data-boil="" style="display:inline-block">e</span><span data-boil="" style="display:inline-block">l</span></span>
+    <span lang="ar" data-hero-name="" style="display:inline-block;font-family:'Aref Ruqaa',serif;font-weight:700;font-size:1.15em;line-height:1.25;color:#C42B1F">سلمان بن منديل</span>
+  </h1>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:clamp(8px,1.2vw,18px);font-size:clamp(15px,1.25vw,19px);color:var(--red-sm)">
+    <span data-hero-aux="" style="rotate: -3deg; display: inline-flex; align-items: center; gap: .6em; padding: .55em 1em .5em; border: 2.5px solid currentColor; border-radius: 7px 9px 6px 10px; box-shadow: inset 0 0 0 3px var(--bg),inset 0 0 0 4.5px currentColor; font-family: var(--serif); font-weight: 600; font-size: clamp(13px,1.05vw,16px); letter-spacing: .14em; text-transform: uppercase; line-height: 1; color: var(--stamp); filter: url(#stamp)"><span lang="en">Product Designer · Riyadh</span><span lang="ar">مصمم منتجات · الرياض</span></span>
+    <span style="display:var(--navx);gap:22px;margin-inline-start:auto">
+      <button onClick="{{ go }}" data-target="#work" data-uline="" data-sfx="" style="all:unset;cursor:pointer;position:relative"><span lang="en">Work</span><span lang="ar">أعمالي</span><span data-line="" style="position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0)"></span></button>
+      <button onClick="{{ go }}" data-target="#about" data-uline="" data-sfx="" style="all:unset;cursor:pointer;position:relative"><span lang="en">About</span><span lang="ar">عنّي</span><span data-line="" style="position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0)"></span></button>
+      <button onClick="{{ go }}" data-target="#skills" data-uline="" data-sfx="" style="all:unset;cursor:pointer;position:relative"><span lang="en">Capabilities</span><span lang="ar">المهارات</span><span data-line="" style="position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0)"></span></button>
+      <button onClick="{{ go }}" data-target="#contact" data-uline="" data-sfx="" style="all:unset;cursor:pointer;position:relative"><span lang="en">Contact</span><span lang="ar">تواصل</span><span data-line="" style="position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0)"></span></button>
+    </span>
+    <span style="position:relative;margin-inline-start:auto">
+      <button onClick="{{ toggleConnect }}" aria-expanded="{{ connectOpen }}" aria-controls="connect-card" data-sfx="" style="all:unset;cursor:pointer;display:inline-block;padding:10px 20px 9px;border:2px solid var(--red-sm);outline:1px solid var(--red-sm);outline-offset:2px;border-radius:2px;color:var(--red-sm);font-family:'Newsreader',serif;font-size:15px;line-height:1;letter-spacing:.2em;text-transform:uppercase;rotate:{{ connectRot }};transition:rotate .35s cubic-bezier(.2,.8,.2,1)" style-hover="rotate:0deg" type="button"><span lang="en">{{ connectLabel }}</span><span lang="ar">{{ connectLabelAr }}</span></button>
+      <sc-if value="{{ connectOpen }}" hint-placeholder-val="{{ false }}">
+        <div id="connect-card" role="dialog" aria-label="Contact" style="position:absolute;top:calc(100% + 14px);inset-inline-end:0;z-index:120;width:min(320px,86vw);display:flex;flex-direction:column;gap:14px;padding:18px 18px 14px;background:var(--bg);border:1px solid var(--line);border-radius:2px;box-shadow:0 24px 50px -24px rgba(30,24,16,.45);rotate:.6deg">
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)"><span lang="en">Get in touch</span><span lang="ar">تواصل معي</span></span>
+          <button data-hold="" data-copy="hello@example.com" data-sfx="" aria-label="Hold to copy email" style="all:unset;cursor:pointer;position:relative;overflow:hidden;display:flex;align-items:center;padding:11px 14px;border:1px solid color-mix(in oklab,var(--red) 35%,transparent);font-size:14px;border-radius:2px;user-select:none;-webkit-user-select:none;touch-action:none">
+        <span data-hold-fill="" style="position:absolute;inset:0;background:var(--red);opacity:.22;transform:scaleX(0);transform-origin:left"></span>
+        <span data-st="idle" style="position:relative;display:inline-flex;align-items:center;gap:10px"><em style="font-family:var(--serif)">hello@example.com</em><span style="font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.7"><span lang="en">Hold to copy</span><span lang="ar">اضغط مطولاً للنسخ</span></span></span>
+        <span data-st="hold" style="position:relative;display:none;align-items:center;gap:8px"><span lang="en">Keep holding…</span><span lang="ar">استمر بالضغط…</span></span>
+        <span data-st="busy" style="position:relative;display:none;align-items:center;gap:9px"><span data-spin="" style="width:12px;height:12px;border-radius:50%;border:1.5px solid currentColor;border-top-color:transparent"></span><span lang="en">Copying</span><span lang="ar">جارٍ النسخ</span></span>
+        <span data-st="done" style="position:relative;display:none;align-items:center;gap:8px"><span lang="en">Copied to clipboard ✓</span><span lang="ar">تم النسخ ✓</span></span>
+      </button>
+          <div style="display:flex;flex-direction:column">
+            <a href="#" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--ink);text-decoration:none" style-hover="color:var(--red-sm)"><span>LinkedIn</span><span style="font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.08em;color:var(--muted)">↗</span></a>
+            <a href="#" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--ink);text-decoration:none" style-hover="color:var(--red-sm)"><span>Read.cv</span><span style="font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.08em;color:var(--muted)">↗</span></a>
+            <a href="#" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--ink);text-decoration:none" style-hover="color:var(--red-sm)"><span>Dribbble</span><span style="font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.08em;color:var(--muted)">↗</span></a>
+          </div>
+          <span style="font-size:13px;color:var(--muted)"><span lang="en">Riyadh · replies within a day</span><span lang="ar">الرياض · أرد خلال يوم</span></span>
+        </div>
+      </sc-if>
+    </span>
+  </div>
+
+  <div style="flex:1;display:grid;grid-template-columns:var(--hero3);gap:clamp(36px,6vw,110px);align-items:end;margin-top:clamp(64px,12vh,170px)">
+    <div style="display: flex; flex-direction: column; gap: 100px; flex-wrap: nowrap; width: 100%; height: 100%; position: static; justify-content: flex-end">
+      <p data-reveal="" style="margin: 0; font-family: var(--serif); font-weight: 300; font-size: 64px; line-height: 1.14; letter-spacing: -.012em; text-wrap: pretty; max-width: 17em; color: var(--red)">
+        <span lang="en" style="color: #1A1916">I design the stuff people dread at work: payroll day, subscription renewals, a dispatch call that can’t wait. My job is making those <em style="font-family:'Newsreader',serif;font-style:italic">boring</em> again.</span>
+        <span lang="ar">أصمّم الأشياء التي يتجنّبها الناس في العمل: يوم الرواتب، تجديد الاشتراكات، ومكالمة توزيع لا تحتمل الانتظار. مهمتي أن أجعلها مملّة من جديد.</span>
+      </p>
+      <div data-reveal="" data-delay=".12" style="display:flex;flex-wrap:wrap;gap:10px">
+        <button onClick="{{ go }}" data-target="#work" data-sfx="" style="all:unset;cursor:pointer;position:relative;display:inline-block;padding:14px 26px 13px;border:2px solid var(--red);outline:1px solid var(--red);outline-offset:2px;border-radius:2px;background:transparent;color:var(--red);font-family:'Newsreader',serif;font-weight:400;font-size:20px;line-height:1;letter-spacing:.2em;text-transform:uppercase;rotate:-1.5deg;transition:rotate .35s cubic-bezier(.2,.8,.2,1),transform .2s;flex-grow:0" style-hover="rotate:0deg" style-active="transform:scale(.97)" type="button"><span data-lbl=""><span lang="en">See the work ↓</span><span lang="ar">شاهد الأعمال ↓</span></span></button>
+      </div>
+    </div><div style="display:flex;flex-direction:column;gap:14px;align-self:stretch;min-width:0">
+      <div data-float-stage="" style="position:relative;flex:1;min-height:clamp(380px,58vh,720px);width:100%">
+        <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
+          <div data-float="" data-i="{{ $index }}" style="position:absolute;left:{{ t.x }};top:{{ t.y }};width:{{ t.w }};z-index:{{ t.z }}">
+            <button onClick="{{ t.open }}" data-media="{{ t.mid }}" data-brush="" data-delay="{{ t.delay }}" aria-label="{{ t.aria }}" style="all:unset;cursor:pointer;position:relative;display:block;width:100%;rotate:{{ t.r }};aspect-ratio:{{ t.ar }};overflow:hidden;border-radius:12px;background:{{ t.bg }};box-shadow:0 30px 60px -28px rgba(30,24,16,.45),0 8px 18px -10px rgba(30,24,16,.25);transition:transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .6s" style-hover="transform:translateY(-8px) scale(1.03);box-shadow:0 44px 80px -30px rgba(30,24,16,.5),0 10px 22px -10px rgba(30,24,16,.28)">
+              <span style="position:absolute;inset:0"><image-slot id="{{ t.slot }}" shape="rect" placeholder="{{ t.ph }}"></image-slot></span>
+              <span data-paper="" style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.35"></span>
+              <span style="position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);background:linear-gradient(130deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,0) 35%)"></span>
+            </button>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:clamp(40px,6vh,72px);font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red-sm)">
+    <span style="display:flex;flex-direction:column;gap:4px"><span><span lang="en">Local time</span><span lang="ar">التوقيت المحلي</span></span><span dir="ltr"><span data-clock="">--:--:--</span> (GMT+3)</span></span>
+    <span style="display:flex;align-items:center;gap:18px"><span><span lang="en">● Taking on new problems</span><span lang="ar">● متاح لمشاكل جديدة</span></span>
+    </span>
+  </div>
+</header>
+
+<div data-sky="" data-screen-label="Dune 1" aria-hidden="true" style="position:relative;z-index:1;height:clamp(220px,28vw,420px);overflow:hidden;margin:-1px 0;background:var(--sbg)">
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+    <linearGradient id="tShade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".2"></stop><stop offset="1" stop-color="#000" stop-opacity=".07"></stop></linearGradient>
+    <linearGradient id="tLight" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".22"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient>
+    <linearGradient id="tHaze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"></stop><stop offset="1" stop-color="#fff" stop-opacity=".06"></stop></linearGradient>
+    <linearGradient id="tHazeLo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".08"></stop><stop offset="1" stop-color="#fff" stop-opacity=".02"></stop></linearGradient>
+    <linearGradient id="tGround" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"></stop><stop offset="1" stop-color="#000" stop-opacity=".14"></stop></linearGradient>
+  </defs></svg>
+  <svg data-pl-speed="0.6" viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:0;width:100%;height:100%"><path d="{{ sky.duneBack }}" style="fill:color-mix(in oklab, {{ firstBg }} 50%, var(--sbg))"></path></svg>
+  <svg viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:-1px;width:100%;height:100%"><path d="{{ sky.duneFront }}" style="fill:{{ firstBg }}"></path></svg>
+</div>
+
+<!-- ========== WORK (CHAPTERS) ========== -->
+<div id="work" data-screen-label="Work" style="position:relative;z-index:1">
+  <div style="background:{{ firstBg }};padding:clamp(40px,6vw,90px) var(--pad) clamp(10px,2vw,30px);display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+    <span style="font-family:var(--display);font-weight:600;font-size:clamp(18px,1.6vw,24px);color:var(--muted)"><span lang="en">Presenting</span><span lang="ar">نقدّم</span></span>
+    <h2 style="margin:0;font-family:var(--display);font-weight:800;font-size:clamp(40px,5.4vw,92px);line-height:1.05;color:var(--ink);text-shadow:none"><span lang="en">Selected work in <span style="display:inline-block;background:var(--red);color:#0C1411;padding:0 .18em;transform:rotate(-1.5deg);text-shadow:none">three</span> chapters</span><span lang="ar">أعمال مختارة في <span style="display:inline-block;background:var(--red);color:#0C1411;padding:0 .18em;transform:rotate(-1.5deg);text-shadow:none">ثلاثة</span> فصول</span></h2>
+  </div>
+  <sc-for list="{{ chapters }}" as="c" hint-placeholder-count="3">
+    <section style="position:relative;background:{{ c.bg }};padding-bottom:0">
+      <div style="position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px var(--pad);background:var(--glass);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase">
+        <span style="display:flex;align-items:baseline;gap:12px"><span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:15px;letter-spacing:0;color:var(--red-sm)">{{ c.n }}</span><span>{{ c.kicker }} · {{ c.title }}</span></span>
+        <span style="color:var(--muted)">{{ c.countLabel }}</span>
+      </div>
+      <div style="position:relative;z-index:6;height:0">
+        <div style="position:absolute;left:clamp(16px,20vw,360px);top:clamp(2px,1.2vw,18px);display:flex;flex-direction:column;align-items:flex-start;gap:8px;transform:rotate(-4deg);pointer-events:none">
+          <span data-slam="" style="display:block;margin-left:7%"><span style="display:block;background:{{ c.col }};color:#0C1411;padding:4px 18px 8px;font-family:'Grenze Gotisch',serif;font-weight:800;font-size:clamp(22px,2.4vw,38px);line-height:1">{{ c.kicker2 }}</span></span>
+          <span data-slam="" style="display:block"><span style="display:flex;align-items:center;gap:14px;padding:6px clamp(22px,3vw,44px) 6px 6px;border-radius:999px;background:#0C1411;border:6px solid {{ c.col }}"><span style="width:clamp(44px,4.6vw,66px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:{{ c.col }};color:#0C1411;box-shadow:inset 0 0 0 4px #0C1411;font-family:var(--display);font-weight:800;font-size:clamp(22px,2.3vw,34px)">{{ c.initial }}</span><span style="font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,72px);line-height:1;color:#F1E8D6">{{ c.title }}</span></span></span>
+        </div>
+      </div>
+      <div style="position:relative;height:min(84vh,880px);margin:clamp(60px,7vw,110px) clamp(0px,1.5vw,24px) 0;overflow:hidden;-webkit-mask-image:url(assets/ink-mask.png);mask-image:url(assets/ink-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%">
+        <div data-par="" style="position:absolute;inset:-9% 0">
+          <div data-kb="" style="position:absolute;inset:0">
+            <sc-if value="{{ c.isMonet }}" hint-placeholder-val="{{ false }}"><img src="assets/monet-lilies-1906.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></sc-if>
+            <sc-if value="{{ c.useSlot }}" hint-placeholder-val="{{ true }}"><image-slot id="{{ c.slot }}" shape="rect" placeholder="{{ c.ph }}"></image-slot></sc-if>
+          </div>
+        </div>
+        <span aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#0E3A3A 0%,#1E5A4B 45%,#E8D7B2 100%);mix-blend-mode:soft-light;opacity:.85"></span><span aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:#0D3534;mix-blend-mode:multiply;opacity:.28"></span><span data-paper="" aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:multiply;opacity:.6"></span><span aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(8,24,24,.8) 0%,rgba(8,24,24,0) 58%)"></span>
+        <div data-slam="" style="position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(50px,7vw,110px);z-index:2;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;color:#F1E8D6;pointer-events:none">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            
+            
+          </div>
+          <span style="max-width:22em;font-family:var(--serif);font-style:italic;font-size:14px;opacity:.85">{{ c.credit }}</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:var(--beat);gap:clamp(28px,5vw,90px);padding:clamp(56px,7vw,110px) var(--pad) clamp(48px,6vw,90px)">
+        <p data-slam="" style="margin:0;max-width:16em;font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,48px);line-height:1.12;letter-spacing:-.012em;text-wrap:pretty;color:var(--red)">{{ c.line }}</p>
+        <div data-slam="" style="display:flex;flex-direction:column;border-top:1px solid var(--ink)">
+          <span style="padding:14px 0;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)">{{ c.inThis }}</span>
+          <sc-for list="{{ c.items }}" as="p" hint-placeholder-count="2">
+            <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)"><span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:15px;color:var(--red-sm)">{{ p.num }}</span><span style="font-size:17px">{{ p.title }}</span><span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ p.client }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:clamp(64px,8vw,130px);padding:0 var(--pad)">
+        <sc-for list="{{ c.items }}" as="p" hint-placeholder-count="2">
+          <article data-slam="" style="display:grid;grid-template-columns:var(--row);gap:clamp(24px,4vw,64px);align-items:center">
+            <div style="position:relative;filter:drop-shadow(0 22px 28px rgba(0,0,0,.45))"><button onClick="{{ p.open }}" data-media="{{ p.mi }}" data-sfx="" aria-label="{{ p.aria }}" style="all:unset;cursor:pointer;position:relative;display:block;width:100%;box-sizing:border-box;aspect-ratio:16/10;overflow:hidden;background:{{ p.bg }};-webkit-mask-image:url(assets/film-mask.png);mask-image:url(assets/film-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%">
+              <span data-tilt="" style="position:absolute;top:9%;bottom:9%;left:8%;right:8%;border-radius:12px;overflow:hidden;background:#F4F0E6;box-shadow:0 30px 70px rgba(0,0,0,.35),-1.5px 0 0 rgba(255,70,100,.45),1.5px 0 0 rgba(70,200,255,.45)"><image-slot id="{{ p.slot }}" shape="rect" placeholder="{{ p.ph }}"></image-slot><span data-paper="" style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.4"></span></span>
+              <span data-paper="" style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.5"></span>
+              <span data-open-label="" style="position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;background:rgba(244,238,226,.16);backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);border:1px solid rgba(255,255,255,.34);color:#F4EEE2;font-size:14px;font-weight:600"><span style="font-family:var(--serif);font-style:italic;font-weight:400">{{ p.result }}</span><span>{{ p.openLabel }}</span></span>
+            </button><span aria-hidden="true" style="position:absolute;left:-14px;top:-6px;width:clamp(70px,8vw,120px);height:30px;transform:rotate(-24deg);background:#E8DCBE url(assets/paper.png) center/400px;background-blend-mode:multiply;opacity:.88;pointer-events:none;clip-path:polygon(4% 0,96% 8%,100% 30%,95% 55%,100% 80%,94% 100%,3% 92%,0 70%,5% 45%,0 18%)"></span><span aria-hidden="true" style="position:absolute;right:-12px;bottom:-4px;width:clamp(70px,8vw,120px);height:30px;transform:rotate(-20deg);background:#E8DCBE url(assets/paper.png) center/400px;background-blend-mode:multiply;opacity:.88;pointer-events:none;clip-path:polygon(4% 0,96% 8%,100% 30%,95% 55%,100% 80%,94% 100%,3% 92%,0 70%,5% 45%,0 18%)"></span></div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <span style="display:flex;gap:14px;align-items:baseline;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:18px;letter-spacing:0;color:var(--red)">{{ p.num }}</span>{{ p.client }}</span>
+              <h3 style="margin:0;font-family:var(--display);font-weight:var(--dw);letter-spacing:var(--dtrack);line-height:1;font-size:clamp(34px,3.6vw,60px)">{{ p.title }}</h3>
+              <p style="margin:0;max-width:28em;font-size:clamp(15px,1.15vw,18px);line-height:1.6;color:var(--muted);text-wrap:pretty">{{ p.blurb }}</p>
+              <button onClick="{{ p.open }}" data-uline="" data-sfx="" style="all:unset;cursor:pointer;position:relative;align-self:flex-start;font-weight:600;font-size:15px">{{ p.cta }}<span data-line="" style="position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform:scaleX(0)"></span></button>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+      <sc-if value="{{ c.showDune }}" hint-placeholder-val="{{ true }}">
+        <div data-sky="" aria-hidden="true" style="position:relative;height:clamp(160px,20vw,300px);margin-top:clamp(60px,8vw,120px);overflow:hidden">
+          <svg data-pl-speed="0.6" viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:0;width:100%;height:100%"><path d="{{ sky.duneBack }}" style="fill:{{ c.midNext }}"></path></svg>
+          <svg viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:-1px;width:100%;height:100%"><path d="{{ sky.duneFront }}" style="fill:{{ c.nextBg }}"></path></svg>
+        </div>
+      </sc-if>
+      <sc-if value="{{ c.isLast }}" hint-placeholder-val="{{ false }}"><div style="height:clamp(90px,11vw,170px)"></div></sc-if>
+    </section>
+  </sc-for>
+</div>
+
+<!-- ========== PAST TEAMS ========== -->
+<div data-sky="" data-screen-label="Dune 2" aria-hidden="true" style="position:relative;z-index:1;height:clamp(220px,28vw,420px);overflow:hidden;margin:-1px 0;background:{{ lastBg }}">
+  <svg data-pl-speed="0.6" viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:0;width:100%;height:100%"><path d="{{ sky.duneBack }}" style="fill:color-mix(in oklab, var(--sbg) 50%, {{ lastBg }})"></path></svg>
+  <svg viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:-1px;width:100%;height:100%"><path d="{{ sky.duneFront }}" style="fill:var(--sbg)"></path></svg>
+</div>
+
+
+<!-- ========== ABOUT ========== -->
+<div data-screen-label="Riyadh art" style="position:relative;z-index:1;height:min(70vh,720px);overflow:hidden;background:#3a2a1a;margin:0 clamp(0px,1.5vw,24px);-webkit-mask-image:url(assets/ink-mask.png);mask-image:url(assets/ink-mask.png);-webkit-mask-size:100% 100%;mask-size:100% 100%">
+  <div data-par="" style="position:absolute;inset:-9% 0"><div data-kb="" style="position:absolute;inset:0"><image-slot id="art-orient" shape="rect" placeholder="Drop Léon Belly, Pilgrims Going to Mecca (1861), public domain on Wikimedia Commons"></image-slot></div></div>
+  <span aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#0E3A3A 0%,#1E5A4B 45%,#E8D7B2 100%);mix-blend-mode:soft-light;opacity:.85"></span><span aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:#0D3534;mix-blend-mode:multiply;opacity:.28"></span><span data-paper="" aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:multiply;opacity:.6"></span><span aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(8,24,24,.8) 0%,rgba(8,24,24,0) 58%)"></span>
+  <span style="position:absolute;right:var(--pad);bottom:clamp(40px,5vw,70px);z-index:2;font-family:var(--serif);font-style:italic;font-size:14px;color:#F1E8D6;opacity:.85;pointer-events:none">Léon Belly · Pilgrims Going to Mecca · 1861</span>
+</div>
+
+<div aria-hidden="true" style="position:relative;z-index:1;padding:0 var(--pad);background:var(--sbg)"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" style="display:block;width:100%;height:30px;color:var(--ink);opacity:.82;overflow:visible"><path data-draw="" d="M8 16 C 220 4, 420 32, 640 18 S 1010 2, 1192 24" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"></path><path data-draw="" data-delay=".25" d="M120 30 C 380 24, 700 34, 1040 27" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".6"></path></svg></div>
+<section id="about" data-screen-label="About" style="position:relative;z-index:1;background:var(--sbg) var(--paperimg);background-size:640px;background-blend-mode:overlay;padding:clamp(100px,13vw,190px) var(--pad) clamp(80px,10vw,150px)">
+  <span style="display:block;margin-bottom:28px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red-sm)"><span lang="en">(03) About</span><span lang="ar">(٠٣) عنّي</span></span>
+  <p data-reveal="" style="margin:0 0 clamp(70px,9vw,140px);max-width:24em;font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.7vw,60px);line-height:1.12;letter-spacing:-.015em;text-wrap:pretty">
+    <span lang="en">I’m Salman. I started at Jahez designing for people who answer phones all day, spent two years on Mudad at Masdr (back when it was still GOSI Business Development), and now I’m co-founding One To X. I design in Arabic and English, so I’m used to thinking <em style="color:var(--red)">in both directions.</em></span>
+    <span lang="ar">أنا سلمان. بدأت في جاهز أصمّم لأشخاص يقضون يومهم على الهاتف، ثم قضيت سنتين على منصة مُدد في مصدر (حين كانت لا تزال تطوير أعمال التأمينات الاجتماعية)، والآن أشارك في تأسيس One To X. أصمّم بالعربية والإنجليزية، لذلك اعتدت التفكير <span style="color:var(--red)">في الاتجاهين.</span></span>
+  </p>
+
+  <div style="margin:0 calc(-1 * var(--pad)) clamp(70px,9vw,140px);display:flex;flex-direction:column;gap:clamp(18px,2vw,28px)">
+    <div style="padding:0 var(--pad);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 24px">
+      <h3 style="margin:0;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);font-weight:400"><span lang="en">Teams I’ve shipped with</span><span lang="ar">فرق أطلقت معها منتجات</span></h3>
+    </div>
+  <div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)">
+    <div data-marquee="" dir="ltr" style="display:flex;width:max-content;will-change:transform">
+      <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="8">
+        <div style="flex:none;display:flex;align-items:center;gap:22px;height:110px;padding:0 clamp(36px,5vw,80px);border-right:1px solid var(--line)">
+          <sc-if value="{{ m.isLogo }}"><div role="img" aria-label="{{ m.name }}" style="flex:none;width:{{ m.w }}px;height:{{ m.h }}px;background:var(--ink);-webkit-mask:url({{ m.logo }}) center / contain no-repeat;mask:url({{ m.logo }}) center / contain no-repeat"></div></sc-if>
+          <sc-if value="{{ m.isWord }}"><div style="flex:none;font-family:var(--display);font-weight:600;font-size:46px;letter-spacing:-.02em;line-height:1">{{ m.word }}</div></sc-if>
+          <div style="display:flex;flex-direction:column;gap:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--ink)">{{ m.name }}</span><span>{{ m.yrs }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:var(--about);gap:clamp(36px,5vw,90px);align-items:start;margin-bottom:clamp(90px,11vw,170px)">
+    <div data-brush="" style="position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--bg2);max-width:440px;width:100%">
+      <div data-speed="-.4" style="position:absolute;inset:-8% 0;"><image-slot id="about-portrait" shape="rect" placeholder="Drop a portrait"></image-slot></div>
+      <div style="position:absolute;bottom:14px;inset-inline-end:14px;width:60px;height:60px;border-radius:10px;background:var(--red);color:#F4EEE2;display:grid;place-items:center;font-family:'Amiri',serif;font-weight:700;font-size:20px;transform:rotate(-6deg);pointer-events:none">سلمان</div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <h3 style="margin:0 0 28px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);font-weight:400"><span lang="en">How I operate</span><span lang="ar">كيف أعمل</span></h3>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:17px;color:var(--red-sm);padding-top:.5em">01</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">Follow the money through the flow.</span><span lang="ar">تتبّع المال داخل التجربة.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">Payroll and subscriptions taught me that every extra step costs someone real cash or real time. I map where that happens before I open Figma.</span><span lang="ar">علّمتني الرواتب والاشتراكات أن كل خطوة زائدة تكلّف أحدهم مالاً أو وقتاً. أحدد أين يحدث ذلك قبل أن أفتح فيغما.</span></p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:17px;color:var(--red-sm);padding-top:.5em">02</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">Warn before, not after.</span><span lang="ar">نبّه قبل، لا بعد.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">The most useful error message shows up before you hit submit. That’s where Mudad’s pre-submission alerts came from.</span><span lang="ar">أنفع رسالة خطأ هي التي تظهر قبل أن تضغط إرسال. من هنا جاءت تنبيهات ما قبل الإرسال في مُدد.</span></p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:17px;color:var(--red-sm);padding-top:.5em">03</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">One screen beats five tabs.</span><span lang="ar">شاشة واحدة أفضل من خمسة تبويبات.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">If someone needs a second monitor to do their job, that’s a design bug. Saned is the example I keep coming back to.</span><span lang="ar">إذا احتاج أحدهم شاشة ثانية ليؤدي عمله، فهذه مشكلة تصميم. سانِد هو المثال الذي أعود إليه دائماً.</span></p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:17px;color:var(--red-sm);padding-top:.5em">04</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">Read the numbers first.</span><span lang="ar">اقرأ الأرقام أولاً.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">I came up as a UX analyst, so I’d rather look at CSAT and NPS than argue about a redesign in a meeting.</span><span lang="ar">بدأت محللاً لتجربة المستخدم، لذا أفضّل النظر في رضا العملاء وNPS على الجدال حول إعادة التصميم في اجتماع.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:24px">
+    <h3 data-reveal="" style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(40px,5vw,84px)"><span lang="en">Where I’ve been</span><span lang="ar">أين عملت</span></h3>
+    <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Most recent first</span><span lang="ar">الأحدث أولاً</span></span>
+  </div>
+  <div role="list">
+    <sc-for list="{{ exp }}" as="x" hint-placeholder-count="4">
+      <div role="listitem" data-swipe="" style="position:relative;overflow:hidden;border-top:1px solid var(--line)">
+        <div data-swipe-back="" style="position:absolute;inset:0;display:flex;justify-content:flex-end;align-items:center;background:var(--green);color:#F4EEE2;padding-inline:20px">
+          <div data-swipe-content="" style="display:flex;align-items:center;gap:16px">
+            <span style="font-family:var(--serif);font-style:italic;font-size:clamp(15px,1.2vw,18px)">{{ x.back }}</span>
+            <button onClick="{{ x.open }}" data-sfx="" style="all:unset;cursor:pointer;flex:none;padding:9px 14px;border-radius:2px;background:#F4EEE2;color:#1B2420;font-size:13px;font-weight:600" style-active="transform:scale(.95)">{{ x.cta }}</button>
+          </div>
+        </div>
+        <div data-swipe-front="" data-sfx="" style="position:relative;z-index:1;display:grid;grid-template-columns:var(--exp);gap:8px 24px;align-items:baseline;padding:26px 0;background:var(--bg);touch-action:pan-y;cursor:grab;user-select:none">
+          <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ x.date }}</span>
+          <span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:var(--display);font-weight:var(--dw);letter-spacing:var(--dtrack);line-height:1;font-size:clamp(26px,2.6vw,42px)">{{ x.co }}</span><sc-if value="{{ x.sub }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ x.sub }}</span></sc-if></span>
+          <span style="font-size:16px">{{ x.role }}</span>
+          <span style="display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);white-space:nowrap"><span style="color:{{ x.dot }}">●</span>{{ x.hint }}</span>
+        </div>
+      </div>
+    </sc-for>
+    <div style="border-top:1px solid var(--line)"></div>
+  </div>
+</section>
+
+<!-- ========== CAPABILITIES ========== -->
+<div aria-hidden="true" style="position:relative;z-index:1;padding:0 var(--pad);background:var(--sbg)"><svg viewBox="0 0 1200 40" preserveAspectRatio="none" style="display:block;width:100%;height:30px;color:var(--ink);opacity:.82;overflow:visible"><path data-draw="" d="M8 24 C 220 12, 420 32, 640 18 S 1010 10, 1192 24" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"></path><path data-draw="" data-delay=".25" d="M120 30 C 380 24, 700 34, 1040 27" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".6"></path></svg></div>
+<section id="skills" data-screen-label="Capabilities" style="position:relative;z-index:1;background:var(--sbg);padding:clamp(80px,10vw,150px) var(--pad);border-top:1px solid var(--line)">
+  <div style="display:grid;grid-template-columns:var(--hero);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(44px,5vw,80px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red-sm)"><span lang="en">(04) Capabilities</span><span lang="ar">(٠٤) المهارات</span></span>
+      <h2 data-reveal="" style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(44px,6vw,100px);text-wrap:balance"><span lang="en">What you’d actually hire me for</span><span lang="ar">ما الذي ستوظّفني من أجله فعلاً</span></h2>
+    </div>
+    <p data-reveal="" data-delay=".1" style="margin:0;max-width:30em;font-size:clamp(16px,1.2vw,19px);line-height:1.55;color:var(--muted)"><span lang="en">Six things I’m reliably good at, each tied to something I shipped or proposed. No generic skill bars.</span><span lang="ar">ست مهارات أتقنها، وكل واحدة مرتبطة بشيء أطلقته أو اقترحته.</span></p>
+  </div>
+  <div style="display:grid;grid-template-columns:var(--cols);column-gap:clamp(20px,3vw,48px)">
+    <sc-for list="{{ skills }}" as="s" hint-placeholder-count="6">
+      <div data-reveal="" data-sfx="" style="position:relative;display:flex;flex-direction:column;gap:14px;padding:30px 0 40px;border-top:1px solid var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:17px;color:var(--red-sm)">{{ s.n }}</span>
+          <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ s.seen }}</span>
+        </div>
+        <h3 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(28px,2.4vw,40px)">{{ s.t }}</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ s.b }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<div data-sky="" data-screen-label="Dune 3" aria-hidden="true" style="position:relative;z-index:1;height:clamp(220px,28vw,420px);overflow:hidden;margin:-1px 0;background:var(--sbg)">
+  <svg data-pl-speed="0.6" viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:0;width:100%;height:100%"><path d="{{ sky.duneBack }}" style="fill:color-mix(in oklab, var(--foot-bg) 50%, var(--sbg))"></path></svg>
+  <svg viewBox="0 0 1600 400" preserveAspectRatio="none" style="position:absolute;left:0;bottom:-1px;width:100%;height:100%"><path d="{{ sky.duneFront }}" style="fill:var(--foot-bg)"></path></svg>
+</div>
+<footer id="contact" data-screen-label="Contact" style="--red:#FF8A6B;--red-sm:#FF8A6B;position:relative;z-index:1;background:var(--foot-bg);color:var(--foot-ink);overflow:hidden">
+  <img src="assets/monet-lilies-1906.png" alt="" aria-hidden="true" style="position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(14px) saturate(1.1);pointer-events:none">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:color-mix(in oklab,var(--foot-bg) 62%,transparent);pointer-events:none"></div>
+  <div aria-hidden="true" style="display:var(--ticket,block);position:absolute;right:clamp(20px,6vw,110px);top:clamp(60px,7vw,120px);z-index:2;transform:rotate(6deg);filter:drop-shadow(0 18px 24px rgba(0,0,0,.4));pointer-events:none">
+    <div style="display:flex;background:#EDE4D0 url(assets/paper.png) center/500px;background-blend-mode:multiply;color:#1A1916;-webkit-mask:radial-gradient(circle at 0 50%,transparent 12px,#000 12.5px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 12px,#000 12.5px) right/51% 100% no-repeat;mask:radial-gradient(circle at 0 50%,transparent 12px,#000 12.5px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 12px,#000 12.5px) right/51% 100% no-repeat">
+      <div style="padding:18px 26px 18px 30px;display:flex;flex-direction:column;gap:6px;border-right:2px dashed rgba(26,25,22,.35)">
+        <span style="font-family:'Bowlby One SC',sans-serif;font-size:15px">Admit one</span>
+        <span style="font-family: 'Bowlby One SC',sans-serif; font-size: 30px; line-height: 1; color: #1A1916"><span lang="en">Salman</span><span lang="ar" style="font-family:'Aref Ruqaa',serif;font-weight:700;font-size:1.15em;line-height:1.2;color:#C42B1F">سلمان</span></span>
+        <span style="font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase">Product Designer · Riyadh</span>
+      </div>
+      <div style="padding:18px 22px;display:grid;place-items:center;font-family:'Bowlby One SC',sans-serif;font-size:18px;writing-mode:vertical-rl">No. 001</div>
+    </div>
+  </div>
+  <div style="position:relative;z-index:1;padding:clamp(110px,14vw,210px) var(--pad) 110px">
+  <span style="display:block;margin-bottom:32px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--foot-muted)"><span lang="en">(06) Contact</span><span lang="ar">(٠٦) تواصل</span></span>
+  <h2 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(52px,9vw,170px);text-wrap:balance">
+    <span data-reveal="" style="display:block"><span lang="en">Got a flow everyone hates?</span><span lang="ar">عندك تجربة يكرهها الجميع؟</span></span>
+    <a href="#" data-magnetic="" data-sfx="" data-reveal="" data-delay=".1" style="display:inline-block;color:var(--red);font-family:'Newsreader',serif;font-style:italic;font-weight:300;text-transform:none"><span lang="en">Let’s talk →</span><span lang="ar" style="font-family:'Amiri',serif;font-style:normal">لنتحدث ←</span></a>
+  </h2>
+  <div style="display:grid;grid-template-columns:var(--hero);gap:clamp(32px,5vw,80px);margin-top:clamp(60px,7vw,110px);align-items:end">
+    <p style="margin:0;max-width:28em;font-size:clamp(16px,1.2vw,19px);line-height:1.6;color:var(--foot-muted)"><span lang="en">I reply within a day or two, faster if it involves money moving somewhere.</span><span lang="ar">أرد خلال يوم أو يومين، وأسرع إن كان الأمر يتعلق بأموال تتحرك.</span></p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end">
+      <button data-hold="" data-copy="hello@example.com" data-sfx="" aria-label="Hold to copy email" style="all:unset;cursor:pointer;position:relative;overflow:hidden;display:inline-flex;align-items:center;padding:14px 22px;border:1px solid currentColor;font-weight:600;font-size:15px;border-radius:2px;user-select:none;-webkit-user-select:none;touch-action:none">
+        <span data-hold-fill="" style="position:absolute;inset:0;background:var(--red);opacity:.22;transform:scaleX(0);transform-origin:left"></span>
+        <span data-st="idle" style="position:relative;display:inline-flex;align-items:center;gap:10px"><em style="font-family:var(--serif)">hello@example.com</em><span style="font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.7"><span lang="en">Hold to copy</span><span lang="ar">اضغط مطولاً للنسخ</span></span></span>
+        <span data-st="hold" style="position:relative;display:none;align-items:center;gap:8px"><span lang="en">Keep holding…</span><span lang="ar">استمر بالضغط…</span></span>
+        <span data-st="busy" style="position:relative;display:none;align-items:center;gap:9px"><span data-spin="" style="width:12px;height:12px;border-radius:50%;border:1.5px solid currentColor;border-top-color:transparent"></span><span lang="en">Copying</span><span lang="ar">جارٍ النسخ</span></span>
+        <span data-st="done" style="position:relative;display:none;align-items:center;gap:8px"><span lang="en">Copied to clipboard ✓</span><span lang="ar">تم النسخ ✓</span></span>
+      </button>
+      <a href="#" data-sfx="" style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:20px;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:1.5px;text-underline-offset:5px;transition:color .25s" style-hover="color:var(--red)">LinkedIn</a>
+      <a href="#" data-sfx="" style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:20px;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:1.5px;text-underline-offset:5px;transition:color .25s" style-hover="color:var(--red)">Read.cv</a>
+      <a href="#" data-sfx="" style="font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:20px;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:1.5px;text-underline-offset:5px;transition:color .25s" style-hover="color:var(--red)">Dribbble</a>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:clamp(70px,8vw,120px);padding-top:24px;border-top:1px solid color-mix(in oklab,currentColor 22%,transparent);font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--foot-muted)">
+    <span><span lang="en">© 2026 Salman Binmandeel · Riyadh</span><span lang="ar">© 2026 سلمان بن منديل · الرياض</span></span>
+    <span><span lang="en">Made with ink, pond water and WebGL</span><span lang="ar">صُنع بالحبر وماء البركة وWebGL</span></span>
+    <button onClick="{{ go }}" data-target="#top" data-sfx="" style="all:unset;cursor:pointer" style-hover="color:var(--red)"><span lang="en">Back to top ↑</span><span lang="ar">إلى الأعلى ↑</span></button>
+  </div>
+  </div>
+</footer>
+
+<!-- ========== CASE STUDY (FLIP) ========== -->
+<sc-if value="{{ csOpen }}" hint-placeholder-val="{{ false }}">
+<div ref="{{ csRef }}" data-lenis-prevent="" role="dialog" aria-modal="true" aria-label="{{ cs.title }}" onScroll="{{ onCsScroll }}" style="position:fixed;inset:0;z-index:302;color:var(--ink);overflow-y:auto;overscroll-behavior:contain">
+  <div data-cs-bg="" style="position:fixed;inset:0;background:var(--bg)"></div>
+  <div data-cs-paper="" aria-hidden="true"></div>
+  <div style="position:relative">
+    <div data-cs-in="" style="position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad);background:var(--glass);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(255,70,100,.12),0 2px 0 rgba(70,200,255,.1)">
+      <button onClick="{{ closeCs }}" data-sfx="" style="all:unset;cursor:pointer;padding:10px 16px;border-radius:2px;border:1px solid var(--line);font-size:14px;font-weight:600;transition:background .25s" style-hover="background:var(--line)" style-active="transform:scale(.95)">{{ cs.closeLabel }}</button>
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:14px;letter-spacing:0">{{ cs.num }} / 04</span> · {{ cs.title }}</span>
+      <button onClick="{{ nextCs }}" data-sfx="" style="all:unset;cursor:pointer;position:relative;overflow:hidden;padding:10px 16px;border-radius:2px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600" style-active="transform:scale(.95)"><span style="position:absolute;left:0;bottom:0;height:3px;background:var(--red);width:{{ cs.bar }};transition:width .46s cubic-bezier(.6,0,.2,1)"></span><span style="position:relative">{{ cs.nextLabel }}</span></button>
+    </div>
+    <div style="padding:clamp(20px,3vw,40px) var(--pad) 0">
+      <div data-flip="" style="position:relative;height:min(74vh,840px)">
+        <div data-flip-inner="" style="position:absolute;inset:0;overflow:hidden;border-radius:6px;background:{{ cs.bg }}">
+          <sc-if value="{{ cs.browser }}" hint-placeholder-val="{{ true }}">
+            <div style="position:absolute;top:12%;bottom:12%;left:12%;right:12%;border-radius:16px;background:#F4F0E6;box-shadow:0 40px 90px rgba(0,0,0,.35),-1.5px 0 0 rgba(255,70,100,.45),1.5px 0 0 rgba(70,200,255,.45);overflow:hidden"><image-slot id="{{ cs.slot }}" shape="rect" placeholder="{{ cs.ph }}"></image-slot><span style="position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);border-radius:inherit;background:linear-gradient(125deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,0) 30%)"></span></div>
+          </sc-if>
+          <sc-if value="{{ cs.figHero }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;inset:0;z-index:301;display:grid;place-items:center"><div style="position:relative;z-index:301;width:100%;max-height:100%;aspect-ratio:21/9"><image-slot id="cs-hero-payroll" style="position:relative;z-index:301" shape="rect" placeholder="{{ cs.heroPh }}"></image-slot></div></div>
+          </sc-if>
+          <sc-if value="{{ cs.phone }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;left:50%;top:10%;height:80%;aspect-ratio:9/19.5;transform:translateX(-50%);border-radius:30px;background:#111;padding:6px;box-shadow:0 40px 90px rgba(0,0,0,.4),-1.5px 0 0 rgba(255,70,100,.45),1.5px 0 0 rgba(70,200,255,.45)"><div style="position:relative;width:100%;height:100%;border-radius:25px;overflow:hidden"><image-slot id="{{ cs.slot }}" shape="rect" placeholder="{{ cs.ph }}"></image-slot></div></div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:var(--csgrid);gap:clamp(24px,4vw,64px);padding:0 var(--pad)">
+      <aside data-cs-in="" style="display:var(--rail);flex-direction:column;gap:2px;position:sticky;top:90px;align-self:start;padding-top:clamp(56px,7vw,110px)">
+        <span style="margin-bottom:12px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.onPage }}</span>
+        <sc-for list="{{ cs.menu }}" as="s" hint-placeholder-count="4">
+          <button onClick="{{ s.jump }}" data-sfx="" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 0;font-size:14px;line-height:1.3;color:{{ s.color }};transition:color .3s">
+            <span style="flex:none;height:1px;width:{{ s.barW }};background:currentColor;transition:width .45s cubic-bezier(.2,.8,.2,1)"></span><span>{{ s.label }}</span>
+          </button>
+        </sc-for>
+      </aside>
+      <main style="min-width:0;padding:clamp(56px,7vw,110px) 0 160px">
+        <div data-cs-sec="" style="display:flex;flex-direction:column">
+          <div data-cs-in="" style="display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase"><span style="color:var(--red-sm)">{{ cs.tag }}</span><span style="color:var(--muted)">{{ cs.readTime }}</span></div>
+          <h1 data-cs-in="" style="margin:22px 0 0;font-family:var(--display);font-weight:var(--dw);letter-spacing:-.01em;line-height:.95;font-size:clamp(52px,8vw,150px)">{{ cs.title }}</h1>
+          <div data-cs-in="" style="display:grid;grid-template-columns:var(--beat);gap:clamp(32px,5vw,80px);align-items:start;margin-top:clamp(40px,5vw,72px)">
+            <p style="margin:0;max-width:22em;font-family:var(--serif);font-weight:300;font-size:clamp(21px,1.9vw,30px);line-height:1.25;text-wrap:pretty">{{ cs.summary }}</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-top:1px solid var(--line)">
+              <div style="padding:18px 18px 18px 0;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--line)"><span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.orgLabel }}</span><span style="font-size:16px">{{ cs.org }}</span></div>
+              <div style="padding:18px 18px 18px 0;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--line)"><span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.roleLabel }}</span><span style="font-size:16px">{{ cs.role }}</span></div>
+              <sc-for list="{{ cs.metrics }}" as="m" hint-placeholder-count="2">
+                <div style="padding:18px 18px 18px 0;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--line)"><span style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;line-height:1;font-size:clamp(24px,2.2vw,36px);color:var(--red)">{{ m.v }}</span><span style="font-size:14px;color:var(--muted)">{{ m.l }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <sc-for list="{{ cs.beats }}" as="b" hint-placeholder-count="3">
+          <section data-cs-sec="" data-cs-in="" style="display:grid;grid-template-columns:var(--beat);gap:clamp(28px,4vw,72px);align-items:center;padding-top:clamp(90px,11vw,170px)">
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <span style="display:flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red-sm)"><span dir="ltr" style="font-family:'Newsreader',serif;font-variant-numeric:lining-nums tabular-nums;font-size:22px;letter-spacing:0">{{ b.n }}</span><span>{{ b.k }}</span></span>
+              <h2 style="margin:0;font-family:var(--display);font-weight:var(--dw);letter-spacing:var(--dtrack);line-height:1;font-size:clamp(34px,3.6vw,58px);text-wrap:balance">{{ b.h }}</h2>
+              <p style="margin:0;max-width:28em;font-size:clamp(16px,1.2vw,19px);line-height:1.65;color:var(--muted);text-wrap:pretty">{{ b.p }}</p>
+            </div>
+            <sc-if value="{{ b.fig }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ b.lead.src }}" alt="{{ b.lead.alt }}" loading="lazy" decoding="async" style="position:relative;z-index:301;display:block;width:100%;aspect-ratio:16/10;object-fit:contain">
+            </sc-if>
+            <sc-if value="{{ b.hasMore }}" hint-placeholder-val="{{ false }}">
+              <div style="grid-column:1/-1;order:3;display:grid;grid-template-columns:repeat(var(--figcols,2),minmax(0,1fr));gap:24px">
+                <sc-for list="{{ b.more }}" as="g" hint-placeholder-count="2">
+                  <img src="{{ g.src }}" alt="{{ g.alt }}" loading="lazy" decoding="async" style="position:relative;z-index:301;display:block;width:100%;aspect-ratio:16/10;object-fit:contain">
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ b.noFig }}" hint-placeholder-val="{{ true }}">
+            <div style="position:relative;z-index:301;aspect-ratio:4/3;overflow:hidden;border-radius:6px;background:{{ cs.bg }}">
+              <div style="position:absolute;top:10%;bottom:10%;left:10%;right:10%;border-radius:14px;background:#F4F0E6;box-shadow:0 30px 70px rgba(0,0,0,.3),-1.5px 0 0 rgba(255,70,100,.4),1.5px 0 0 rgba(70,200,255,.4);overflow:hidden"><image-slot id="{{ b.slot }}" style="position:relative;z-index:301" shape="rect" placeholder="{{ b.ph }}"></image-slot><span style="position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);background:linear-gradient(125deg,rgba(255,255,255,.26) 0%,rgba(255,255,255,0) 30%)"></span></div>
+            </div>
+            </sc-if>
+          </section>
+        </sc-for>
+        <button onClick="{{ nextCs }}" data-sfx="" style="all:unset;cursor:pointer;position:relative;display:flex;flex-direction:column;gap:12px;margin-top:clamp(100px,12vw,180px);padding-top:28px;border-top:1px solid var(--ink);width:100%">
+          <span style="position:absolute;left:0;top:-1px;height:3px;background:var(--red);width:{{ cs.bar }};transition:width .46s cubic-bezier(.6,0,.2,1)"></span>
+          <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.nextKicker }}</span>
+          <span style="font-family:var(--display);font-weight:var(--dw);font-style:italic;letter-spacing:var(--dtrack);line-height:1;font-size:clamp(44px,6.4vw,112px);transition:color .35s" style-hover="color:var(--red)">{{ cs.nextTitle }} →</span>
+        </button>
+      </main>
+      <aside data-cs-in="" style="display:var(--rail);flex-direction:column;gap:12px;position:sticky;top:90px;align-self:start;padding-top:clamp(56px,7vw,110px)">
+        <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.pageLabel }}</span>
+        <div ref="{{ miniRef }}" onClick="{{ miniClick }}" title="Jump" style="position:relative;width:112px;height:62vh;display:flex;flex-direction:column;gap:7px;padding:9px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);cursor:pointer;overflow:hidden">
+          <span style="flex:2.2;min-height:0;border-radius:4px;background:{{ cs.bg }};opacity:.9"></span>
+          <div style="flex:1.2;display:flex;flex-direction:column;gap:4px;min-height:0">
+            <span style="height:3px;width:40%;border-radius:2px;background:var(--red);opacity:.7"></span>
+            <span style="height:9px;width:85%;border-radius:2px;background:var(--ink);opacity:.55"></span>
+            <span style="height:3px;width:100%;border-radius:2px;background:var(--muted);opacity:.35"></span>
+            <span style="height:3px;width:70%;border-radius:2px;background:var(--muted);opacity:.35"></span>
+          </div>
+          <sc-for list="{{ cs.beats }}" as="b" hint-placeholder-count="3">
+            <div style="flex:1.6;display:flex;gap:5px;min-height:0;overflow:hidden">
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="height:4px;width:70%;border-radius:2px;background:var(--ink);opacity:.5"></span><span style="height:2px;width:100%;border-radius:2px;background:var(--muted);opacity:.35"></span><span style="height:2px;width:80%;border-radius:2px;background:var(--muted);opacity:.35"></span></div>
+              <span style="flex:1.3;border-radius:3px;background:{{ cs.bg }};opacity:.8"></span>
+            </div>
+          </sc-for>
+          <div ref="{{ indRef }}" style="position:absolute;left:3px;right:3px;top:3px;height:20%;border:1.5px solid var(--red);border-radius:7px;background:color-mix(in oklab,var(--red) 7%,transparent);pointer-events:none"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;loaderAnimation&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fadeIn&quot;,&quot;blurIn&quot;,&quot;blurInUp&quot;,&quot;blurInDown&quot;,&quot;slideUp&quot;,&quot;slideDown&quot;,&quot;slideLeft&quot;,&quot;slideRight&quot;,&quot;scaleUp&quot;,&quot;scaleDown&quot;],&quot;default&quot;:&quot;blurInUp&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Loader text animation&quot;},&quot;loaderBy&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;character&quot;,&quot;word&quot;,&quot;text&quot;],&quot;default&quot;:&quot;character&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Loader text animation&quot;},&quot;loaderDuration&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0.5,&quot;max&quot;:8,&quot;step&quot;:0.1,&quot;unit&quot;:&quot;s&quot;,&quot;default&quot;:2,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Loader text animation&quot;},&quot;loaderDelay&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.05,&quot;unit&quot;:&quot;s&quot;,&quot;default&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Loader text animation&quot;},&quot;boilInterval&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:80,&quot;max&quot;:1200,&quot;step&quot;:20,&quot;unit&quot;:&quot;ms&quot;,&quot;default&quot;:180,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Stop-motion&quot;},&quot;strategyColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#7FD08A&quot;,&quot;#5CC8DC&quot;,&quot;#E0A84A&quot;,&quot;#E06A3C&quot;],&quot;default&quot;:&quot;#7FD08A&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Chapter colours&quot;},&quot;researchColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#5CC8DC&quot;,&quot;#7FD08A&quot;,&quot;#E0A84A&quot;,&quot;#C9A7E8&quot;],&quot;default&quot;:&quot;#5CC8DC&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Chapter colours&quot;},&quot;visualColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#E0A84A&quot;,&quot;#E06A3C&quot;,&quot;#5CC8DC&quot;,&quot;#7FD08A&quot;],&quot;default&quot;:&quot;#E06A3C&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Chapter colours&quot;},&quot;grainAmount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;},&quot;showStars&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showPreloader&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showLightRays&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Light rays&quot;},&quot;rayCount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:14,&quot;step&quot;:1,&quot;default&quot;:7,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Light rays&quot;},&quot;raySpeed&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:4,&quot;max&quot;:30,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;default&quot;:14,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Light rays&quot;}}">
+const ROLES = [
+  { k: 'strategy', en: 'Strategy', ar: 'استراتيجية' },
+  { k: 'research', en: 'Research', ar: 'بحث' },
+  { k: 'visual', en: 'Visual', ar: 'بصري' }
+];
+
+const CHAPTERS = [
+  { k: 'strategy', art: 'slot', ph: 'Drop Hiroshige, Fireworks at Ryōgoku (1858), public domain on Wikimedia Commons', credit: 'Utagawa Hiroshige · Fireworks at Ryōgoku · 1858',
+    en: { line: 'Choosing the problem worth solving, then the smallest change that solves it.' }, ar: { line: 'اختيار المشكلة التي تستحق الحل، ثم أصغر تغيير يحلّها.' } },
+  { k: 'research', art: 'monet', credit: 'Claude Monet · Water Lilies · 1906',
+    en: { line: 'Sitting with the people who use it until the real problem shows up.' }, ar: { line: 'الجلوس مع من يستخدم المنتج حتى تظهر المشكلة الحقيقية.' } },
+  { k: 'visual', art: 'slot', ph: 'Drop Alphonse Mucha, The Seasons: Spring (1896), public domain on Wikimedia Commons', credit: 'Alphonse Mucha · The Seasons: Spring · 1896',
+    en: { line: 'Making the calm version look as calm as it is.' }, ar: { line: 'أن تبدو النسخة الهادئة بالهدوء الذي هي عليه.' } }
+];
+const BEAT = { en: ['Problem', 'Move', 'Result'], ar: ['المشكلة', 'الحل', 'النتيجة'] };
+const FIG = {
+  '01': ['01-auto-payroll-off-on', 'Two payroll screens side by side: auto payroll off, and on with a new end-month field.'],
+  '02': ['02-warn-before-submit', 'Payroll summary with wage protection warnings on employee rows and the expected compliance rate.'],
+  '03': ['03-one-code-five-months', 'Verification dialog confirming auto payroll from January to May 2024 with one code.'],
+  '04': ['04-dashboard-status', 'Payroll dashboard card showing the next transfer, next deduction date and when auto payroll ends.'],
+  '05': ['05-earned-wage-access', 'Earned wage access request list with statuses, and a request detail panel.'],
+  '06': ['06-ewa-in-payroll', 'Payroll history with early-pay deductions inside the payroll run, marked as not a wage protection violation.'],
+  '07': ['07-financing-offers', 'Payroll financing request with offers from five providers compared side by side.'],
+  '08': ['08-financing-onboarding', 'Payroll financing onboarding explaining the four steps before the first request.'],
+  '09': ['09-old-to-new-system', 'Mudad before and after: the old blue top-navigation dashboard and the new side-navigation design system.']
+};
+const figOf = (id) => ({ src: 'assets/mudad/' + FIG[id][0] + '.webp', alt: FIG[id][1] });
+
+const PROJECTS = [
+  { key: 'payroll', slot: 'work-payroll', bg: '#2E5547', frame: 'browser', figs: true,
+    hero: { src: 'assets/mudad/hero-auto-payroll.webp', alt: 'Mudad payroll dashboard showing the auto payroll card, with the verification code dialog in front.' },
+    figures: [['09'], ['02', '01', '03'], ['07', '08', '05', '06'], ['04']], roles: ['strategy', 'research'],
+    ph: 'Drop a Mudad Payroll screenshot (full-page works best)', beatPh: ['Drop the old 3-step flow', 'Drop the 2-step payroll flow', 'Drop the salary financing screen'],
+    en: { title: 'Mudad Payroll', client: 'Masdr', blurb: 'Payroll used to take three steps and a bit of hoping. We got it to two, added Autopayroll, moved the warnings to before you submit, and put salary financing right where cash gets tight.',
+      cs: { tag: 'Business thinking', org: 'Masdr', role: 'Sole product designer in the squad',
+        summary: 'Mudad runs Saudi Arabia’s wage protection program: more than 900,000 private-sector establishments and 8.5 million employees, about SAR 35 billion in wages a month. As the only product designer on the payroll squad, I worked on making payday less of a gamble: fewer steps, warnings before submission, and financing right where cash runs short.',
+        metrics: [{ v: '79% → 82%', l: 'CSAT' }, { v: '43 → 50.9', l: 'NPS' }, { v: '3 → 2', l: 'Steps to run payroll' }],
+        beats: [
+          { h: 'Three steps and a bit of hoping', p: 'Running payroll took three steps, and most problems only showed up after you’d submitted. By then, fixing them meant support tickets and late salaries.' },
+          { h: 'Two steps, warnings first', p: 'I folded the flow into two steps, added Autopayroll for companies that pay the same way every month, and moved the checks up front. Salary financing sits right where a company sees it can’t cover the run.' },
+          { h: 'Money before payday', k: 'Move', p: '[Body text to come]' },
+          { h: 'Calmer paydays', p: 'CSAT went from 79% to 82% and NPS from 43 to 50.9. Three steps became two, which is the number I’m proudest of.' }
+        ] } },
+    ar: { title: 'مُدد: الرواتب', client: 'مصدر', blurb: 'كانت مسيرة الرواتب ثلاث خطوات وشيئاً من الأمل. اختصرناها إلى خطوتين، وأضفنا الرواتب التلقائية، ونقلنا التنبيهات إلى ما قبل الإرسال، ووضعنا تمويل الرواتب في اللحظة التي تضيق فيها السيولة.',
+      cs: { tag: 'تفكير تجاري', org: 'مصدر', role: 'المصمم الوحيد للمنتج في الفريق',
+        summary: 'تشغّل مُدد برنامج حماية الأجور في السعودية: أكثر من 900 ألف منشأة في القطاع الخاص و8.5 مليون موظف، ونحو 35 مليار ريال من الأجور شهرياً. بصفتي المصمم الوحيد في فريق الرواتب، عملت على جعل يوم الرواتب أقل مخاطرة: خطوات أقل، وتنبيهات قبل الإرسال، وتمويل في اللحظة التي تنقص فيها السيولة.',
+        metrics: [{ v: '79% ← 82%', l: 'رضا العملاء' }, { v: '43 ← 50.9', l: 'NPS' }, { v: '3 ← 2', l: 'خطوات مسيرة الرواتب' }],
+        beats: [
+          { h: 'ثلاث خطوات وشيء من الأمل', p: 'كانت المسيرة ثلاث خطوات، ومعظم المشاكل لا تظهر إلا بعد الإرسال. وحينها يعني إصلاحها تذاكر دعم ورواتب متأخرة.' },
+          { h: 'خطوتان، والتنبيه أولاً', p: 'اختصرت التدفق إلى خطوتين، وأضفت الرواتب التلقائية للمنشآت التي تدفع بالطريقة نفسها كل شهر، ونقلت الفحوصات إلى البداية. ويظهر تمويل الرواتب في اللحظة التي ترى فيها المنشأة أنها لا تستطيع تغطية المسيرة.' },
+          { h: 'المال قبل يوم الرواتب', k: 'الحل', p: '[النص لاحقاً]' },
+          { h: 'أيام رواتب أهدأ', p: 'ارتفع رضا العملاء من 79% إلى 82%، وNPS من 43 إلى 50.9. وأصبحت الخطوات الثلاث خطوتين، وهو الرقم الذي أفخر به أكثر.' }
+        ] } } },
+  { key: 'subs', slot: 'work-subs-1', bg: '#4E5A86', frame: 'browser', roles: ['strategy'],
+    ph: 'Drop the plans / billing screen', beatPh: ['Drop a renewal charge / statement', 'Drop the proration / plan change screen', 'Drop the renewal notice'],
+    en: { title: 'Mudad Subscriptions', client: 'Masdr · Self-initiated', blurb: 'Nobody asked for this one. Renewals felt like a trap, so I rewrote the rules: you’re told before you’re charged, and upgrades or downgrades are prorated to the day.',
+      cs: { tag: 'Strategy', org: 'Masdr · self-initiated', role: 'Product Designer',
+        summary: 'Nobody assigned this one. Renewals felt like a trap to the companies paying for them, so I redesigned how auto-renewal, upgrades and downgrades work.',
+        metrics: [{ v: 'Fair', l: 'Auto-renewal, announced ahead' }, { v: 'Prorated', l: 'Upgrades & downgrades' }],
+        beats: [
+          { h: 'Found out from the bank statement', p: 'A plan renewed, money moved, and the company found out later. I kept hearing it while working on payroll, so I picked it up without a brief.' },
+          { h: 'Rules before screens', p: 'You’re told before you’re charged. Upgrades and downgrades are prorated to the day, and the screen shows the math so nobody has to take my word for it.' },
+          { h: 'From proposal to roadmap', p: 'I presented it to the team and it moved into active work while I was there. It shows how I work without a brief: find the pain, set the rules, then design.' }
+        ] } },
+    ar: { title: 'مُدد: الاشتراكات', client: 'مصدر · بمبادرة شخصية', blurb: 'لم يطلب أحد هذا المشروع. كان التجديد يبدو كالفخ، فأعدت كتابة القواعد: تُنبَّه قبل أن يُخصم منك، والترقية أو التخفيض محسوبان بالأيام.',
+      cs: { tag: 'استراتيجية', org: 'مصدر · بمبادرة شخصية', role: 'مصمم منتجات',
+        summary: 'لم يكلّفني أحد بهذا المشروع. كان التجديد يبدو كالفخ للمنشآت التي تدفع، فأعدت تصميم طريقة عمل التجديد التلقائي والترقية والتخفيض.',
+        metrics: [{ v: 'عادل', l: 'تجديد تلقائي بإشعار مسبق' }, { v: 'بالتناسب', l: 'الترقية والتخفيض' }],
+        beats: [
+          { h: 'عرفوا من كشف الحساب', p: 'تتجدد الباقة، ويُخصم المبلغ، وتعرف المنشأة لاحقاً. سمعت هذه الشكوى مراراً أثناء عملي على الرواتب، فبدأت فيها دون موجز.' },
+          { h: 'القواعد قبل الشاشات', p: 'تُنبَّه قبل أن يُخصم منك. والترقية والتخفيض محسوبان بالأيام، والشاشة تعرض الحساب فلا أحد يحتاج أن يصدّقني على كلمتي.' },
+          { h: 'من مقترح إلى خطة عمل', p: 'عرضته على الفريق وبدأ العمل عليه خلال فترة وجودي. يوضح كيف أعمل دون موجز: أجد الألم، أضع القواعد، ثم أصمّم.' }
+        ] } } },
+  { key: 'saned', slot: 'work-saned', bg: '#9C3F2C', frame: 'browser', roles: ['research'],
+    ph: 'Drop the Saned dispatch screen', beatPh: ['Drop the old multi-tab setup', 'Drop the single-screen dispatch view', 'Drop the audit log screen'],
+    en: { title: 'Saned Dispatch', client: 'Jahez', blurb: 'Call-center agents were jumping between tabs to dispatch one order. I folded them into a single screen and added an audit log, so anyone can see who changed what and when.',
+      cs: { tag: 'Planning & systems', org: 'Jahez', role: 'Product Designer',
+        summary: 'Saned is the tool Jahez’s call-center agents use to dispatch orders. Agents were jumping between tabs to handle one call, so I folded them into one screen and added an audit log.',
+        metrics: [{ v: 'Tabs → 1', l: 'Screen per call' }, { v: 'Audit log', l: 'Who changed what, and when' }],
+        beats: [
+          { h: 'Silence on the line', p: 'Agents jumped between tabs to handle one order while a hungry customer waited. Every second hunting for a tab was a second of silence.' },
+          { h: 'One screen, in call order', p: 'I mapped what agents look at during a call, in order, then put order, customer, courier and actions on one screen in that sequence.' },
+          { h: 'Faster calls, clear history', p: 'One screen per call, plus an audit log that shows who changed what and when, so nobody gets blamed for an edit they didn’t make.' }
+        ] } },
+    ar: { title: 'سانِد: التوزيع', client: 'جاهز', blurb: 'كان موظفو مركز الاتصال يتنقلون بين عدة تبويبات لتوزيع طلب واحد. جمعتها في شاشة واحدة وأضفت سجل تدقيق يوضح من غيّر ماذا ومتى.',
+      cs: { tag: 'تخطيط وأنظمة', org: 'جاهز', role: 'مصمم منتجات',
+        summary: 'سانِد هي الأداة التي يستخدمها موظفو مركز الاتصال في جاهز لتوزيع الطلبات. كانوا يتنقلون بين تبويبات لمعالجة مكالمة واحدة، فجمعتها في شاشة واحدة وأضفت سجل تدقيق.',
+        metrics: [{ v: 'شاشة واحدة', l: 'لكل مكالمة' }, { v: 'سجل تدقيق', l: 'من غيّر ماذا ومتى' }],
+        beats: [
+          { h: 'صمت على الخط', p: 'كان الموظفون يتنقلون بين التبويبات لمعالجة طلب واحد بينما ينتظر عميل جائع. كل ثانية في البحث عن تبويب هي ثانية صمت.' },
+          { h: 'شاشة واحدة بترتيب المكالمة', p: 'رسمت ما ينظر إليه الموظفون أثناء المكالمة وبالترتيب، ثم وضعت الطلب والعميل والمندوب والإجراءات في شاشة واحدة بهذا التسلسل.' },
+          { h: 'مكالمات أسرع وسجل واضح', p: 'شاشة واحدة لكل مكالمة، وسجل تدقيق يوضح من غيّر ماذا ومتى، فلا يُلام أحد على تعديل لم يقم به.' }
+        ] } } },
+  { key: 'onetox', slot: 'work-onetox-1', bg: '#7D9572', frame: 'phone', roles: ['visual', 'strategy'],
+    ph: 'Drop the batch-scan screen', beatPh: ['Drop a group-expense moment', 'Drop a batch-scan screen', 'Drop a split / balance screen'],
+    en: { title: 'One To X', client: 'Co-founder', blurb: 'A shared-expense app I’m co-founding. Batch receipt scanning used to take 30–50 seconds. Now it’s 15–20, and splitting the bill is the easy part of the night.',
+      cs: { tag: 'Visual & product craft', org: 'One To X', role: 'Co-Founder & Product Designer',
+        summary: 'A shared-expense app I’m co-founding. The goal is simple: splitting the bill should be the easiest part of the night out.',
+        metrics: [{ v: '30–50s → 15–20s', l: 'Batch receipt scan' }],
+        beats: [
+          { h: 'Nobody wants to chase money', p: 'Splitting costs with friends gets awkward because the math is tedious and nobody wants to be the one asking.' },
+          { h: 'Scan the whole stack', p: 'Batch receipt scanning with progress on each receipt, in a warm, calm look that feels closer to the group chat than a spreadsheet.' },
+          { h: 'Half the wait', p: 'Batch scan went from 30–50 seconds to 15–20. As co-founder I also make the product calls, which mostly means saying no to features I’d love to design.' }
+        ] } },
+    ar: { title: 'One To X', client: 'شريك مؤسس', blurb: 'تطبيق لتقسيم المصاريف المشتركة أشارك في تأسيسه. كان مسح الفواتير دفعة واحدة يستغرق 30–50 ثانية، وأصبح 15–20 ثانية، وصار تقسيم الحساب أسهل جزء في السهرة.',
+      cs: { tag: 'حِرفة بصرية', org: 'One To X', role: 'شريك مؤسس ومصمم منتجات',
+        summary: 'تطبيق لتقسيم المصاريف المشتركة أشارك في تأسيسه. الهدف بسيط: أن يكون تقسيم الحساب أسهل جزء في السهرة.',
+        metrics: [{ v: '15–20 ثانية', l: 'المسح الجماعي للفواتير (كان 30–50)' }],
+        beats: [
+          { h: 'لا أحد يريد ملاحقة المال', p: 'تقسيم المصاريف مع الأصدقاء محرج، لأن الحساب ممل ولا أحد يريد أن يكون من يطالب.' },
+          { h: 'امسح الفواتير دفعة واحدة', p: 'مسح جماعي للفواتير مع مؤشر تقدّم لكل فاتورة، بشكل دافئ وهادئ أقرب إلى مجموعة الدردشة منه إلى جدول بيانات.' },
+          { h: 'نصف وقت الانتظار', p: 'انخفض المسح الجماعي من 30–50 ثانية إلى 15–20. وبصفتي شريكاً مؤسساً أتخذ قرارات المنتج أيضاً، وهذا يعني غالباً رفض ميزات كنت سأستمتع بتصميمها.' }
+        ] } } }
+];
+
+
+const SHAPES = ['s0', 's1', 's2', 's3'];
+const MENU = { en: ['Overview', 'Problem', 'Move', 'Result'], ar: ['نظرة عامة', 'المشكلة', 'الحل', 'النتيجة'] };
+const EXP = [
+  { i: 3, cur: true, en: { date: 'Nov 2025 — Present', co: 'One To X', role: 'Co-Founder & Product Designer', back: 'Batch scan: 30–50s → 15–20s', cta: 'One To X' },
+    ar: { date: 'نوفمبر 2025 — الآن', co: 'One To X', role: 'شريك مؤسس ومصمم منتجات', back: 'المسح الجماعي: من 30–50 إلى 15–20 ثانية', cta: 'One To X' } },
+  { i: 1, en: { date: 'May 2025 — Nov 2025', co: 'Masdr', role: 'Senior Product Designer', back: 'Sole designer on Mudad Payroll; subscriptions proposal taken into development', cta: 'Subscriptions' },
+    ar: { date: 'مايو 2025 — نوفمبر 2025', co: 'مصدر', role: 'مصمم منتجات أول', back: 'رواتب مُدد ومقترح اشتراكات بمبادرة شخصية', cta: 'الاشتراكات' } },
+  { i: 0, en: { date: 'Oct 2023 — May 2025', co: 'Masdr', sub: 'Formerly GOSI Business Development', role: 'Product Designer / UX Analyst', back: 'CSAT 79% → 82%, NPS 43 → 50.9', cta: 'Mudad Payroll' },
+    ar: { date: 'أكتوبر 2023 — مايو 2025', co: 'مصدر', sub: 'تطوير أعمال التأمينات الاجتماعية سابقاً', role: 'مصمم منتجات / محلل تجربة مستخدم', back: 'رضا العملاء من 79% إلى 82%، وNPS من 43 إلى 50.9', cta: 'مُدد: الرواتب' } },
+  { i: 2, en: { date: 'Mar 2023 — Sep 2023', co: 'Jahez', role: 'Product Designer', back: 'Five tabs folded into one dispatch screen', cta: 'Saned Dispatch' },
+    ar: { date: 'مارس 2023 — سبتمبر 2023', co: 'جاهز', role: 'مصمم منتجات', back: 'تبويبات متعددة في شاشة توزيع واحدة', cta: 'سانِد' } }
+];
+
+const SKILLS = {
+  en: [
+    { t: 'Product strategy', b: 'Figuring out what’s worth building before anyone opens Figma. Salary financing ended up inside Mudad Payroll because that’s where companies actually run short.', seen: 'Mudad Payroll' },
+    { t: 'Flow surgery', b: 'Taking steps out instead of adding screens. Payroll went from three steps to two, and CSAT moved from 79% to 82%.', seen: 'Mudad Payroll' },
+    { t: 'Billing & pricing logic', b: 'Proration, renewals, downgrades mid-cycle. The edge cases that decide whether people trust you with their card.', seen: 'Subscriptions' },
+    { t: 'Ops & internal tools', b: 'Dense screens for people who use them for an entire shift. Fewer tabs, a clear history, faster calls.', seen: 'Saned' },
+    { t: 'Arabic-first interfaces', b: 'RTL layouts that don’t feel like a mirrored English site, with type that holds up in both scripts. Hit ع in the menu.', seen: 'This site' },
+    { t: 'Interaction & motion', b: 'Making waiting feel shorter. Batch scan in One To X dropped from 30–50 seconds to 15–20, and the motion covers the rest.', seen: 'One To X' }
+  ],
+  ar: [
+    { t: 'استراتيجية المنتج', b: 'أحدد ما يستحق البناء قبل أن يفتح أحد فيغما. وُضع تمويل الرواتب داخل مسيرة الرواتب لأن هناك تحديداً تنقص السيولة.', seen: 'مُدد: الرواتب' },
+    { t: 'جراحة التدفقات', b: 'أحذف خطوات بدل أن أضيف شاشات. انتقلت الرواتب من ثلاث خطوات إلى خطوتين، وارتفع رضا العملاء من 79% إلى 82%.', seen: 'مُدد: الرواتب' },
+    { t: 'منطق الفوترة والتسعير', b: 'التناسب، والتجديد، والتخفيض في منتصف الدورة. الحالات الحدّية التي تحدد إن كان الناس سيأتمنونك على بطاقتهم.', seen: 'الاشتراكات' },
+    { t: 'الأدوات الداخلية', b: 'شاشات كثيفة لأشخاص يستخدمونها طوال المناوبة. تبويبات أقل، وسجل واضح، ومكالمات أسرع.', seen: 'سانِد' },
+    { t: 'واجهات عربية أولاً', b: 'تخطيطات من اليمين لليسار لا تبدو كموقع إنجليزي معكوس، وخطوط تصمد في اللغتين. جرّب زر EN في القائمة.', seen: 'هذا الموقع' },
+    { t: 'التفاعل والحركة', b: 'أجعل الانتظار يبدو أقصر. انخفض المسح الجماعي في One To X من 30–50 ثانية إلى 15–20، والحركة تتكفّل بالباقي.', seen: 'One To X' }
+  ]
+};
+
+const TEAMS = [
+  { isLogo: true, logo: 'assets/jahez.svg', w: 118, h: 52, name: 'Jahez', yrs: '2023' },
+  { isLogo: true, logo: 'assets/masdr.svg', w: 42, h: 62, name: 'Masdr', yrs: '2025' },
+  { isWord: true, word: 'GOSI', name: 'GOSI Business Dev.', yrs: '2023–25' },
+  { isWord: true, word: 'One To X', name: 'Co-founder', yrs: '2025–' }
+];
+
+
+
+const TURAIF = { a: "M-10.1 400 L-10.1 219.6 C-8.9 220.5 -5.1 222.3 -2.5 225.1 C-0.0 227.9 2.5 231.7 5.0 236.3 C7.6 240.8 10.1 246.5 12.6 252.4 C15.2 258.2 17.7 264.9 20.2 271.2 C22.7 277.5 25.3 284.3 27.8 290.2 C30.3 296.1 32.9 302.1 35.4 306.7 C37.9 311.4 40.4 315.9 43.0 318.1 C45.5 320.3 48.0 322.2 50.5 320.2 C53.1 318.1 55.6 311.2 58.1 305.8 C60.7 300.5 63.2 293.7 65.7 288.2 C68.2 282.6 70.8 276.7 73.3 272.7 C75.8 268.6 78.4 265.6 80.9 264.1 C83.4 262.6 85.9 263.8 88.5 263.9 C91.0 264.0 93.5 264.6 96.1 264.8 C98.6 265.1 101.1 265.1 103.6 265.2 C106.2 265.2 108.7 265.3 111.2 265.1 C113.8 264.8 116.3 264.7 118.8 263.7 C121.3 262.6 123.9 260.4 126.4 258.9 C128.9 257.3 131.4 256.3 134.0 254.1 C136.5 252.0 139.0 251.7 141.6 246.1 C144.1 240.5 146.6 228.9 149.1 220.4 C151.7 212.0 154.2 201.6 156.7 195.5 C159.3 189.4 161.8 186.4 164.3 183.7 C166.8 181.1 169.4 181.3 171.9 179.6 C174.4 177.8 177.0 174.5 179.5 173.0 C182.0 171.6 184.5 171.4 187.1 171.0 C189.6 170.6 192.1 169.4 194.7 170.9 C197.2 172.4 199.7 174.7 202.2 180.1 C204.8 185.4 207.3 198.2 209.8 203.0 C212.3 207.8 214.9 207.9 217.4 208.8 C219.9 209.6 222.5 207.2 225.0 208.2 C227.5 209.3 230.0 213.0 232.6 215.0 C235.1 217.0 237.6 219.2 240.2 220.1 C242.7 221.0 245.2 220.2 247.7 220.2 C250.3 220.2 252.8 220.2 255.3 220.1 C257.9 220.0 260.4 219.7 262.9 219.6 C265.4 219.4 268.0 220.7 270.5 219.3 C273.0 217.8 275.5 214.9 278.1 210.9 C280.6 206.9 283.1 199.3 285.7 195.3 C288.2 191.3 290.7 191.5 293.2 186.9 C295.8 182.4 298.3 178.2 300.8 167.9 C303.4 157.6 305.9 134.8 308.4 125.3 C310.9 115.8 313.5 114.0 316.0 110.6 C318.5 107.3 321.1 106.4 323.6 105.1 C326.1 103.8 328.6 98.0 331.2 102.7 C333.7 107.5 336.2 123.2 338.8 133.7 C341.3 144.1 343.8 160.3 346.3 165.5 C348.9 170.8 351.4 165.2 353.9 165.1 C356.4 165.1 359.0 155.3 361.5 165.3 C364.0 175.4 366.6 203.6 369.1 225.3 C371.6 246.9 374.1 281.7 376.7 295.2 C379.2 308.7 381.7 303.9 384.3 306.3 C386.8 308.6 389.3 315.5 391.8 309.1 C394.4 302.8 396.9 285.2 399.4 268.1 C402.0 250.9 404.5 216.6 407.0 206.2 C409.5 195.8 412.1 205.7 414.6 205.6 C417.1 205.4 419.7 205.3 422.2 205.2 C424.7 205.2 427.2 205.2 429.8 205.2 C432.3 205.3 434.8 205.1 437.3 205.4 C439.9 205.6 442.4 205.5 444.9 207.0 C447.5 208.4 450.0 212.1 452.5 214.1 C455.0 216.2 457.6 221.1 460.1 219.4 C462.6 217.6 465.2 213.6 467.7 203.7 C470.2 193.9 472.7 172.5 475.3 160.4 C477.8 148.3 480.3 140.1 482.9 131.2 C485.4 122.3 487.9 113.8 490.4 107.2 C493.0 100.6 495.5 94.3 498.0 91.7 C500.5 89.1 503.1 91.6 505.6 91.7 C508.1 91.8 510.7 92.2 513.2 92.5 C515.7 92.7 518.2 92.6 520.8 93.1 C523.3 93.6 525.8 89.3 528.4 95.7 C530.9 102.1 533.4 117.6 535.9 131.5 C538.5 145.4 541.0 166.6 543.5 178.9 C546.1 191.2 548.6 198.6 551.1 205.5 C553.6 212.3 556.2 217.7 558.7 220.0 C561.2 222.4 563.8 219.9 566.3 219.6 C568.8 219.3 571.3 218.4 573.9 218.1 C576.4 217.8 578.9 218.0 581.4 218.0 C584.0 218.0 586.5 218.0 589.0 218.0 C591.6 218.0 594.1 217.9 596.6 218.0 C599.1 218.0 601.7 218.3 604.2 218.4 C606.7 218.5 609.3 218.7 611.8 218.7 C614.3 218.8 616.8 218.6 619.4 218.7 C621.9 218.8 624.4 218.1 627.0 219.3 C629.5 220.5 632.0 222.7 634.5 225.9 C637.1 229.1 639.6 236.0 642.1 238.3 C644.7 240.6 647.2 239.5 649.7 239.7 C652.2 239.9 654.8 239.7 657.3 239.7 C659.8 239.7 662.3 239.7 664.9 239.7 C667.4 239.7 669.9 239.7 672.5 239.7 C675.0 239.7 677.5 239.7 680.0 239.7 C682.6 239.7 685.1 239.7 687.6 239.7 C690.2 239.7 692.7 239.8 695.2 239.7 C697.7 239.6 700.3 239.4 702.8 239.3 C705.3 239.1 707.9 239.2 710.4 238.8 C712.9 238.5 715.4 237.8 718.0 237.0 C720.5 236.2 723.0 234.2 725.5 234.0 C728.1 233.9 730.6 231.7 733.1 236.2 C735.7 240.7 738.2 252.5 740.7 261.0 C743.2 269.5 745.8 283.5 748.3 287.0 C750.8 290.6 753.4 285.4 755.9 282.3 C758.4 279.1 760.9 272.9 763.5 268.1 C766.0 263.3 768.5 258.0 771.1 253.3 C773.6 248.7 776.1 243.9 778.6 240.2 C781.2 236.5 783.7 234.2 786.2 231.4 C788.8 228.6 791.5 225.3 793.8 223.3 C796.1 221.3 797.6 219.3 799.9 219.6 C802.2 219.9 804.9 222.7 807.5 224.9 C810.0 227.1 812.5 229.9 815.0 232.9 C817.6 235.8 820.1 238.7 822.6 242.6 C825.2 246.5 827.7 251.4 830.2 256.2 C832.7 260.9 835.3 266.4 837.8 271.2 C840.3 275.9 842.9 282.4 845.4 284.6 C847.9 286.8 850.4 289.7 853.0 284.5 C855.5 279.4 858.0 262.1 860.5 253.7 C863.1 245.4 865.6 237.7 868.1 234.5 C870.7 231.2 873.2 233.9 875.7 234.5 C878.2 235.0 880.8 236.9 883.3 237.7 C885.8 238.4 888.4 238.7 890.9 239.0 C893.4 239.2 895.9 239.3 898.5 239.4 C901.0 239.5 903.5 239.6 906.1 239.7 C908.6 239.8 911.1 239.7 913.6 239.7 C916.2 239.7 918.7 239.7 921.2 239.7 C923.8 239.7 926.3 239.7 928.8 239.7 C931.3 239.7 933.9 239.7 936.4 239.7 C938.9 239.7 941.4 239.7 944.0 239.7 C946.5 239.7 949.0 240.2 951.6 239.7 C954.1 239.2 956.6 239.3 959.1 236.6 C961.7 233.9 964.2 226.3 966.7 223.3 C969.3 220.4 971.8 219.8 974.3 219.0 C976.8 218.3 979.4 218.8 981.9 218.7 C984.4 218.7 987.0 218.8 989.5 218.7 C992.0 218.7 994.5 218.4 997.1 218.3 C999.6 218.2 1002.1 218.0 1004.7 218.0 C1007.2 217.9 1009.7 218.0 1012.2 218.0 C1014.8 218.0 1017.3 217.9 1019.8 218.0 C1022.3 218.0 1024.9 218.0 1027.4 218.3 C1029.9 218.6 1032.5 219.7 1035.0 219.9 C1037.5 220.1 1040.0 222.7 1042.6 219.4 C1045.1 216.0 1047.6 207.7 1050.2 199.8 C1052.7 191.9 1055.2 185.2 1057.7 171.9 C1060.3 158.5 1062.8 132.6 1065.3 119.6 C1067.9 106.7 1070.4 98.6 1072.9 94.2 C1075.4 89.7 1078.0 93.3 1080.5 93.0 C1083.0 92.7 1085.5 92.6 1088.1 92.3 C1090.6 92.1 1093.1 91.5 1095.7 91.6 C1098.2 91.7 1100.7 89.7 1103.2 93.1 C1105.8 96.5 1108.3 105.1 1110.8 112.3 C1113.4 119.4 1115.9 126.5 1118.4 135.9 C1120.9 145.3 1123.5 156.4 1126.0 168.6 C1128.5 180.9 1131.1 201.2 1133.6 209.6 C1136.1 218.0 1138.6 218.6 1141.2 219.0 C1143.7 219.5 1146.2 214.4 1148.8 212.3 C1151.3 210.2 1153.8 207.5 1156.3 206.3 C1158.9 205.1 1161.4 205.4 1163.9 205.2 C1166.4 205.1 1169.0 205.2 1171.5 205.2 C1174.0 205.2 1176.6 205.2 1179.1 205.2 C1181.6 205.3 1184.1 205.0 1186.7 205.7 C1189.2 206.3 1191.7 196.1 1194.3 209.0 C1196.8 221.8 1199.3 266.1 1201.8 282.7 C1204.4 299.4 1206.9 305.1 1209.4 308.8 C1212.0 312.6 1214.5 308.4 1217.0 305.3 C1219.5 302.2 1222.1 306.7 1224.6 290.4 C1227.1 274.2 1229.7 228.7 1232.2 207.8 C1234.7 186.9 1237.2 172.0 1239.8 164.9 C1242.3 157.8 1244.8 165.1 1247.3 165.2 C1249.9 165.3 1252.4 172.3 1254.9 165.5 C1257.5 158.8 1260.0 135.2 1262.5 124.7 C1265.0 114.2 1267.6 105.7 1270.1 102.6 C1272.6 99.5 1275.2 104.7 1277.7 106.2 C1280.2 107.7 1282.7 107.2 1285.3 111.6 C1287.8 116.1 1290.3 122.5 1292.9 132.8 C1295.4 143.1 1297.9 164.3 1300.4 173.7 C1303.0 183.0 1305.5 184.8 1308.0 188.8 C1310.5 192.8 1313.1 193.6 1315.6 197.8 C1318.1 201.9 1320.7 210.3 1323.2 213.9 C1325.7 217.5 1328.2 218.4 1330.8 219.4 C1333.3 220.3 1335.8 219.5 1338.4 219.7 C1340.9 219.8 1343.4 220.1 1345.9 220.2 C1348.5 220.3 1351.0 220.3 1353.5 220.2 C1356.1 220.2 1358.6 221.2 1361.1 220.0 C1363.6 218.9 1366.2 215.2 1368.7 213.3 C1371.2 211.3 1373.8 209.1 1376.3 208.3 C1378.8 207.6 1381.3 210.4 1383.9 208.9 C1386.4 207.4 1388.9 204.8 1391.4 199.4 C1394.0 194.0 1396.5 181.2 1399.0 176.5 C1401.6 171.7 1404.1 171.7 1406.6 170.8 C1409.1 169.9 1411.7 170.5 1414.2 171.1 C1416.7 171.7 1419.3 172.6 1421.8 174.2 C1424.3 175.8 1426.8 179.1 1429.4 180.8 C1431.9 182.6 1434.4 181.6 1437.0 184.8 C1439.5 188.0 1442.0 193.0 1444.5 199.9 C1447.1 206.8 1449.6 218.2 1452.1 226.4 C1454.7 234.6 1457.2 244.4 1459.7 249.1 C1462.2 253.8 1464.8 253.0 1467.3 254.8 C1469.8 256.6 1472.3 258.5 1474.9 260.0 C1477.4 261.6 1479.9 263.3 1482.5 264.2 C1485.0 265.1 1487.5 265.0 1490.0 265.2 C1492.6 265.3 1495.1 265.3 1497.6 265.2 C1500.2 265.1 1502.7 264.9 1505.2 264.6 C1507.7 264.4 1510.3 263.7 1512.8 263.8 C1515.3 263.8 1517.9 263.0 1520.4 265.0 C1522.9 266.9 1525.4 271.1 1528.0 275.5 C1530.5 280.0 1533.0 285.9 1535.5 291.6 C1538.1 297.3 1540.6 304.9 1543.1 309.8 C1545.7 314.7 1548.2 320.0 1550.7 321.1 C1553.2 322.2 1555.8 319.3 1558.3 316.4 C1560.8 313.5 1563.4 308.7 1565.9 303.7 C1568.4 298.7 1570.9 292.6 1573.5 286.5 C1576.0 280.4 1578.5 273.6 1581.1 267.3 C1583.6 261.1 1586.1 254.5 1588.6 248.8 C1591.2 243.2 1593.7 237.8 1596.2 233.6 C1598.8 229.4 1601.5 225.7 1603.8 223.4 C1606.1 221.1 1608.9 220.2 1609.9 219.6 L1609.9 400 Z", b: "M-10.1 400 L-10.1 219.6 C-8.9 220.5 -5.1 222.7 -2.5 224.9 C-0.0 227.1 2.5 229.9 5.0 232.9 C7.6 235.8 10.1 238.7 12.6 242.6 C15.2 246.5 17.7 251.4 20.2 256.2 C22.7 260.9 25.3 266.4 27.8 271.2 C30.3 275.9 32.9 282.4 35.4 284.6 C37.9 286.8 40.4 289.7 43.0 284.5 C45.5 279.4 48.0 262.1 50.5 253.7 C53.1 245.4 55.6 237.7 58.1 234.5 C60.7 231.2 63.2 233.9 65.7 234.5 C68.2 235.0 70.8 236.9 73.3 237.7 C75.8 238.4 78.4 238.7 80.9 239.0 C83.4 239.2 85.9 239.3 88.5 239.4 C91.0 239.5 93.5 239.6 96.1 239.7 C98.6 239.8 101.1 239.7 103.6 239.7 C106.2 239.7 108.7 239.7 111.2 239.7 C113.8 239.7 116.3 239.7 118.8 239.7 C121.3 239.7 123.9 239.7 126.4 239.7 C128.9 239.7 131.4 239.7 134.0 239.7 C136.5 239.7 139.0 240.2 141.6 239.7 C144.1 239.2 146.6 239.3 149.1 236.6 C151.7 233.9 154.2 226.3 156.7 223.3 C159.3 220.4 161.8 219.8 164.3 219.0 C166.8 218.3 169.4 218.8 171.9 218.7 C174.4 218.7 177.0 218.8 179.5 218.7 C182.0 218.7 184.5 218.4 187.1 218.3 C189.6 218.2 192.1 218.0 194.7 218.0 C197.2 217.9 199.7 218.0 202.2 218.0 C204.8 218.0 207.3 217.9 209.8 218.0 C212.3 218.0 214.9 218.0 217.4 218.3 C219.9 218.6 222.5 219.7 225.0 219.9 C227.5 220.1 230.0 222.7 232.6 219.4 C235.1 216.0 237.6 207.7 240.2 199.8 C242.7 191.9 245.2 185.2 247.7 171.9 C250.3 158.5 252.8 132.6 255.3 119.6 C257.9 106.7 260.4 98.6 262.9 94.2 C265.4 89.7 268.0 93.3 270.5 93.0 C273.0 92.7 275.5 92.6 278.1 92.3 C280.6 92.1 283.1 91.5 285.7 91.6 C288.2 91.7 290.7 89.7 293.2 93.1 C295.8 96.5 298.3 105.1 300.8 112.3 C303.4 119.4 305.9 126.5 308.4 135.9 C310.9 145.3 313.5 156.4 316.0 168.6 C318.5 180.9 321.1 201.2 323.6 209.6 C326.1 218.0 328.6 218.6 331.2 219.0 C333.7 219.5 336.2 214.4 338.8 212.3 C341.3 210.2 343.8 207.5 346.3 206.3 C348.9 205.1 351.4 205.4 353.9 205.2 C356.4 205.1 359.0 205.2 361.5 205.2 C364.0 205.2 366.6 205.2 369.1 205.2 C371.6 205.3 374.1 205.0 376.7 205.7 C379.2 206.3 381.7 196.1 384.3 209.0 C386.8 221.8 389.3 266.1 391.8 282.7 C394.4 299.4 396.9 305.1 399.4 308.8 C402.0 312.6 404.5 308.4 407.0 305.3 C409.5 302.2 412.1 306.7 414.6 290.4 C417.1 274.2 419.7 228.7 422.2 207.8 C424.7 186.9 427.2 172.0 429.8 164.9 C432.3 157.8 434.8 165.1 437.3 165.2 C439.9 165.3 442.4 172.3 444.9 165.5 C447.5 158.8 450.0 135.2 452.5 124.7 C455.0 114.2 457.6 105.7 460.1 102.6 C462.6 99.5 465.2 104.7 467.7 106.2 C470.2 107.7 472.7 107.2 475.3 111.6 C477.8 116.1 480.3 122.5 482.9 132.8 C485.4 143.1 487.9 164.3 490.4 173.7 C493.0 183.0 495.5 184.8 498.0 188.8 C500.5 192.8 503.1 193.6 505.6 197.8 C508.1 201.9 510.7 210.3 513.2 213.9 C515.7 217.5 518.2 218.4 520.8 219.4 C523.3 220.3 525.8 219.5 528.4 219.7 C530.9 219.8 533.4 220.1 535.9 220.2 C538.5 220.3 541.0 220.3 543.5 220.2 C546.1 220.2 548.6 221.2 551.1 220.0 C553.6 218.9 556.2 215.2 558.7 213.3 C561.2 211.3 563.8 209.1 566.3 208.3 C568.8 207.6 571.3 210.4 573.9 208.9 C576.4 207.4 578.9 204.8 581.4 199.4 C584.0 194.0 586.5 181.2 589.0 176.5 C591.6 171.7 594.1 171.7 596.6 170.8 C599.1 169.9 601.7 170.5 604.2 171.1 C606.7 171.7 609.3 172.6 611.8 174.2 C614.3 175.8 616.8 179.1 619.4 180.8 C621.9 182.6 624.4 181.6 627.0 184.8 C629.5 188.0 632.0 193.0 634.5 199.9 C637.1 206.8 639.6 218.2 642.1 226.4 C644.7 234.6 647.2 244.4 649.7 249.1 C652.2 253.8 654.8 253.0 657.3 254.8 C659.8 256.6 662.3 258.5 664.9 260.0 C667.4 261.6 669.9 263.3 672.5 264.2 C675.0 265.1 677.5 265.0 680.0 265.2 C682.6 265.3 685.1 265.3 687.6 265.2 C690.2 265.1 692.7 264.9 695.2 264.6 C697.7 264.4 700.3 263.7 702.8 263.8 C705.3 263.8 707.9 263.0 710.4 265.0 C712.9 266.9 715.4 271.1 718.0 275.5 C720.5 280.0 723.0 285.9 725.5 291.6 C728.1 297.3 730.6 304.9 733.1 309.8 C735.7 314.7 738.2 320.0 740.7 321.1 C743.2 322.2 745.8 319.3 748.3 316.4 C750.8 313.5 753.4 308.7 755.9 303.7 C758.4 298.7 760.9 292.6 763.5 286.5 C766.0 280.4 768.5 273.6 771.1 267.3 C773.6 261.1 776.1 254.5 778.6 248.8 C781.2 243.2 783.7 237.8 786.2 233.6 C788.8 229.4 791.5 225.7 793.8 223.4 C796.1 221.1 797.6 219.3 799.9 219.6 C802.2 219.9 804.9 222.3 807.5 225.1 C810.0 227.9 812.5 231.7 815.0 236.3 C817.6 240.8 820.1 246.5 822.6 252.4 C825.2 258.2 827.7 264.9 830.2 271.2 C832.7 277.5 835.3 284.3 837.8 290.2 C840.3 296.1 842.9 302.1 845.4 306.7 C847.9 311.4 850.4 315.9 853.0 318.1 C855.5 320.3 858.0 322.2 860.5 320.2 C863.1 318.1 865.6 311.2 868.1 305.8 C870.7 300.5 873.2 293.7 875.7 288.2 C878.2 282.6 880.8 276.7 883.3 272.7 C885.8 268.6 888.4 265.6 890.9 264.1 C893.4 262.6 895.9 263.8 898.5 263.9 C901.0 264.0 903.5 264.6 906.1 264.8 C908.6 265.1 911.1 265.1 913.6 265.2 C916.2 265.2 918.7 265.3 921.2 265.1 C923.8 264.8 926.3 264.7 928.8 263.7 C931.3 262.6 933.9 260.4 936.4 258.9 C938.9 257.3 941.4 256.3 944.0 254.1 C946.5 252.0 949.0 251.7 951.6 246.1 C954.1 240.5 956.6 228.9 959.1 220.4 C961.7 212.0 964.2 201.6 966.7 195.5 C969.3 189.4 971.8 186.4 974.3 183.7 C976.8 181.1 979.4 181.3 981.9 179.6 C984.4 177.8 987.0 174.5 989.5 173.0 C992.0 171.6 994.5 171.4 997.1 171.0 C999.6 170.6 1002.1 169.4 1004.7 170.9 C1007.2 172.4 1009.7 174.7 1012.2 180.1 C1014.8 185.4 1017.3 198.2 1019.8 203.0 C1022.3 207.8 1024.9 207.9 1027.4 208.8 C1029.9 209.6 1032.5 207.2 1035.0 208.2 C1037.5 209.3 1040.0 213.0 1042.6 215.0 C1045.1 217.0 1047.6 219.2 1050.2 220.1 C1052.7 221.0 1055.2 220.2 1057.7 220.2 C1060.3 220.2 1062.8 220.2 1065.3 220.1 C1067.9 220.0 1070.4 219.7 1072.9 219.6 C1075.4 219.4 1078.0 220.7 1080.5 219.3 C1083.0 217.8 1085.5 214.9 1088.1 210.9 C1090.6 206.9 1093.1 199.3 1095.7 195.3 C1098.2 191.3 1100.7 191.5 1103.2 186.9 C1105.8 182.4 1108.3 178.2 1110.8 167.9 C1113.4 157.6 1115.9 134.8 1118.4 125.3 C1120.9 115.8 1123.5 114.0 1126.0 110.6 C1128.5 107.3 1131.1 106.4 1133.6 105.1 C1136.1 103.8 1138.6 98.0 1141.2 102.7 C1143.7 107.5 1146.2 123.2 1148.8 133.7 C1151.3 144.1 1153.8 160.3 1156.3 165.5 C1158.9 170.8 1161.4 165.2 1163.9 165.1 C1166.4 165.1 1169.0 155.3 1171.5 165.3 C1174.0 175.4 1176.6 203.6 1179.1 225.3 C1181.6 246.9 1184.1 281.7 1186.7 295.2 C1189.2 308.7 1191.7 303.9 1194.3 306.3 C1196.8 308.6 1199.3 315.5 1201.8 309.1 C1204.4 302.8 1206.9 285.2 1209.4 268.1 C1212.0 250.9 1214.5 216.6 1217.0 206.2 C1219.5 195.8 1222.1 205.7 1224.6 205.6 C1227.1 205.4 1229.7 205.3 1232.2 205.2 C1234.7 205.2 1237.2 205.2 1239.8 205.2 C1242.3 205.3 1244.8 205.1 1247.3 205.4 C1249.9 205.6 1252.4 205.5 1254.9 207.0 C1257.5 208.4 1260.0 212.1 1262.5 214.1 C1265.0 216.2 1267.6 221.1 1270.1 219.4 C1272.6 217.6 1275.2 213.6 1277.7 203.7 C1280.2 193.9 1282.7 172.5 1285.3 160.4 C1287.8 148.3 1290.3 140.1 1292.9 131.2 C1295.4 122.3 1297.9 113.8 1300.4 107.2 C1303.0 100.6 1305.5 94.3 1308.0 91.7 C1310.5 89.1 1313.1 91.6 1315.6 91.7 C1318.1 91.8 1320.7 92.2 1323.2 92.5 C1325.7 92.7 1328.2 92.6 1330.8 93.1 C1333.3 93.6 1335.8 89.3 1338.4 95.7 C1340.9 102.1 1343.4 117.6 1345.9 131.5 C1348.5 145.4 1351.0 166.6 1353.5 178.9 C1356.1 191.2 1358.6 198.6 1361.1 205.5 C1363.6 212.3 1366.2 217.7 1368.7 220.0 C1371.2 222.4 1373.8 219.9 1376.3 219.6 C1378.8 219.3 1381.3 218.4 1383.9 218.1 C1386.4 217.8 1388.9 218.0 1391.4 218.0 C1394.0 218.0 1396.5 218.0 1399.0 218.0 C1401.6 218.0 1404.1 217.9 1406.6 218.0 C1409.1 218.0 1411.7 218.3 1414.2 218.4 C1416.7 218.5 1419.3 218.7 1421.8 218.7 C1424.3 218.8 1426.8 218.6 1429.4 218.7 C1431.9 218.8 1434.4 218.1 1437.0 219.3 C1439.5 220.5 1442.0 222.7 1444.5 225.9 C1447.1 229.1 1449.6 236.0 1452.1 238.3 C1454.7 240.6 1457.2 239.5 1459.7 239.7 C1462.2 239.9 1464.8 239.7 1467.3 239.7 C1469.8 239.7 1472.3 239.7 1474.9 239.7 C1477.4 239.7 1479.9 239.7 1482.5 239.7 C1485.0 239.7 1487.5 239.7 1490.0 239.7 C1492.6 239.7 1495.1 239.7 1497.6 239.7 C1500.2 239.7 1502.7 239.8 1505.2 239.7 C1507.7 239.6 1510.3 239.4 1512.8 239.3 C1515.3 239.1 1517.9 239.2 1520.4 238.8 C1522.9 238.5 1525.4 237.8 1528.0 237.0 C1530.5 236.2 1533.0 234.2 1535.5 234.0 C1538.1 233.9 1540.6 231.7 1543.1 236.2 C1545.7 240.7 1548.2 252.5 1550.7 261.0 C1553.2 269.5 1555.8 283.5 1558.3 287.0 C1560.8 290.6 1563.4 285.4 1565.9 282.3 C1568.4 279.1 1570.9 272.9 1573.5 268.1 C1576.0 263.3 1578.5 258.0 1581.1 253.3 C1583.6 248.7 1586.1 243.9 1588.6 240.2 C1591.2 236.5 1593.7 234.2 1596.2 231.4 C1598.8 228.6 1601.5 225.3 1603.8 223.3 C1606.1 221.3 1608.9 220.2 1609.9 219.6 L1609.9 400 Z", back: "M-400.0 400 L-400.0 234.0 C-398.8 234.8 -395.0 236.9 -392.5 238.9 C-390.0 241.0 -387.5 243.5 -385.0 246.3 C-382.5 249.0 -380.0 251.6 -377.5 255.2 C-375.0 258.8 -372.5 263.3 -370.0 267.7 C-367.5 272.1 -365.0 277.1 -362.5 281.5 C-360.0 285.8 -357.6 291.8 -355.1 293.8 C-352.6 295.9 -350.1 298.5 -347.6 293.8 C-345.1 289.0 -342.6 273.1 -340.1 265.4 C-337.6 257.7 -335.1 250.7 -332.6 247.7 C-330.1 244.7 -327.6 247.2 -325.1 247.7 C-322.6 248.2 -320.1 250.0 -317.6 250.7 C-315.1 251.3 -312.6 251.6 -310.1 251.8 C-307.6 252.1 -305.1 252.1 -302.6 252.2 C-300.1 252.3 -297.6 252.5 -295.1 252.5 C-292.6 252.6 -290.1 252.5 -287.6 252.5 C-285.1 252.5 -282.6 252.5 -280.1 252.5 C-277.7 252.5 -275.2 252.5 -272.7 252.5 C-270.2 252.5 -267.7 252.5 -265.2 252.5 C-262.7 252.5 -260.2 252.5 -257.7 252.5 C-255.2 252.5 -252.7 253.0 -250.2 252.5 C-247.7 252.0 -245.2 252.2 -242.7 249.7 C-240.2 247.2 -237.7 240.2 -235.2 237.5 C-232.7 234.8 -230.2 234.2 -227.7 233.5 C-225.2 232.8 -222.7 233.3 -220.2 233.2 C-217.7 233.2 -215.2 233.3 -212.7 233.2 C-210.2 233.2 -207.7 232.9 -205.2 232.8 C-202.7 232.7 -200.2 232.6 -197.8 232.5 C-195.3 232.5 -192.8 232.5 -190.3 232.5 C-187.8 232.5 -185.3 232.5 -182.8 232.5 C-180.3 232.6 -177.8 232.5 -175.3 232.8 C-172.8 233.1 -170.3 234.1 -167.8 234.3 C-165.3 234.5 -162.8 236.9 -160.3 233.8 C-157.8 230.7 -155.3 223.1 -152.8 215.8 C-150.3 208.5 -147.8 202.4 -145.3 190.1 C-142.8 177.8 -140.3 154.0 -137.8 142.1 C-135.3 130.2 -132.8 122.7 -130.3 118.6 C-127.8 114.5 -125.3 117.8 -122.8 117.6 C-120.3 117.3 -117.9 117.2 -115.4 117.0 C-112.9 116.7 -110.4 116.2 -107.9 116.3 C-105.4 116.4 -102.9 114.5 -100.4 117.7 C-97.9 120.8 -95.4 128.7 -92.9 135.3 C-90.4 141.8 -87.9 148.4 -85.4 157.0 C-82.9 165.7 -80.4 175.8 -77.9 187.2 C-75.4 198.5 -72.9 217.1 -70.4 224.9 C-67.9 232.6 -65.4 233.1 -62.9 233.5 C-60.4 233.9 -57.9 229.3 -55.4 227.3 C-52.9 225.4 -50.4 222.9 -47.9 221.8 C-45.4 220.7 -42.9 221.0 -40.4 220.8 C-38.0 220.7 -35.5 220.8 -33.0 220.8 C-30.5 220.8 -28.0 220.8 -25.5 220.8 C-23.0 220.9 -20.5 220.6 -18.0 221.2 C-15.5 221.8 -13.0 212.5 -10.5 224.3 C-8.0 236.1 -5.5 276.8 -3.0 292.1 C-0.5 307.4 2.0 312.7 4.5 316.1 C7.0 319.6 9.5 315.7 12.0 312.9 C14.5 310.1 17.0 314.1 19.5 299.2 C22.0 284.2 24.5 242.4 27.0 223.2 C29.5 203.9 32.0 190.2 34.5 183.7 C37.0 177.2 39.5 183.9 41.9 184.0 C44.4 184.1 46.9 190.5 49.4 184.3 C51.9 178.1 54.4 156.3 56.9 146.7 C59.4 137.0 61.9 129.3 64.4 126.4 C66.9 123.6 69.4 128.3 71.9 129.7 C74.4 131.0 76.9 130.6 79.4 134.7 C81.9 138.8 84.4 144.7 86.9 154.2 C89.4 163.7 91.9 183.2 94.4 191.8 C96.9 200.4 99.4 202.0 101.9 205.7 C104.4 209.4 106.9 210.1 109.4 213.9 C111.9 217.8 114.4 225.5 116.9 228.8 C119.4 232.1 121.8 232.9 124.3 233.8 C126.8 234.7 129.3 234.0 131.8 234.1 C134.3 234.2 136.8 234.5 139.3 234.6 C141.8 234.7 144.3 234.6 146.8 234.6 C149.3 234.6 151.8 235.5 154.3 234.4 C156.8 233.3 159.3 230.0 161.8 228.2 C164.3 226.4 166.8 224.4 169.3 223.7 C171.8 223.0 174.3 225.5 176.8 224.2 C179.3 222.8 181.8 220.4 184.3 215.4 C186.8 210.4 189.3 198.7 191.8 194.3 C194.3 190.0 196.8 189.9 199.3 189.1 C201.7 188.3 204.2 188.9 206.7 189.4 C209.2 189.9 211.7 190.8 214.2 192.3 C216.7 193.8 219.2 196.8 221.7 198.4 C224.2 200.0 226.7 199.1 229.2 202.0 C231.7 204.9 234.2 209.5 236.7 215.9 C239.2 222.3 241.7 232.8 244.2 240.3 C246.7 247.9 249.2 256.8 251.7 261.2 C254.2 265.5 256.7 264.7 259.2 266.4 C261.7 268.1 264.2 269.8 266.7 271.2 C269.2 272.7 271.7 274.3 274.2 275.1 C276.7 275.9 279.2 275.8 281.6 276.0 C284.1 276.1 286.6 276.0 289.1 276.0 C291.6 275.9 294.1 275.7 296.6 275.5 C299.1 275.2 301.6 274.6 304.1 274.7 C306.6 274.7 309.1 274.0 311.6 275.8 C314.1 277.6 316.6 281.4 319.1 285.5 C321.6 289.6 324.1 295.0 326.6 300.3 C329.1 305.5 331.6 312.5 334.1 317.0 C336.6 321.5 339.1 326.4 341.6 327.4 C344.1 328.4 346.6 325.7 349.1 323.1 C351.6 320.4 354.1 316.0 356.6 311.4 C359.1 306.8 361.5 301.2 364.0 295.6 C366.5 290.0 369.0 283.7 371.5 278.0 C374.0 272.2 376.5 266.1 379.0 260.9 C381.5 255.7 384.0 250.8 386.5 246.9 C389.0 243.0 391.8 239.7 394.0 237.5 C396.3 235.4 397.8 233.8 400.0 234.0 C402.2 234.3 405.0 236.5 407.5 239.1 C410.0 241.7 412.5 245.2 415.0 249.4 C417.5 253.5 420.0 258.8 422.5 264.2 C425.0 269.5 427.5 275.7 430.0 281.5 C432.5 287.3 435.0 293.5 437.5 299.0 C440.0 304.4 442.4 309.9 444.9 314.2 C447.4 318.5 449.9 322.6 452.4 324.7 C454.9 326.7 457.4 328.4 459.9 326.6 C462.4 324.7 464.9 318.3 467.4 313.4 C469.9 308.5 472.4 302.2 474.9 297.1 C477.4 292.0 479.9 286.5 482.4 282.8 C484.9 279.2 487.4 276.3 489.9 275.0 C492.4 273.6 494.9 274.7 497.4 274.8 C499.9 274.9 502.4 275.5 504.9 275.7 C507.4 275.9 509.9 275.9 512.4 276.0 C514.9 276.0 517.4 276.1 519.9 275.9 C522.3 275.6 524.8 275.5 527.3 274.6 C529.8 273.6 532.3 271.6 534.8 270.1 C537.3 268.7 539.8 267.8 542.3 265.8 C544.8 263.9 547.3 263.6 549.8 258.4 C552.3 253.3 554.8 242.6 557.3 234.8 C559.8 227.0 562.3 217.5 564.8 211.9 C567.3 206.2 569.8 203.5 572.3 201.0 C574.8 198.6 577.3 198.8 579.8 197.2 C582.3 195.6 584.8 192.5 587.3 191.2 C589.8 189.9 592.3 189.6 594.8 189.3 C597.3 189.0 599.8 187.8 602.2 189.2 C604.7 190.6 607.2 192.8 609.7 197.7 C612.2 202.6 614.7 214.4 617.2 218.8 C619.7 223.2 622.2 223.3 624.7 224.1 C627.2 224.9 629.7 222.6 632.2 223.6 C634.7 224.5 637.2 228.0 639.7 229.8 C642.2 231.6 644.7 233.7 647.2 234.5 C649.7 235.3 652.2 234.6 654.7 234.6 C657.2 234.6 659.7 234.6 662.2 234.5 C664.7 234.4 667.2 234.1 669.7 234.0 C672.2 233.9 674.7 235.0 677.2 233.7 C679.7 232.4 682.1 229.7 684.6 226.0 C687.1 222.4 689.6 215.3 692.1 211.7 C694.6 208.0 697.1 208.2 699.6 204.0 C702.1 199.8 704.6 195.9 707.1 186.5 C709.6 177.0 712.1 156.1 714.6 147.3 C717.1 138.5 719.6 136.9 722.1 133.8 C724.6 130.7 727.1 129.9 729.6 128.7 C732.1 127.5 734.6 122.1 737.1 126.5 C739.6 130.9 742.1 145.3 744.6 155.0 C747.1 164.6 749.6 179.5 752.1 184.3 C754.6 189.1 757.1 183.9 759.6 183.9 C762.0 183.9 764.5 174.9 767.0 184.1 C769.5 193.3 772.0 219.3 774.5 239.2 C777.0 259.2 779.5 291.2 782.0 303.6 C784.5 316.0 787.0 311.6 789.5 313.8 C792.0 315.9 794.5 322.3 797.0 316.4 C799.5 310.6 802.0 294.4 804.5 278.6 C807.0 262.8 809.5 231.3 812.0 221.7 C814.5 212.1 817.0 221.3 819.5 221.1 C822.0 221.0 824.5 220.9 827.0 220.8 C829.5 220.8 832.0 220.8 834.5 220.8 C837.0 220.8 839.5 220.7 841.9 220.9 C844.4 221.2 846.9 221.1 849.4 222.4 C851.9 223.7 854.4 227.1 856.9 229.0 C859.4 230.9 861.9 235.4 864.4 233.8 C866.9 232.2 869.4 228.5 871.9 219.4 C874.4 210.4 876.9 190.7 879.4 179.6 C881.9 168.4 884.4 160.9 886.9 152.7 C889.4 144.5 891.9 136.7 894.4 130.6 C896.9 124.6 899.4 118.7 901.9 116.4 C904.4 114.0 906.9 116.3 909.4 116.4 C911.9 116.5 914.4 116.8 916.9 117.1 C919.4 117.3 921.8 117.2 924.3 117.7 C926.8 118.1 929.3 114.1 931.8 120.0 C934.3 125.9 936.8 140.2 939.3 153.0 C941.8 165.8 944.3 185.3 946.8 196.6 C949.3 207.9 951.8 214.7 954.3 221.0 C956.8 227.3 959.3 232.2 961.8 234.4 C964.3 236.6 966.8 234.3 969.3 234.0 C971.8 233.7 974.3 232.9 976.8 232.6 C979.3 232.4 981.8 232.6 984.3 232.5 C986.8 232.5 989.3 232.5 991.8 232.5 C994.3 232.5 996.8 232.5 999.3 232.5 C1001.7 232.6 1004.2 232.8 1006.7 232.9 C1009.2 233.0 1011.7 233.2 1014.2 233.2 C1016.7 233.3 1019.2 233.1 1021.7 233.2 C1024.2 233.3 1026.7 232.6 1029.2 233.7 C1031.7 234.8 1034.2 236.9 1036.7 239.8 C1039.2 242.7 1041.7 249.1 1044.2 251.2 C1046.7 253.4 1049.2 252.3 1051.7 252.5 C1054.2 252.7 1056.7 252.5 1059.2 252.5 C1061.7 252.5 1064.2 252.5 1066.7 252.5 C1069.2 252.5 1071.7 252.5 1074.2 252.5 C1076.7 252.5 1079.2 252.5 1081.6 252.5 C1084.1 252.5 1086.6 252.5 1089.1 252.5 C1091.6 252.5 1094.1 252.6 1096.6 252.5 C1099.1 252.5 1101.6 252.3 1104.1 252.1 C1106.6 252.0 1109.1 252.1 1111.6 251.7 C1114.1 251.4 1116.6 250.8 1119.1 250.1 C1121.6 249.3 1124.1 247.4 1126.6 247.3 C1129.1 247.2 1131.6 245.1 1134.1 249.3 C1136.6 253.4 1139.1 264.3 1141.6 272.1 C1144.1 279.9 1146.6 292.8 1149.1 296.1 C1151.6 299.3 1154.1 294.6 1156.6 291.7 C1159.1 288.8 1161.5 283.1 1164.0 278.7 C1166.5 274.2 1169.0 269.4 1171.5 265.1 C1174.0 260.8 1176.5 256.4 1179.0 253.0 C1181.5 249.6 1184.0 247.5 1186.5 244.9 C1189.0 242.3 1191.8 239.2 1194.0 237.4 C1196.3 235.6 1197.8 233.8 1200.0 234.0 C1202.2 234.3 1205.0 236.9 1207.5 238.9 C1210.0 241.0 1212.5 243.5 1215.0 246.3 C1217.5 249.0 1220.0 251.6 1222.5 255.2 C1225.0 258.8 1227.5 263.3 1230.0 267.7 C1232.5 272.1 1235.0 277.1 1237.5 281.5 C1240.0 285.8 1242.4 291.8 1244.9 293.8 C1247.4 295.9 1249.9 298.5 1252.4 293.8 C1254.9 289.0 1257.4 273.1 1259.9 265.4 C1262.4 257.7 1264.9 250.7 1267.4 247.7 C1269.9 244.7 1272.4 247.2 1274.9 247.7 C1277.4 248.2 1279.9 250.0 1282.4 250.7 C1284.9 251.3 1287.4 251.6 1289.9 251.8 C1292.4 252.1 1294.9 252.1 1297.4 252.2 C1299.9 252.3 1302.4 252.5 1304.9 252.5 C1307.4 252.6 1309.9 252.5 1312.4 252.5 C1314.9 252.5 1317.4 252.5 1319.9 252.5 C1322.3 252.5 1324.8 252.5 1327.3 252.5 C1329.8 252.5 1332.3 252.5 1334.8 252.5 C1337.3 252.5 1339.8 252.5 1342.3 252.5 C1344.8 252.5 1347.3 253.0 1349.8 252.5 C1352.3 252.0 1354.8 252.2 1357.3 249.7 C1359.8 247.2 1362.3 240.2 1364.8 237.5 C1367.3 234.8 1369.8 234.2 1372.3 233.5 C1374.8 232.8 1377.3 233.3 1379.8 233.2 C1382.3 233.2 1384.8 233.3 1387.3 233.2 C1389.8 233.2 1392.3 232.9 1394.8 232.8 C1397.3 232.7 1399.8 232.6 1402.2 232.5 C1404.7 232.5 1407.2 232.5 1409.7 232.5 C1412.2 232.5 1414.7 232.5 1417.2 232.5 C1419.7 232.6 1422.2 232.5 1424.7 232.8 C1427.2 233.1 1429.7 234.1 1432.2 234.3 C1434.7 234.5 1437.2 236.9 1439.7 233.8 C1442.2 230.7 1444.7 223.1 1447.2 215.8 C1449.7 208.5 1452.2 202.4 1454.7 190.1 C1457.2 177.8 1459.7 154.0 1462.2 142.1 C1464.7 130.2 1467.2 122.7 1469.7 118.6 C1472.2 114.5 1474.7 117.8 1477.2 117.6 C1479.7 117.3 1482.1 117.2 1484.6 117.0 C1487.1 116.7 1489.6 116.2 1492.1 116.3 C1494.6 116.4 1497.1 114.5 1499.6 117.7 C1502.1 120.8 1504.6 128.7 1507.1 135.3 C1509.6 141.8 1512.1 148.4 1514.6 157.0 C1517.1 165.7 1519.6 175.8 1522.1 187.2 C1524.6 198.5 1527.1 217.1 1529.6 224.9 C1532.1 232.6 1534.6 233.1 1537.1 233.5 C1539.6 233.9 1542.1 229.3 1544.6 227.3 C1547.1 225.4 1549.6 222.9 1552.1 221.8 C1554.6 220.7 1557.1 221.0 1559.6 220.8 C1562.0 220.7 1564.5 220.8 1567.0 220.8 C1569.5 220.8 1572.0 220.8 1574.5 220.8 C1577.0 220.9 1579.5 220.6 1582.0 221.2 C1584.5 221.8 1587.0 212.5 1589.5 224.3 C1592.0 236.1 1594.5 276.8 1597.0 292.1 C1599.5 307.4 1602.0 312.7 1604.5 316.1 C1607.0 319.6 1609.5 315.7 1612.0 312.9 C1614.5 310.1 1617.0 314.1 1619.5 299.2 C1622.0 284.2 1624.5 242.4 1627.0 223.2 C1629.5 203.9 1632.0 190.2 1634.5 183.7 C1637.0 177.2 1639.5 183.9 1641.9 184.0 C1644.4 184.1 1646.9 190.5 1649.4 184.3 C1651.9 178.1 1654.4 156.3 1656.9 146.7 C1659.4 137.0 1661.9 129.3 1664.4 126.4 C1666.9 123.6 1669.4 128.3 1671.9 129.7 C1674.4 131.0 1676.9 130.6 1679.4 134.7 C1681.9 138.8 1684.4 144.7 1686.9 154.2 C1689.4 163.7 1691.9 183.2 1694.4 191.8 C1696.9 200.4 1699.4 202.0 1701.9 205.7 C1704.4 209.4 1706.9 210.1 1709.4 213.9 C1711.9 217.8 1714.4 225.5 1716.9 228.8 C1719.4 232.1 1721.8 232.9 1724.3 233.8 C1726.8 234.7 1729.3 234.0 1731.8 234.1 C1734.3 234.2 1736.8 234.5 1739.3 234.6 C1741.8 234.7 1744.3 234.6 1746.8 234.6 C1749.3 234.6 1751.8 235.5 1754.3 234.4 C1756.8 233.3 1759.3 230.0 1761.8 228.2 C1764.3 226.4 1766.8 224.4 1769.3 223.7 C1771.8 223.0 1774.3 225.5 1776.8 224.2 C1779.3 222.8 1781.8 220.4 1784.3 215.4 C1786.8 210.4 1789.3 198.7 1791.8 194.3 C1794.3 190.0 1796.8 189.9 1799.3 189.1 C1801.7 188.3 1804.2 188.9 1806.7 189.4 C1809.2 189.9 1811.7 190.8 1814.2 192.3 C1816.7 193.8 1819.2 196.8 1821.7 198.4 C1824.2 200.0 1826.7 199.1 1829.2 202.0 C1831.7 204.9 1834.2 209.5 1836.7 215.9 C1839.2 222.3 1841.7 232.8 1844.2 240.3 C1846.7 247.9 1849.2 256.8 1851.7 261.2 C1854.2 265.5 1856.7 264.7 1859.2 266.4 C1861.7 268.1 1864.2 269.8 1866.7 271.2 C1869.2 272.7 1871.7 274.3 1874.2 275.1 C1876.7 275.9 1879.2 275.8 1881.6 276.0 C1884.1 276.1 1886.6 276.0 1889.1 276.0 C1891.6 275.9 1894.1 275.7 1896.6 275.5 C1899.1 275.2 1901.6 274.6 1904.1 274.7 C1906.6 274.7 1909.1 274.0 1911.6 275.8 C1914.1 277.6 1916.6 281.4 1919.1 285.5 C1921.6 289.6 1924.1 295.0 1926.6 300.3 C1929.1 305.5 1931.6 312.5 1934.1 317.0 C1936.6 321.5 1939.1 326.4 1941.6 327.4 C1944.1 328.4 1946.6 325.7 1949.1 323.1 C1951.6 320.4 1954.1 316.0 1956.6 311.4 C1959.1 306.8 1961.5 301.2 1964.0 295.6 C1966.5 290.0 1969.0 283.7 1971.5 278.0 C1974.0 272.2 1976.5 266.1 1979.0 260.9 C1981.5 255.7 1984.0 250.8 1986.5 246.9 C1989.0 243.0 1991.8 239.7 1994.0 237.5 C1996.3 235.4 1999.0 234.6 2000.0 234.0 L2000.0 400 Z" };
+class Component extends DCLogic {
+  state = { theme: null, lang: 'en', sound: false, cs: -1, hover: null, lock: null, sec: 0, busy: false };
+  rootRef = React.createRef(); trackRef = React.createRef(); csRef = React.createRef(); miniRef = React.createRef(); indRef = React.createRef();
+  shaders = {};
+
+  componentDidMount() {
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem('sb-portfolio-v6') || '{}'); } catch (e) {}
+    this.setState({ theme: saved.theme || null, lang: saved.lang || 'en' });
+    this._key = (e) => { if (e.key === 'Escape' && this.state.cs >= 0) this.closeCs(); };
+    addEventListener('keydown', this._key);
+    this.sync();
+    this.whenEngine(() => { SiteEngine.skipPreload = this.props.showPreloader === false; SiteEngine.init(this.rootRef.current, {}); });
+  }
+  componentWillUnmount() { removeEventListener('keydown', this._key); Object.values(this.shaders).forEach((s) => s && s.h && s.h.dispose()); }
+
+  componentDidUpdate(pp, ps) {
+    this.sync();
+    const S = window.SiteEngine; if (!S || !S._inited) return;
+    if (ps.lang !== this.state.lang || pp.showStars !== this.props.showStars) requestAnimationFrame(() => { S.scan(); S.fit && S.fit(); window.ScrollTrigger && ScrollTrigger.refresh(); });
+    if (ps.cs >= 0 && this.state.cs >= 0 && ps.cs !== this.state.cs) {
+      const el = this.csRef.current;
+      if (el) { el.scrollTop = 0; S.csStagger(el); }
+      requestAnimationFrame(() => this.onCsScroll());
+    }
+    if (ps.lang !== this.state.lang && this.state.cs >= 0) requestAnimationFrame(() => this.onCsScroll());
+  }
+  csAttach = (el) => {
+    const prev = this.csRef.current; this.csRef.current = el;
+    if (el && el !== prev && window.SiteEngine && SiteEngine.flipOpen) { SiteEngine.flipOpen(el, this._from); requestAnimationFrame(() => this.onCsScroll()); }
+  };
+
+  whenEngine(fn) { const t = () => (window.SiteEngine && SiteEngine.v6 && SiteEngine.ready() && SiteEngine.mountShader ? fn() : setTimeout(t, 60)); t(); }
+  themeKey() { return this.state.theme || 'dark'; }
+  sync() {
+    const d = document.documentElement, th = this.themeKey(), lg = this.state.lang;
+    if (d.dataset.theme !== th) d.dataset.theme = th;
+    if (d.dataset.lang !== lg) d.dataset.lang = lg;
+    d.dataset.dir = 'a';
+    d.style.setProperty('--gk', String(this.props.grainAmount ?? 1));
+    if (window.SiteEngine) SiteEngine.boilMs = this.props.boilInterval ?? 320;
+    if (window.SiteEngine && SiteEngine.floatWork) SiteEngine.floatWork(this.rootRef.current, this.props.floatWork !== false);
+    if (window.SiteEngine) SiteEngine.textAnim = { animation: this.props.loaderAnimation || 'blurInUp', by: this.props.loaderBy || 'character', duration: this.props.loaderDuration ?? 5, delay: this.props.loaderDelay ?? 0.1 };
+    if (window.SiteEngine && SiteEngine.lightRays) SiteEngine.lightRays(this.rootRef.current, { on: this.props.showLightRays !== false, count: this.props.rayCount ?? 7, speed: this.props.raySpeed ?? 14, blur: 36 });
+    Object.values(this.shaders).forEach((s) => s && s.h && s.h.setTheme(th === 'dark' ? 1 : 0));
+    try { localStorage.setItem('sb-portfolio-v6', JSON.stringify({ theme: this.state.theme, lang: lg })); } catch (e) {}
+  }
+
+  canvasRef(slot, mode) {
+    return (el) => {
+      const cur = this.shaders[slot];
+      if (cur && cur.el !== el) { cur.h && cur.h.dispose(); cur.dead = true; this.shaders[slot] = null; }
+      if (el && !this.shaders[slot]) {
+        const rec = (this.shaders[slot] = { el, h: null });
+        this.whenEngine(() => { if (!rec.dead) rec.h = SiteEngine.mountShader(el, { mode, theme: this.themeKey() === 'dark' ? 1 : 0 }); });
+      }
+    };
+  }
+  footCanvas = this.canvasRef('foot', 0);
+
+  go = (e) => { const t = e.currentTarget.dataset.target; if (window.SiteEngine && SiteEngine.scrollTo) SiteEngine.scrollTo(t); else { const el = document.querySelector(t); el && window.scrollTo({ top: el.offsetTop, behavior: 'smooth' }); } };
+  pt(e) { const r = e.currentTarget.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; }
+  toggleTheme = (e) => {
+    const next = this.themeKey() === 'dark' ? 'light' : 'dark'; const [x, y] = this.pt(e);
+    const apply = () => { document.documentElement.dataset.theme = next; Object.values(this.shaders).forEach((s) => s && s.h && s.h.setTheme(next === 'dark' ? 1 : 0)); this.setState({ theme: next }); };
+    window.SiteEngine ? SiteEngine.themeTransition(x, y, apply) : apply();
+  };
+  toggleLang = (e) => {
+    const next = this.state.lang === 'en' ? 'ar' : 'en'; const [x, y] = this.pt(e);
+    const apply = () => { document.documentElement.dataset.lang = next; if (this.rootRef.current) this.rootRef.current.dir = next === 'ar' ? 'rtl' : 'ltr'; this.setState({ lang: next }); };
+    window.SiteEngine ? SiteEngine.themeTransition(x, y, apply) : apply();
+  };
+  toggleSound = () => { if (!window.SiteEngine) return; const on = SiteEngine.sound.toggle(); this.setState({ sound: on }); SiteEngine.bars(this.rootRef.current.querySelector('[data-bars]'), on); };
+
+  scrollCards(dir) {
+    const t = this.trackRef.current; if (!t) return;
+    const card = t.children[0]; const step = card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(t).columnGap || 24) : t.clientWidth * 0.8;
+    t.scrollBy({ left: step * dir * (this.state.lang === 'ar' ? -1 : 1), behavior: 'smooth' });
+  }
+  prevCard = () => this.scrollCards(-1);
+  nextCard = () => this.scrollCards(1);
+
+  srcFor(i) { return this.rootRef.current && this.rootRef.current.querySelector('#work [data-media="' + i + '"]'); }
+  skyPaths() {
+    if (this._sky) return this._sky;
+    let seed = 5; const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647, q = (v) => v.toFixed(1);
+    const cr = (a, b, y) => { let s = ''; for (let c = a; c < b - 1; c += 12) s += 'L' + q(c + 6) + ' ' + q(y - 9) + ' L' + q(Math.min(c + 12, b)) + ' ' + q(y) + ' '; return s; };
+    const najd = (lo, hi, soft) => {
+      const ss = (e0, e1, x) => { const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
+      const bs = []; let x = -60;
+      while (x < 1660) { const tower = r() < .34, w = tower ? 34 + r() * 26 : 70 + r() * 130, H = tower ? hi + r() * 70 : lo + r() * 55; bs.push({ x0: x, x1: x + w, H, ramp: (tower ? w * .22 : 10) * soft, tower }); x += w * (.55 + r() * .4); }
+      const ph = r() * 6; let p = 'M0 400 ';
+      for (let xx = 0; xx <= 1600; xx += 4) {
+        const hill = 34 + 26 * Math.sin(xx / 380 + ph) + 12 * Math.sin(xx / 150 + ph * 2);
+        let top = 0, cov = 0;
+        bs.forEach((o) => { if (xx < o.x0 - o.ramp || xx > o.x1 + o.ramp) return; const pl = ss(o.x0 - o.ramp, o.x0 + o.ramp, xx) * (1 - ss(o.x1 - o.ramp, o.x1 + o.ramp, xx)); const mid = (o.x0 + o.x1) / 2, dome = o.tower ? 1 + .1 * Math.cos(Math.min(1, Math.abs(xx - mid) / ((o.x1 - o.x0) / 2)) * Math.PI / 2) : 1; const v = o.H * pl * dome; if (v > top) { top = v; cov = pl; } });
+        const rip = soft < 1.5 ? 6 * Math.pow(Math.abs(Math.sin(xx * Math.PI / 13)), .8) * cov * cov : 0;
+        p += 'L' + xx + ' ' + q(400 - hill - top - rip) + ' ';
+      }
+      return p + 'L1600 400 Z';
+    };
+    const palms = (xs) => { let p = ''; xs.forEach((x) => { const h = 150 + r() * 90, cx = x + (r() - .5) * 30, cy = 400 - h; p += 'M' + q(x - 5) + ' 400 Q' + q(x) + ' ' + q(400 - h / 2) + ' ' + q(cx - 2) + ' ' + q(cy) + ' L' + q(cx + 2) + ' ' + q(cy) + ' Q' + q(x + 6) + ' ' + q(400 - h / 2) + ' ' + q(x + 5) + ' 400 Z '; for (let i = 0; i < 9; i++) { const a = Math.PI * (1.05 + i / 8 * .9), L = 46 + r() * 26, tx = cx + Math.cos(a) * L, ty = cy + Math.sin(a) * L * .55 + L * .45, mx = (cx + tx) / 2, my = (cy + ty) / 2 - L * .32, px = -Math.sin(a) * 8, py = Math.cos(a) * 8; p += 'M' + q(cx) + ' ' + q(cy) + ' Q' + q(mx + px) + ' ' + q(my + py) + ' ' + q(tx) + ' ' + q(ty) + ' Q' + q(mx) + ' ' + q(my + 6) + ' ' + q(cx) + ' ' + q(cy + 3) + ' Z '; } }); return p; };
+    const dune = (b, a, ph) => { let p = 'M0 400 '; for (let x = 0; x <= 1600; x += 16) p += 'L' + x + ' ' + q(b + a * (Math.sin(x / 260 + ph) * .6 + Math.sin(x / 97 + ph * 2) * .3)) + ' '; return p + 'L1600 400 Z'; };
+    const o = { duneBack: dune(170, 70, 1), duneFront: dune(260, 55, 3) };
+    const turaif = (seed) => {
+      let s = seed; const rnd = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
+      const TW = 1600, REP = [0, 1600, 3200];
+      const L = { far: '', back: '', backSh: '', mid: '', midSh: '', midLt: '', front: '', frontSh: '', frontLt: '', orn: '' };
+      const blk = (k, x, w, top, r) => { r = Math.min(r, w / 3); REP.forEach((o) => { const X = x + o; L[k] += 'M' + q(X) + ' 400V' + q(top + r) + 'Q' + q(X) + ' ' + q(top) + ' ' + q(X + r) + ' ' + q(top) + 'H' + q(X + w - r) + 'Q' + q(X + w) + ' ' + q(top) + ' ' + q(X + w) + ' ' + q(top + r) + 'V400Z'; }); };
+      const rect = (k, x, y, w, h) => REP.forEach((o) => { L[k] += 'M' + q(x + o) + ' ' + q(y) + 'h' + q(w) + 'v' + q(h) + 'h' + q(-w) + 'Z'; });
+      const tri = (k, x, y, w, h) => REP.forEach((o) => { L[k] += 'M' + q(x + o) + ' ' + q(y + h) + 'L' + q(x + o + w / 2) + ' ' + q(y) + 'L' + q(x + o + w) + ' ' + q(y + h) + 'Z'; });
+      const door = (x, w, h) => REP.forEach((o) => { const X = x + o; L.orn += 'M' + q(X) + ' 400V' + q(400 - h + w / 2) + 'Q' + q(X + w / 2) + ' ' + q(400 - h - w / 4) + ' ' + q(X + w) + ' ' + q(400 - h + w / 2) + 'V400Z'; });
+      const deco = (x, w, top, tall) => {
+        const span = w - 24; if (span < 24) return;
+        const n = Math.max(2, Math.floor(span / 14)), g = span / n;
+        for (let k = 0; k < n; k++) tri('orn', x + 12 + k * g + g * .22, top + 14, g * .56, 8);
+        rect('orn', x + 8, top + 28, w - 16, 2.2);
+        if (tall && rnd() > .3) { const m = Math.max(1, Math.floor(span / 34)); for (let k = 0; k < m; k++) rect('orn', x + 12 + (k + .5) * span / m - 4, top + 46, 8, 11); }
+        if (rnd() > .5) { rect('orn', x - 5, top + 8, 11, 3); rect('orn', x + w - 6, top + 8, 11, 3); }
+      };
+      const tier = (k, minH, maxH, minW, maxW, gapMax, shade, light, decorate) => {
+        let x = -20 - rnd() * 30;
+        while (x < TW - 40) {
+          let w = minW + rnd() * (maxW - minW); if (x + w > TW - 10) w = TW - 10 - x; if (w < 40) break;
+          const h = minH + rnd() * (maxH - minH), top = 400 - h;
+          blk(k, x, w, top, 7);
+          if (shade) { const sx = x + w * (.62 + rnd() * .14); REP.forEach((o) => { const X = sx + o, E = x + w + o, r = Math.min(7, w / 3); L[shade] += 'M' + q(X) + ' ' + q(top) + 'H' + q(E - r) + 'Q' + q(E) + ' ' + q(top) + ' ' + q(E) + ' ' + q(top + r) + 'V400H' + q(X) + 'Z'; }); }
+          if (light) rect(light, x + 6, top + 1.5, w * .55, 3);
+          if (rnd() > .55 && h > minH + 20) { const tw = 26 + rnd() * 30, tx = x + 10 + rnd() * Math.max(4, w * .45 - tw), th = 24 + rnd() * 40; blk(k, tx, tw, top - th, 6); if (shade) rect(shade, tx + tw * .65, top - th + 6, tw * .35, th - 6); if (decorate) tri('orn', tx + tw / 2 - 5, top - th + 12, 10, 8); }
+          if (decorate) { deco(x, w, top, h > (minH + maxH) / 2); if (rnd() > .45) door(x + w * (.2 + rnd() * .5), 15 + rnd() * 6, 30 + rnd() * 10); }
+          x += w + rnd() * gapMax - (gapMax ? 0 : 8);
+        }
+      };
+      tier('far', 150, 250, 120, 260, 0, null, null, false);
+      tier('back', 170, 270, 90, 190, 30, 'backSh', null, true);
+      tier('mid', 110, 200, 80, 170, 60, 'midSh', 'midLt', true);
+      tier('front', 40, 105, 140, 320, 10, 'frontSh', 'frontLt', true);
+      rect('front', -10, 386, 4820, 16);
+      return L;
+    };
+    const tA = turaif(7), tB = turaif(23);
+    [1, 2, 3].forEach((n) => { const t = n === 2 ? tB : tA; Object.keys(t).forEach((k) => { o['t' + n + k] = t[k]; }); });
+    return (this._sky = o);
+  }
+  peelOpen(i, e) {
+    const t = e && e.currentTarget, art = t && t.closest && t.closest('article');
+    const m = (art && art.querySelector('[data-media]')) || t;
+    if (!window.SiteEngine || !SiteEngine.peel || !m) return this.openCase(i, e);
+    SiteEngine.peel(m, () => this.openCase(i, { currentTarget: m }));
+  }
+  openCase(i, e) {
+    const m = (e && e.currentTarget) || this.srcFor(i);
+    this._src = m; this._from = m ? m.getBoundingClientRect() : null;
+    if (m) m.style.visibility = 'hidden';
+    this.setState({ cs: i, sec: 0 });
+  }
+  bringIntoTrack(src) {
+    const t = this.trackRef.current; if (!t || !src || this.state.lang === 'ar' || !t.contains(src)) return;
+    const card = src.parentElement, tr = t.getBoundingClientRect(), r = card.getBoundingClientRect();
+    if (r.left >= tr.left && r.right <= tr.right) return;
+    t.style.scrollSnapType = 'none';
+    t.scrollLeft += r.left - tr.left - (parseFloat(getComputedStyle(t).paddingLeft) || 0);
+    setTimeout(() => { t.style.scrollSnapType = 'x mandatory'; }, 80);
+  }
+  closeCs = () => {
+    const el = this.csRef.current, S = window.SiteEngine, src = this._src;
+    this.bringIntoTrack(src);
+    const end = () => this.setState({ cs: -1 }, () => { if (src) src.style.visibility = ''; });
+    if (el && S && S.flipClose) S.flipClose(el, src, end); else end();
+  };
+  nextCs = () => {
+    if (this.state.busy) return;
+    this.setState({ busy: true });
+    setTimeout(() => {
+      const n = (this.state.cs + 1) % PROJECTS.length;
+      if (this._src) this._src.style.visibility = '';
+      const s = this.srcFor(n); if (s) s.style.visibility = 'hidden';
+      this._src = s; this.setState({ cs: n, sec: 0, busy: false });
+    }, 480);
+  };
+
+  onCsScroll = () => {
+    const el = this.csRef.current, mini = this.miniRef.current, ind = this.indRef.current; if (!el) return;
+    const max = el.scrollHeight - el.clientHeight; const p = max > 0 ? el.scrollTop / max : 0;
+    if (mini && ind) { const H = mini.clientHeight - 6; const h = Math.max(18, (el.clientHeight / el.scrollHeight) * H); ind.style.height = h + 'px'; ind.style.top = 3 + p * (H - h) + 'px'; }
+    let a = 0; el.querySelectorAll('[data-cs-sec]').forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * 0.45) a = i; });
+    if (a !== this.state.sec) this.setState({ sec: a });
+  };
+  jumpTo(i) { const el = this.csRef.current; if (!el) return; const s = el.querySelectorAll('[data-cs-sec]')[i]; if (s) el.scrollTo({ top: s.getBoundingClientRect().top + el.scrollTop - 80, behavior: 'smooth' }); }
+  miniClick = (e) => { const el = this.csRef.current, m = this.miniRef.current; if (!el || !m) return; const r = m.getBoundingClientRect(); el.scrollTo({ top: ((e.clientY - r.top) / r.height) * (el.scrollHeight - el.clientHeight), behavior: 'smooth' }); };
+
+  renderVals() {
+    const lg = this.state.lang, ar = lg === 'ar';
+    const act = this.state.lock || this.state.hover;
+    const roleName = (k) => { const r = ROLES.find((x) => x.k === k); return r ? r[lg] : k; };
+    const roles = ROLES.map((r) => {
+      const on = act === r.k;
+      return { label: r[lg], count: PROJECTS.filter((p) => p.roles.indexOf(r.k) >= 0).length,
+        color: act ? (on ? 'var(--red)' : 'var(--muted)') : 'var(--ink)', fs: on && !ar ? 'italic' : 'normal',
+        enter: () => this.setState({ hover: r.k }), leave: () => this.setState({ hover: null }),
+        toggle: () => this.setState((s) => ({ hover: null, lock: s.lock === r.k ? null : r.k })) };
+    });
+    const nMatch = act ? PROJECTS.filter((p) => p.roles.indexOf(act) >= 0).length : 4;
+    const filterNote = act ? (ar ? ('يظهر ' + nMatch + ' من 4') : ('Showing ' + nMatch + ' of 4')) : (ar ? 'كل المشاريع' : 'All four projects');
+    const projects = PROJECTS.map((p, i) => {
+      const match = !act || p.roles.indexOf(act) >= 0, d = p[lg];
+      const o = { i, num: '0' + (i + 1), title: d.title, client: d.client, blurb: d.blurb, bg: p.bg, slot: p.slot, ph: p.ph,
+        browser: p.frame === 'browser', phone: p.frame === 'phone',
+        op: match ? 1 : 0.16, sc: match ? 1 : 0.965, flt: match ? 'none' : 'grayscale(1)',
+        tags: p.roles.map((k) => ({ label: roleName(k), color: act === k ? 'var(--red)' : 'var(--muted)' })),
+        aria: (ar ? 'افتح ' : 'Open ') + d.title, openLabel: ar ? 'افتح ↖' : 'Open ↗', open: (e) => this.openCase(i, e) };
+      SHAPES.forEach((k, j) => { o[k] = j === i; });
+      return o;
+    });
+    const FL = [{ x: '4%', y: '6%', w: '54%', r: '-3deg', z: 2, ar: '16/10' }, { x: '50%', y: '0%', w: '40%', r: '4deg', z: 1, ar: '4/5' }, { x: '30%', y: '46%', w: '46%', r: '2deg', z: 3, ar: '16/10' }, { x: '0%', y: '58%', w: '30%', r: '-5deg', z: 4, ar: '9/16' }];
+    const thumbs = PROJECTS.map((p, i) => ({ ...FL[i % 4], mid: 'h' + i, slot: p.slot, ph: p.ph, bg: p.bg, delay: String(i * 0.08), aria: (ar ? 'افتح ' : 'Open ') + p[lg].title, open: (e) => this.openCase(i, e) }));
+    const exp = EXP.map((x) => { const d = x[lg]; return { ...d, sub: d.sub || '', dot: x.cur ? 'var(--red)' : 'var(--line)', hint: ar ? 'اسحب ←' : 'Drag ←', open: (e) => this.openCase(x.i, e) }; });
+    let cs = null;
+    if (this.state.cs >= 0) {
+      const p = PROJECTS[this.state.cs], d = p[lg], nx = PROJECTS[(this.state.cs + 1) % PROJECTS.length][lg];
+      const busy = this.state.busy;
+      cs = { ...d.cs, title: d.title, bg: p.bg, slot: p.slot, ph: p.ph, browser: p.frame === 'browser' && !p.figs, phone: p.frame === 'phone' && !p.figs, figHero: !!p.figs, heroSrc: p.hero ? p.hero.src : '', heroAlt: p.hero ? p.hero.alt : '', heroPh: 'Drop hero-auto-payroll.webp (21:9)',
+        num: '0' + (this.state.cs + 1), nextTitle: nx.title, bar: busy ? '100%' : '0%',
+        closeLabel: ar ? 'إغلاق →' : '← Close', nextLabel: busy ? (ar ? 'جارٍ التحميل…' : 'Loading…') : (ar ? 'التالي ←' : 'Next →'), nextKicker: ar ? 'المشروع التالي' : 'Next project',
+        orgLabel: ar ? 'الجهة' : 'Company', roleLabel: ar ? 'الدور' : 'Role', readTime: ar ? 'قراءة في دقيقة' : 'One-minute read',
+        onPage: ar ? 'في هذه الصفحة' : 'On this page', pageLabel: ar ? 'الصفحة' : 'Page',
+        menu: (p.figs ? [MENU[lg][0], ...d.cs.beats.map((b, j) => b.h)] : MENU[lg]).map((label, j) => { const on = j === this.state.sec; return { label, color: on ? 'var(--ink)' : 'var(--muted)', barW: on ? '28px' : '10px', jump: () => this.jumpTo(j) }; }),
+        beats: d.cs.beats.map((b, j) => { const fl = p.figs ? (p.figures[j] || []).map(figOf) : []; const kk = p.figs ? (b.k || BEAT[lg][Math.min(j, 1)] ) : BEAT[lg][j]; return { ...b, n: '0' + (j + 1), k: p.figs && j === d.cs.beats.length - 1 ? BEAT[lg][2] : kk, slot: 'cs2-' + p.key + '-' + (j + 1), ph: p.beatPh[j] || '', fig: !!p.figs, noFig: !p.figs, lead: fl[0] || { src: '', alt: '' }, more: fl.slice(1), hasMore: fl.length > 1 }; }) };
+    }
+    const chapters = CHAPTERS.map((c, ci) => {
+      const items = PROJECTS.map((p, i) => ({ p, i })).filter((x) => x.p.roles.indexOf(c.k) >= 0).map(({ p, i }) => {
+        const d = p[lg];
+        return { i, mi: String(i), num: '0' + (i + 1), title: d.title, client: d.client, blurb: d.blurb, bg: p.bg, slot: p.slot, ph: p.ph,
+          result: d.cs.beats[2].h, openLabel: ar ? 'افتح ↖' : 'Open ↗', cta: ar ? 'اقرأ دراسة الحالة ←' : 'Read the case study →',
+          aria: (ar ? 'افتح ' : 'Open ') + d.title, open: (e) => this.peelOpen(i, e) };
+      });
+      const col = (c.k === 'strategy' ? this.props.strategyColor : c.k === 'research' ? this.props.researchColor : this.props.visualColor) || ({ strategy: '#7FD08A', research: '#5CC8DC', visual: '#E0A84A' })[c.k];
+      return { col, bg: 'color-mix(in oklab, ' + col + ' ' + (this.themeKey() === 'dark' ? '22%, #141512)' : '26%, #EFE9DC)'), initial: roleName(c.k).charAt(0), kicker2: ar ? 'تعرّف على' : 'Get to know', n: '0' + (ci + 1), title: roleName(c.k), kicker: ar ? 'الفصل' : 'Chapter', line: c[lg].line, credit: c.credit,
+        isMonet: c.art === 'monet', useSlot: c.art !== 'monet', slot: 'chapter-' + c.k, ph: c.ph || '',
+        countLabel: ar ? (items.length + ' مشاريع') : (items.length + (items.length === 1 ? ' project' : ' projects')),
+        inThis: ar ? 'في هذا الفصل' : 'In this chapter', items };
+    });
+    chapters.forEach((c, i) => { const nx = chapters[i + 1]; c.nextBg = nx ? nx.bg : 'var(--sbg)'; c.midNext = 'color-mix(in oklab, ' + c.nextBg + ' 50%, ' + c.bg + ')'; c.showDune = !!nx; c.isLast = !nx; });
+    return {
+      chapters, firstBg: chapters[0].bg, lastBg: chapters[chapters.length - 1].bg, sky: this.skyPaths(),
+      rootRef: this.rootRef, trackRef: this.trackRef, csRef: this.csAttach, miniRef: this.miniRef, indRef: this.indRef, footCanvas: this.footCanvas,
+      textDir: ar ? 'rtl' : 'ltr', showStars: this.props.showStars !== false,
+      go: this.go, toggleTheme: this.toggleTheme, toggleLang: this.toggleLang, toggleSound: this.toggleSound,
+      soundLabel: this.state.sound ? 'Mute sound' : 'Turn sound on',
+      prevCard: this.prevCard, nextCard: this.nextCard,
+      roles, projects, thumbs, exp, filterNote,
+      marquee: [...TEAMS, ...TEAMS, ...TEAMS, ...TEAMS],
+      skills: SKILLS[lg].map((s, i) => ({ ...s, n: String(i + 1).padStart(2, '0') })),
+      connectOpen: !!this.state.connect, connectLabel: this.state.connect ? 'Close ×' : 'Connect', connectLabelAr: this.state.connect ? 'إغلاق ×' : 'تواصل', connectRot: this.state.connect ? '0deg' : '-1.5deg',
+      toggleConnect: () => this.setState((s) => ({ connect: !s.connect }), () => { if (window.SiteEngine && SiteEngine.scan) requestAnimationFrame(() => SiteEngine.scan()); }),
+      csOpen: !!cs, cs: cs || { beats: [], metrics: [], menu: [] },
+      closeCs: this.closeCs, nextCs: this.nextCs, onCsScroll: this.onCsScroll, miniClick: this.miniClick
+    };
+  }
+}
+</script>
+</body>
+</html>

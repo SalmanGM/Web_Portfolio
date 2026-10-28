@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Grenze+Gotisch:wght@600;800&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>html,body{margin:0;background:#0B1A1D}a{color:#7FD08A;text-decoration:none}a:hover{color:#F1E8D6}</style>
+</helmet>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="distress" x="-5%" y="-10%" width="110%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11" result="d0"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="d0" scale="2.5" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="4" result="n"></feTurbulence>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -16 0 0 0 10.3" result="m"></feColorMatrix>
+    <feComposite in="d" in2="m" operator="in"></feComposite>
+  </filter>
+  <filter id="gFilm"><feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" seed="2"></feTurbulence><feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 0 1"></feColorMatrix></filter>
+  <filter id="gFibre"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.55" numOctaves="3" seed="8"></feTurbulence><feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 0 1"></feColorMatrix></filter>
+  <filter id="gSpeck"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="1" seed="21" result="n"></feTurbulence><feColorMatrix in="n" type="matrix" values="0 0 0 0 0.9  0 0 0 0 0.88  0 0 0 0 0.8  30 0 0 0 -20.5"></feColorMatrix></filter>
+  <filter id="gBlot"><feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="5" seed="5"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3.2 0 0 0 1.75"></feColorMatrix></filter>
+</svg>
+
+<section id="turn1" style="background:#0B1A1D;padding:72px 64px 120px;color:#E8E2D0;font-family:'Jost',sans-serif;display:flex;flex-direction:column;gap:56px">
+  <header style="display:flex;flex-direction:column;gap:12px;max-width:880px">
+    <span style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#93ABA6">Turn 1 · Asset selections</span>
+    <h1 style="margin:0;font-family:'Grenze Gotisch',serif;font-weight:800;font-size:72px;line-height:1;color:#F1E8D6">Grit, layers &amp; section flow</h1>
+    <p style="margin:0;font-size:18px;line-height:1.6;color:#B7C6C1;text-wrap:pretty">Prototypes built in your palette, modelled on the Deadlock screenshots: grain overlays, skylines in the next section's colour, gritty tags that overlap the image, and framed shots. Pick by id. Fonts here are free stand-ins: Grenze Gotisch, Bowlby One SC, Jost.</p>
+  </header>
+
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <h2 style="margin:0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7FD08A">01 · Grain &amp; imperfection overlay</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:24px">
+      <div id="1a" style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:280px;border-radius:6px;overflow:hidden;background:#1B1A17">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:overlay;opacity:.55"><rect width="100%" height="100%" filter="url(#gFilm)"></rect></svg>
+          <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#7FD08A;color:#0B1A1D;padding:3px 9px">1a</span>
+        </div>
+        <span style="font-size:15px"><strong style="color:#F1E8D6">Film grain.</strong> Fine, even noise. Quietest option.</span>
+      </div>
+      <div id="1b" style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:280px;border-radius:6px;overflow:hidden;background:#1B1A17">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:overlay;opacity:.5"><rect width="100%" height="100%" filter="url(#gFilm)"></rect></svg>
+          <svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:overlay;opacity:.35"><rect width="100%" height="100%" filter="url(#gFibre)"></rect></svg>
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.5"><rect width="100%" height="100%" filter="url(#gSpeck)"></rect></svg>
+          <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#7FD08A;color:#0B1A1D;padding:3px 9px">1b</span>
+        </div>
+        <span style="font-size:15px"><strong style="color:#F1E8D6">Paper fibre + specks.</strong> Grain, horizontal fibres and dust flecks, like the Broadway screenshot.</span>
+      </div>
+      <div id="1c" style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:280px;border-radius:6px;overflow:hidden;background:#24231F">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:multiply;opacity:.55"><rect width="100%" height="100%" filter="url(#gBlot)"></rect></svg>
+          <svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:overlay;opacity:.5"><rect width="100%" height="100%" filter="url(#gFilm)"></rect></svg>
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35"><rect width="100%" height="100%" filter="url(#gSpeck)"></rect></svg>
+          <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#7FD08A;color:#0B1A1D;padding:3px 9px">1c</span>
+        </div>
+        <span style="font-size:15px"><strong style="color:#F1E8D6">Grunge blotches.</strong> Large dark stains under the grain, like the Update Notes background.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <h2 style="margin:0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7FD08A">02 · Section flow: skyline in the next section's colour</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:24px">
+      <sc-for list="{{ skies }}" as="s" hint-placeholder-count="3">
+        <div id="{{ s.id }}" style="flex:1 1 420px;display:flex;flex-direction:column;gap:12px">
+          <div style="position:relative;height:340px;border-radius:6px;overflow:hidden;background:{{ s.top }}">
+            <svg viewBox="0 0 1600 400" preserveAspectRatio="xMidYMax slice" style="position:absolute;left:0;bottom:90px;width:100%;height:250px"><path d="{{ s.back }}" fill="{{ s.mid }}"></path></svg>
+            <svg viewBox="0 0 1600 400" preserveAspectRatio="xMidYMax slice" style="position:absolute;left:0;bottom:90px;width:100%;height:210px"><path d="{{ s.front }}" fill="{{ s.bot }}"></path></svg>
+            <div style="position:absolute;left:0;right:0;bottom:0;height:91px;background:{{ s.bot }}"></div>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:overlay;opacity:.5"><rect width="100%" height="100%" filter="url(#gFilm)"></rect></svg>
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3"><rect width="100%" height="100%" filter="url(#gSpeck)"></rect></svg>
+            <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#7FD08A;color:#0B1A1D;padding:3px 9px">{{ s.id }}</span>
+          </div>
+          <span style="font-size:15px"><strong style="color:#F1E8D6">{{ s.name }}</strong> {{ s.note }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <h2 style="margin:0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7FD08A">03 · Gritty overlapping assets</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:24px">
+
+      <div id="3a" style="flex:1 1 560px;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:420px;border-radius:6px;overflow:hidden;background:#173A2C">
+          <div style="position:absolute;left:8%;right:8%;top:120px;bottom:-10px;overflow:hidden;clip-path:polygon(0 2%,12% 0,30% 1.5%,52% 0,71% 1.2%,88% 0,100% 1.8%,100% 100%,0 100%)">
+            <img src="assets/monet-lilies-1906.png" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.05)">
+            <span style="position:absolute;inset:0;background:linear-gradient(180deg,#0E3A3A,#E8D7B2);mix-blend-mode:soft-light;opacity:.8"></span>
+          </div>
+          <div style="position:absolute;left:30%;top:42px;transform:rotate(-4deg);filter:url(#distress)">
+            <span style="display:block;background:#7FD08A;color:#0C1411;padding:4px 18px 8px;font-family:'Grenze Gotisch',serif;font-weight:800;font-size:34px;line-height:1">Get to know</span>
+          </div>
+          <div style="position:absolute;left:24%;top:96px;transform:rotate(-4deg);filter:url(#distress)">
+            <div style="display:flex;align-items:center;gap:14px;padding:6px 40px 6px 6px;border-radius:999px;background:#0C1411;border:6px solid #7FD08A">
+              <span style="width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#7FD08A;color:#0C1411;box-shadow:inset 0 0 0 4px #0C1411;font-family:'Bowlby One SC';font-size:30px">R</span>
+              <span style="font-family:'Bowlby One SC';font-size:52px;line-height:1;color:#F1E8D6;letter-spacing:.01em">Riyadh</span>
+            </div>
+          </div>
+          <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#F1E8D6;color:#0B1A1D;padding:3px 9px">3a</span>
+        </div>
+        <span style="font-size:15px"><strong style="color:#F1E8D6">Chapter tag over the art.</strong> A Greenwich-style kicker and pill with print wear and a rough edge, overlapping the painting's top edge. Usable per chapter or project, e.g. "Get to know · Jahez".</span>
+      </div>
+
+      <div id="3b" style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:420px;border-radius:6px;overflow:hidden;background:#141C1A;display:grid;place-items:center">
+          <div style="position:relative;width:220px;height:220px">
+            <div style="position:absolute;inset:0;border-radius:50%;background:rgba(127,208,138,.22);border:7px solid #7FD08A;filter:url(#distress)"></div>
+            <svg viewBox="0 0 220 220" style="position:absolute;inset:0"><path d="M120 18 C150 60 90 90 112 120 C130 146 100 170 92 205" fill="none" stroke="#7FD08A" stroke-width="4" stroke-dasharray="2 9" stroke-linecap="round"></path></svg>
+            <sc-for list="{{ stops }}" as="p" hint-placeholder-count="3">
+              <span style="position:absolute;left:{{ p.x }};top:{{ p.y }};width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;display:grid;place-items:center;background:#0C1411;border:3px solid #7FD08A;color:#F1E8D6;font-family:'Bowlby One SC';font-size:15px">{{ p.n }}</span>
+            </sc-for>
+            <span style="position:absolute;left:-70px;top:46px;transform:rotate(-4deg);background:#7FD08A;color:#0C1411;padding:5px 12px;font-family:'Bowlby One SC';font-size:17px;filter:url(#distress)">Product lane</span>
+          </div>
+          <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#F1E8D6;color:#0B1A1D;padding:3px 9px">3b</span>
+        </div>
+        <span style="font-size:15px"><strong style="color:#F1E8D6">Role "lane" badge.</strong> A circle with numbered stops linking a chapter's projects (01, 02, 03), like their lane maps.</span>
+      </div>
+
+      <div id="3c" style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:420px;border-radius:6px;overflow:hidden;background:#1B1A17;display:grid;place-items:center">
+          <div style="position:relative;width:76%;transform:rotate(2.2deg)">
+            <div style="background:#E9E2D2;padding:10px 10px 12px;box-shadow:0 24px 40px rgba(0,0,0,.5)">
+              <div style="aspect-ratio:16/10;overflow:hidden;background:#2a3a36"><image-slot id="board-shot" shape="rect" placeholder="Drop a UI screenshot"></image-slot></div>
+            </div>
+            <span style="position:absolute;left:-18px;top:-10px;width:96px;height:28px;transform:rotate(-28deg);background:rgba(232,220,190,.78);clip-path:polygon(4% 0,96% 8%,100% 30%,95% 55%,100% 80%,94% 100%,3% 92%,0 70%,5% 45%,0 18%)"></span>
+            <span style="position:absolute;right:-16px;bottom:-8px;width:90px;height:28px;transform:rotate(-24deg);background:rgba(232,220,190,.78);clip-path:polygon(4% 0,96% 8%,100% 30%,95% 55%,100% 80%,94% 100%,3% 92%,0 70%,5% 45%,0 18%)"></span>
+          </div>
+          <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#F1E8D6;color:#0B1A1D;padding:3px 9px">3c</span>
+        </div>
+        <span style="font-size:15px"><strong style="color:#F1E8D6">Framed shot + tape.</strong> An off-white print border like their screenshot frames, held on with torn masking tape. For UI images inside case studies.</span>
+      </div>
+
+      <div id="3d" style="flex:1 1 360px;display:flex;flex-direction:column;gap:12px">
+        <div style="position:relative;height:420px;border-radius:6px;overflow:hidden;background:#1B1A17;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">
+          <span style="font-family:'Grenze Gotisch',serif;font-weight:600;font-size:22px;color:#93ABA6">Presenting</span>
+          <h3 style="margin:0;text-align:center;font-family:'Grenze Gotisch',serif;font-weight:800;font-size:46px;line-height:1.05;color:#F1E8D6;text-shadow:0 4px 0 rgba(0,0,0,.45)">A <span style="display:inline-block;background:#E06A3C;color:#0C1411;padding:0 10px;transform:rotate(-1.5deg);filter:url(#distress)">calmer</span> way<br>to ship products</h3>
+          <span style="position:absolute;left:16px;top:14px;font-family:'Bowlby One SC';font-size:13px;background:#F1E8D6;color:#0B1A1D;padding:3px 9px">3d</span>
+        </div>
+        <span style="font-size:15px"><strong style="color:#F1E8D6">Highlight-block headline.</strong> One word knocked out on a worn colour block, like "updated". Placeholder copy.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:18px;max-width:1200px">
+    <h2 style="margin:0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7FD08A">04 · Resources to source real assets</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px">
+      <sc-for list="{{ res }}" as="g" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(232,226,208,.2);padding-top:14px">
+          <span style="font-family:'Bowlby One SC';font-size:16px;color:#F1E8D6">{{ g.h }}</span>
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:2px"><a href="{{ it.u }}" target="_blank" style="font-size:16px;font-weight:600">{{ it.t }}</a><span style="font-size:14px;line-height:1.5;color:#B7C6C1">{{ it.d }}</span></div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    if (!this._skies) {
+      let seed = 3; const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      const f = (v) => v.toFixed(1);
+      const towers = (lo, hi) => { let p = '', x = -10; while (x < 1610) { const w = 26 + r() * 60, h = lo + r() * (hi - lo); p += `M${f(x)} 400 V${f(400 - h)} H${f(x + w)} V400 Z `; if (r() < .18) p += `M${f(x + w / 2 - 2)} ${f(400 - h)} L${f(x + w / 2)} ${f(400 - h - 30 - r() * 40)} L${f(x + w / 2 + 2)} ${f(400 - h)} Z `; x += w - 2; } return p; };
+      const riyadh = () => towers(60, 170) + 'M1086 400 L1092 150 Q1100 95 1108 62 L1113 62 Q1130 135 1147 62 L1152 62 Q1160 95 1168 150 L1174 400 Z M1114 98 H1146 V104 H1114 Z M590 400 L620 118 L650 400 Z M618.6 118 L620 70 L621.4 118 Z ';
+      const najd = (lo, hi) => { let p = '', x = -20; const cr = (a, b, y) => { let s = ''; for (let c = a; c < b - 1; c += 12) s += `L${f(c + 6)} ${f(y - 9)} L${f(Math.min(c + 12, b))} ${f(y)} `; return s; };
+        while (x < 1620) { if (r() < .3) { const wb = 40 + r() * 16, wt = wb * .7, h = hi + r() * 50, y = 400 - h, d = (wb - wt) / 2; p += `M${f(x)} 400 L${f(x + d)} ${f(y)} ` + cr(x + d, x + d + wt, y) + `L${f(x + wb)} 400 Z `; x += wb - 4; } else { const w = 60 + r() * 100, h = lo + r() * 60, y = 400 - h; p += `M${f(x)} 400 L${f(x)} ${f(y)} ` + cr(x, x + w, y) + `L${f(x + w)} 400 Z `; x += w - 2; } }
+        return p; };
+      const palms = (xs, base) => { let p = ''; xs.forEach((x) => { const h = 130 + r() * 80, cx = x + (r() - .5) * 30, cy = base - h; p += `M${f(x - 5)} ${base} Q${f(x)} ${f(base - h / 2)} ${f(cx - 2)} ${f(cy)} L${f(cx + 2)} ${f(cy)} Q${f(x + 6)} ${f(base - h / 2)} ${f(x + 5)} ${base} Z `; for (let i = 0; i < 9; i++) { const a = Math.PI * (1.05 + i / 8 * .9), L = 44 + r() * 24, tx = cx + Math.cos(a) * L, ty = cy + Math.sin(a) * L * .55 + L * .45, mx = (cx + tx) / 2, my = (cy + ty) / 2 - L * .32, px = -Math.sin(a) * 8, py = Math.cos(a) * 8; p += `M${f(cx)} ${f(cy)} Q${f(mx + px)} ${f(my + py)} ${f(tx)} ${f(ty)} Q${f(mx)} ${f(my + 6)} ${f(cx)} ${f(cy + 3)} Z `; } }); return p; };
+      const dune = (b, a, ph) => { let p = 'M0 400 '; for (let x = 0; x <= 1600; x += 16) p += `L${x} ${f(b + a * (Math.sin(x / 260 + ph) * .6 + Math.sin(x / 97 + ph * 2) * .3))} `; return p + 'L1600 400 Z'; };
+      this._skies = [
+        { id: '2a', name: 'Riyadh skyline.', note: 'Kingdom Centre and Al Faisaliah among blocky towers. Dark section above, teal below.', top: '#1B1A17', mid: '#123236', bot: '#164448', back: towers(120, 260), front: riyadh() },
+        { id: '2b', name: 'Najdi mud-brick + palms.', note: 'Diriyah parapets with palms in front. Teal section flowing into green, like Greenwich.', top: '#123236', mid: '#1F4A2C', bot: '#2C5E2F', back: najd(110, 190), front: najd(50, 120) + palms([180, 520, 900, 1280, 1460], 400) },
+        { id: '2c', name: 'Dune ridges.', note: 'Softer and wordless. Two dune lines in the next colour, for calmer sections.', top: '#2C5E2F', mid: '#6E5A35', bot: '#8A6D3B', back: dune(200, 60, 1), front: dune(270, 46, 3) }
+      ];
+    }
+    return {
+      skies: this._skies,
+      stops: [{ n: '1', x: '120px', y: '30px' }, { n: '2', x: '108px', y: '112px' }, { n: '3', x: '94px', y: '190px' }],
+      res: [
+        { h: 'Paper & grain textures', items: [
+          { t: 'Texturelabs', u: 'https://texturelabs.org/', d: 'Free for commercial use, up to ~6K. Paper > Grungy and Grunge > Light suit the overlay.' },
+          { t: 'Resource Boy: 250 grunge textures', u: 'https://resourceboy.com/textures/grunge-textures/', d: '4K–8K JPGs, from fine grain to heavy distress.' },
+          { t: 'Everytexture', u: 'https://everytexture.com/', d: 'Free, no attribution. Grainy grey paper scans that work as overlays.' },
+          { t: 'Unsplash: paper texture', u: 'https://unsplash.com/s/photos/paper-texture', d: 'Free photo scans of real paper, cardboard and plaster.' } ] },
+        { h: 'Public-domain art', items: [
+          { t: 'The Met Open Access', u: 'https://www.metmuseum.org/art/collection/search?showOnly=openAccess', d: 'Hundreds of thousands of CC0 images, including Hiroshige prints.' },
+          { t: 'Smithsonian Open Access', u: 'https://www.si.edu/openaccess', d: 'Millions of CC0 images, many as high-res TIFFs.' },
+          { t: 'Rawpixel public domain', u: 'https://www.rawpixel.com/category/53/public-domain', d: 'Cleaned-up CC0 scans; good for Mucha and Japanese prints.' },
+          { t: 'Artifact World Gallery', u: 'https://artifactworldgallery.com/guides/free-public-domain-art-downloads', d: 'CC0 paintings searchable by colour and movement, no account needed.' } ] },
+        { h: 'UI references', items: [
+          { t: 'Mobbin', u: 'https://mobbin.com/', d: 'Real app screens and flows, for case-study comparisons.' },
+          { t: 'Bencho blocks', u: 'https://bencho.dev/', d: 'Live interactive blocks. Picks below fit the paper theme.' },
+          { t: 'Bencho: Page peel, Tape, Ticket', u: 'https://bencho.dev/blocks/page-peel', d: 'Paper-like drags: peel a case study open, tear a ticket for contact.' },
+          { t: 'Bencho: Ink bloom, Smudge, Foggy word', u: 'https://bencho.dev/blocks/ink-bloom', d: 'Ink-and-print hovers for links and headings.' } ] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

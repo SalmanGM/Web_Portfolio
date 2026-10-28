@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Salman Binmandeel · Product Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Big+Shoulders+Display:wght@600;800;900&amp;family=Gloock&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&amp;family=Noto+Naskh+Arabic:wght@400;500;600&amp;display=swap">
+<style>
+:root{--bg:#EFE9DC;--bg2:#E4DCC9;--ink:#1B2420;--muted:#55605A;--red:#C42B1F;--green:#1E5A4B;--line:rgba(27,36,32,.15);--glass:rgba(244,239,228,.62);--sbg:var(--bg);--foot-bg:#173F35;--foot-ink:#EFE9DC;--foot-muted:#A9BFB5;--grain:.28;--grainf:none;--display:'Big Shoulders Display',sans-serif;--dw:800;--dcase:uppercase;--dtrack:-.005em;--dlh:.88;--serif:'Newsreader',serif;--sans:'Hanken Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;--monosz:11px;--track:.09em;--pad:clamp(20px,4vw,64px);--hero:minmax(0,5fr) minmax(0,7fr);--about:minmax(0,4fr) minmax(0,8fr);--exp:200px minmax(0,1.3fr) minmax(0,1fr) 32px;--cols:repeat(3,minmax(0,1fr));--csgrid:190px minmax(0,1fr) 128px;--rail:flex;--navx:inline-flex;--q-off:12%}
+html[data-theme=dark]{--bg:#0A1613;--bg2:#12231E;--ink:#ECE6D6;--muted:#9DB0A7;--red:#E4503F;--green:#79BFA6;--line:rgba(236,230,214,.14);--glass:rgba(12,28,24,.58);--foot-bg:#0E2721;--foot-ink:#ECE6D6;--foot-muted:#9DB0A7;--grain:.5;--grainf:invert(1)}
+html[data-dir=b]{--display:'Gloock',serif;--dw:400;--dcase:none;--dtrack:-.02em;--dlh:.98;--sbg:color-mix(in oklab,var(--bg) 90%,transparent);--foot-bg:transparent;--foot-ink:var(--ink);--foot-muted:var(--muted)}
+html[data-lang=ar]{--display:'Amiri',serif;--dw:700;--dcase:none;--dtrack:0;--dlh:1.3;--serif:'Amiri',serif;--sans:'Noto Naskh Arabic',serif;--mono:'Noto Naskh Arabic',serif;--monosz:13px;--track:0}
+html[data-lang=ar] [lang=en],html:not([data-lang=ar]) [lang=ar]{display:none !important}
+@media (max-width:1100px){:root{--cols:repeat(2,minmax(0,1fr));--csgrid:minmax(0,1fr);--rail:none}}
+@media (max-width:820px){:root{--hero:minmax(0,1fr);--about:minmax(0,1fr);--exp:minmax(0,1fr);--cols:minmax(0,1fr);--navx:none;--q-off:0%}}
+html,body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto !important}.lenis.lenis-stopped{overflow:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;opacity:var(--grain);filter:var(--grainf);mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+html[data-theme=dark] body::after{mix-blend-mode:screen}
+a{color:inherit;text-decoration:none}a:hover{color:var(--red)}
+::selection{background:var(--red);color:var(--bg)}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+*{box-sizing:border-box}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="./site-engine.js"></script>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div ref="{{ rootRef }}" dir="{{ textDir }}" style="position:relative;min-height:100vh;background:transparent;color:var(--ink);font-family:var(--sans);overflow-x:clip">
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="3" result="n"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="d"></feDisplacementMap>
+    <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="9" result="n2"></feTurbulence>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -9 0 0 0 6.9" result="holes"></feColorMatrix>
+    <feComposite in="d" in2="holes" operator="in"></feComposite>
+  </filter>
+  <filter id="ripple" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence id="rippleTurb" type="fractalNoise" baseFrequency="0.011 0.028" numOctaves="2" seed="2" result="t"></feTurbulence>
+    <feDisplacementMap id="rippleMap" in="SourceGraphic" in2="t" scale="0" xChannelSelector="R" yChannelSelector="B"></feDisplacementMap>
+  </filter>
+</svg>
+
+<!-- Preloader -->
+<div data-preloader="" style="position:fixed;inset:0;z-index:250;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:var(--pad)">
+  <div style="display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">
+    <span lang="en">Salman Binmandeel · Selected work 2023–26</span><span lang="ar">سلمان بن منديل · أعمال مختارة 2023–26</span>
+    <span lang="en">Riyadh</span><span lang="ar">الرياض</span>
+  </div>
+  <div style="display:grid;place-items:center">
+    <div data-seal="" style="opacity:0;width:clamp(120px,14vw,180px);aspect-ratio:1;border-radius:16px;background:var(--red);color:var(--bg);display:grid;place-items:center;font-family:'Amiri',serif;font-weight:700;font-size:clamp(40px,5vw,64px);line-height:1;filter:url(#ink)">سلمان</div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
+    <span style="font-family:var(--serif);font-style:italic;font-size:clamp(16px,1.6vw,22px);color:var(--muted)"><span lang="en">Wetting the brush…</span><span lang="ar">نبلّل الفرشاة…</span></span>
+    <span data-count="" dir="ltr" style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:clamp(80px,16vw,240px);line-height:.8;color:var(--red)">000</span>
+  </div>
+</div>
+
+<!-- Direction B fixed water -->
+<sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}">
+  <canvas ref="{{ bgCanvas }}" aria-hidden="true" style="position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0"></canvas>
+</sc-if>
+
+<!-- Direction switch -->
+<div style="position:fixed;top:16px;inset-inline-end:16px;z-index:120;display:flex;align-items:center;gap:4px;padding:4px;border-radius:999px;background:var(--glass);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase">
+  <button onClick="{{ setA }}" data-sfx="" style="all:unset;cursor:pointer;padding:7px 11px;border-radius:999px;background:{{ aBg }};color:{{ aInk }};transition:background .3s,color .3s">A · Ink &amp; Paper</button>
+  <button onClick="{{ setB }}" data-sfx="" style="all:unset;cursor:pointer;padding:7px 11px;border-radius:999px;background:{{ bBg }};color:{{ bInk }};transition:background .3s,color .3s">B · Pond Light</button>
+</div>
+
+<!-- Floating nav -->
+<nav aria-label="Primary" style="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:110;display:flex;align-items:center;gap:2px;padding:6px;border-radius:999px;background:var(--glass);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid var(--line);box-shadow:0 12px 40px rgba(10,22,19,.14);font-family:var(--sans);font-size:13px;font-weight:500;white-space:nowrap">
+  <button onClick="{{ go }}" data-target="#top" data-sfx="" aria-label="Back to top" style="all:unset;cursor:pointer;width:34px;height:34px;border-radius:999px;background:var(--red);color:var(--bg);display:grid;place-items:center;font-family:'Amiri',serif;font-weight:700;font-size:17px;line-height:1;margin-inline-end:4px" style-active="transform:scale(.92)">س</button>
+  <button onClick="{{ go }}" data-target="#work" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s" style-hover="background:var(--line)"><span lang="en">Work</span><span lang="ar">أعمالي</span></button>
+  <button onClick="{{ go }}" data-target="#teams" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s;display:var(--navx)" style-hover="background:var(--line)"><span lang="en">Teams</span><span lang="ar">الفرق</span></button>
+  <button onClick="{{ go }}" data-target="#about" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s" style-hover="background:var(--line)"><span lang="en">About</span><span lang="ar">عنّي</span></button>
+  <button onClick="{{ go }}" data-target="#skills" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s;display:var(--navx)" style-hover="background:var(--line)"><span lang="en">Capabilities</span><span lang="ar">المهارات</span></button>
+  <button onClick="{{ go }}" data-target="#words" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s;display:var(--navx)" style-hover="background:var(--line)"><span lang="en">Words</span><span lang="ar">آراء</span></button>
+  <button onClick="{{ go }}" data-target="#contact" data-sfx="" style="all:unset;cursor:pointer;padding:9px 13px;border-radius:999px;transition:background .25s" style-hover="background:var(--line)"><span lang="en">Contact</span><span lang="ar">تواصل</span></button>
+  <span aria-hidden="true" style="width:1px;height:20px;background:var(--line);margin:0 4px"></span>
+  <button onClick="{{ toggleLang }}" data-sfx="" aria-label="Switch language" style="all:unset;cursor:pointer;width:34px;height:34px;border-radius:999px;display:grid;place-items:center;font-size:14px;transition:background .25s" style-hover="background:var(--line)"><span lang="en" style="font-family:'Amiri',serif;font-size:18px;line-height:1">ع</span><span lang="ar" style="font-family:'JetBrains Mono',monospace;font-size:11px">EN</span></button>
+  <button onClick="{{ toggleTheme }}" data-sfx="" aria-label="Toggle dark mode" style="all:unset;cursor:pointer;width:34px;height:34px;border-radius:999px;display:grid;place-items:center;transition:background .25s" style-hover="background:var(--line)">
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.4"></circle><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"></path></svg>
+  </button>
+  <button onClick="{{ toggleSound }}" data-sfx="" aria-label="{{ soundLabel }}" style="all:unset;cursor:pointer;width:34px;height:34px;border-radius:999px;display:grid;place-items:center;transition:background .25s" style-hover="background:var(--line)">
+    <span data-bars="" style="display:flex;align-items:center;gap:2px;height:14px">
+      <span style="width:2px;height:14px;background:currentColor;border-radius:2px;transform:scaleY(.3)"></span>
+      <span style="width:2px;height:14px;background:currentColor;border-radius:2px;transform:scaleY(.3)"></span>
+      <span style="width:2px;height:14px;background:currentColor;border-radius:2px;transform:scaleY(.3)"></span>
+      <span style="width:2px;height:14px;background:currentColor;border-radius:2px;transform:scaleY(.3)"></span>
+    </span>
+  </button>
+</nav>
+
+<!-- ========== HERO A · Ink & Paper ========== -->
+<sc-if value="{{ isA }}" hint-placeholder-val="{{ true }}">
+<header id="top" data-screen-label="Hero A" style="position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;padding:18px var(--pad) clamp(28px,4vw,56px);background:var(--bg)">
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);padding-inline-end:260px">
+    <span><span lang="en">Senior product designer</span><span lang="ar">مصمم منتجات أول</span></span>
+    <span><span lang="en">Riyadh, KSA</span><span lang="ar">الرياض، السعودية</span></span>
+    <span style="display:var(--navx);gap:14px">
+      <button onClick="{{ go }}" data-target="#work" data-sfx="" style="all:unset;cursor:pointer" style-hover="color:var(--red)"><span lang="en">Work</span><span lang="ar">أعمالي</span></button>
+      <button onClick="{{ go }}" data-target="#about" data-sfx="" style="all:unset;cursor:pointer" style-hover="color:var(--red)"><span lang="en">About</span><span lang="ar">عنّي</span></button>
+      <button onClick="{{ go }}" data-target="#contact" data-sfx="" style="all:unset;cursor:pointer" style-hover="color:var(--red)"><span lang="en">Contact</span><span lang="ar">تواصل</span></button>
+    </span>
+    <span style="color:var(--red)"><span lang="en">● Taking on new problems</span><span lang="ar">● متاح لمشاكل جديدة</span></span>
+  </div>
+
+  <h1 data-fit="" aria-label="Salman Binmandeel" style="margin:clamp(10px,2vh,24px) 0 0;font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:11.6vw;line-height:.84;letter-spacing:-.005em;color:var(--red);white-space:nowrap;overflow:hidden;filter:url(#ink);padding-bottom:.02em">
+    <span lang="en" data-intro="" style="display:inline-block">SALMAN BINMANDEEL</span>
+    <span lang="ar" data-intro="" style="display:inline-block;font-family:'Amiri',serif;font-weight:700;line-height:1.25">سلمان بن منديل</span>
+  </h1>
+
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:28px;margin:clamp(8px,1.5vw,18px) 0;color:var(--ink);opacity:.55;overflow:visible">
+    <path data-draw="" d="M0 20 H470 C520 20 540 4 575 4 C602 4 612 20 600 28 C590 35 577 26 584 18 C590 11 606 12 612 20 C624 36 650 36 680 20 C700 10 730 20 730 20 H1200" fill="none" stroke="currentColor" stroke-width="1"></path>
+  </svg>
+
+  <div style="flex:1;display:grid;grid-template-columns:var(--hero);gap:clamp(28px,5vw,80px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:28px;padding-bottom:8px">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">(Hi there)</span><span lang="ar">(أهلاً)</span></span>
+      <p data-reveal="" style="margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(26px,2.9vw,46px);line-height:1.12;letter-spacing:-.012em;text-wrap:pretty;max-width:15em">
+        <span lang="en">I design the stuff people dread at work: payroll day, subscription renewals, a dispatch call that can’t wait. My job is making those <em style="color:var(--red)">boring</em> again.</span>
+        <span lang="ar">أصمّم الأشياء التي يتجنّبها الناس في العمل: يوم الرواتب، تجديد الاشتراكات، ومكالمة توزيع لا تحتمل الانتظار. مهمتي أن أجعلها <em style="color:var(--red);font-style:normal">مملّة</em> من جديد.</span>
+      </p>
+      <p data-reveal="" data-delay=".1" style="margin:0;font-size:clamp(15px,1.1vw,17px);line-height:1.55;color:var(--muted);max-width:30em;text-wrap:pretty">
+        <span lang="en">Senior product designer in Riyadh. Two years on Mudad at Masdr, a stint at Jahez before that, and now co-founding One To X.</span>
+        <span lang="ar">مصمم منتجات أول في الرياض. سنتان على منصة مُدد في مصدر، وقبلها فترة في جاهز، والآن أشارك في تأسيس One To X.</span>
+      </p>
+      <div data-reveal="" data-delay=".2" style="display:flex;flex-wrap:wrap;gap:10px">
+        <button onClick="{{ go }}" data-target="#work" data-magnetic="" data-sfx="" style="all:unset;cursor:pointer;padding:15px 24px;border-radius:999px;background:var(--red);color:var(--bg);font-weight:600;font-size:15px" style-active="transform:scale(.96)"><span lang="en">See the work ↓</span><span lang="ar">شاهد الأعمال ↓</span></button>
+        <button onClick="{{ go }}" data-target="#contact" data-magnetic="" data-sfx="" style="all:unset;cursor:pointer;padding:14px 23px;border-radius:999px;border:1px solid var(--ink);font-weight:600;font-size:15px" style-active="transform:scale(.96)"><span lang="en">Say hi</span><span lang="ar">قل مرحباً</span></button>
+      </div>
+    </div>
+
+    <figure data-reveal="" data-delay=".15" style="margin:0;display:flex;flex-direction:column;gap:12px">
+      <div style="position:relative;padding:14px;border:1px solid var(--line)">
+        <div style="position:absolute;inset:5px;border:1px solid var(--line);pointer-events:none"></div>
+        <svg viewBox="0 0 60 60" aria-hidden="true" style="position:absolute;top:-6px;left:-6px;width:56px;height:56px;color:var(--red)"><path data-draw="" d="M4 56 C4 24 14 8 36 6 C50 5 56 14 50 22 C44 30 32 24 38 16 C42 11 50 14 50 14" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg>
+        <svg viewBox="0 0 60 60" aria-hidden="true" style="position:absolute;bottom:-6px;right:-6px;width:56px;height:56px;color:var(--red);transform:rotate(180deg)"><path data-draw="" d="M4 56 C4 24 14 8 36 6 C50 5 56 14 50 22 C44 30 32 24 38 16 C42 11 50 14 50 14" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg>
+        <div style="position:relative;aspect-ratio:16/10.5;overflow:hidden;background:var(--bg2)">
+          <canvas ref="{{ heroCanvas }}" aria-label="Live water-lily painting, click to ripple" style="position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair"></canvas>
+          <div style="position:absolute;bottom:14px;inset-inline-start:14px;width:58px;height:58px;border-radius:10px;background:var(--red);color:#F4EEE2;display:grid;place-items:center;font-family:'Amiri',serif;font-weight:700;font-size:20px;line-height:1;transform:rotate(-6deg);filter:url(#ink);pointer-events:none">سلمان</div>
+        </div>
+      </div>
+      <figcaption style="display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">
+        <span><span lang="en">Fig. 01 · Pond study, painted live</span><span lang="ar">شكل ١ · دراسة البركة، مرسومة الآن</span></span>
+        <span><span lang="en">Click the water</span><span lang="ar">انقر على الماء</span></span>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+</sc-if>
+
+<!-- ========== HERO B · Pond Light ========== -->
+<sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}">
+<header id="top" data-screen-label="Hero B" style="position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:22px var(--pad) clamp(90px,10vw,120px);pointer-events:none">
+  <div style="display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--ink);padding-inline-end:270px">
+    <span><span lang="en">Senior product designer · Riyadh</span><span lang="ar">مصمم منتجات أول · الرياض</span></span>
+    <span style="display:var(--navx)"><span lang="en">Portfolio · 2026</span><span lang="ar">ملف الأعمال · 2026</span></span>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(18px,2.4vw,32px)">
+    <div data-reveal="" style="width:64px;height:64px;border-radius:12px;background:var(--red);color:#F4EEE2;display:grid;place-items:center;font-family:'Amiri',serif;font-weight:700;font-size:22px;transform:rotate(-6deg);filter:url(#ink)">سلمان</div>
+    <h1 aria-label="Salman Binmandeel" style="margin:0;font-family:var(--display);font-weight:var(--dw);font-size:clamp(64px,12.5vw,230px);line-height:.9;letter-spacing:-.025em;color:var(--ink);text-shadow:0 2px 40px color-mix(in oklab,var(--bg) 60%,transparent)">
+      <span lang="en" style="display:block;overflow:hidden;padding-bottom:.06em"><span data-intro="" style="display:inline-block">Salman</span></span>
+      <span lang="en" style="display:block;overflow:hidden;padding-bottom:.06em"><span data-intro="" style="display:inline-block;font-style:italic;font-family:'Newsreader',serif;font-weight:300">Binmandeel</span></span>
+      <span lang="ar" style="display:block;overflow:hidden;line-height:1.35"><span data-intro="" style="display:inline-block;font-family:'Amiri',serif;font-weight:700">سلمان بن منديل</span></span>
+    </h1>
+    <svg viewBox="0 0 400 30" aria-hidden="true" style="width:min(380px,70vw);height:26px;color:var(--ink);opacity:.7;overflow:visible"><path data-draw="" d="M0 15 H150 C170 15 178 3 196 3 C210 3 214 14 206 20 C199 25 190 18 196 12 C201 8 210 10 214 15 C224 27 240 27 250 15 H400" fill="none" stroke="currentColor" stroke-width="1"></path></svg>
+    <p data-reveal="" data-delay=".1" style="margin:0;max-width:30em;font-family:var(--serif);font-weight:300;font-size:clamp(20px,1.9vw,30px);line-height:1.25;text-wrap:pretty">
+      <span lang="en">I design the stuff people dread at work: payroll day, subscription renewals, a dispatch call that can’t wait. My job is making those <em style="color:var(--red)">boring</em> again.</span>
+      <span lang="ar">أصمّم الأشياء التي يتجنّبها الناس في العمل: يوم الرواتب، تجديد الاشتراكات، ومكالمة توزيع لا تحتمل الانتظار. مهمتي أن أجعلها <span style="color:var(--red)">مملّة</span> من جديد.</span>
+    </p>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--ink)">
+    <span><span lang="en">Scroll, slowly</span><span lang="ar">مرّر ببطء</span></span>
+    <span><span lang="en">Click the water</span><span lang="ar">انقر على الماء</span></span>
+  </div>
+</header>
+</sc-if>
+
+<!-- ========== WORK ========== -->
+<section id="work" data-screen-label="Work" style="position:relative;z-index:1;background:var(--sbg);padding:clamp(90px,12vw,180px) 0 clamp(70px,9vw,130px)">
+  <div style="padding:0 var(--pad);display:grid;grid-template-columns:var(--hero);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(40px,5vw,72px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red)"><span lang="en">(01) Selected work</span><span lang="ar">(٠١) أعمال مختارة</span></span>
+      <h2 data-reveal="" style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(48px,6.6vw,112px);text-wrap:balance">
+        <span lang="en">Four projects, four different muscles.</span><span lang="ar">أربعة مشاريع، وكل واحد يُظهر جانباً مختلفاً.</span>
+      </h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <p data-reveal="" data-delay=".1" style="margin:0;font-size:clamp(16px,1.2vw,19px);line-height:1.55;color:var(--muted);max-width:34em;text-wrap:pretty">
+        <span lang="en">Each one’s here for a reason: one for business thinking, one for strategy nobody asked for, one for untangling a messy system, and one for the visuals.</span>
+        <span lang="ar">لكل مشروع سبب: واحد للتفكير التجاري، وواحد لاستراتيجية لم يطلبها أحد، وواحد لفكّ نظام متشابك، وواحد للجانب البصري.</span>
+      </p>
+      <div style="display:flex;align-items:center;gap:18px">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em"><span data-counter="">01</span> / 04</span>
+        <span style="flex:1;height:1px;background:var(--line);position:relative;overflow:hidden"><span data-progress="" style="position:absolute;inset:0;background:var(--ink);transform-origin:var(--origin, left);transform:scaleX(.25)"></span></span>
+        <button onClick="{{ prevCard }}" data-sfx="" aria-label="Previous project" style="all:unset;cursor:pointer;width:46px;height:46px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;transition:background .25s,border-color .25s" style-hover="background:var(--ink);color:var(--bg);border-color:var(--ink)" style-active="transform:scale(.92)"><span lang="en">←</span><span lang="ar">→</span></button>
+        <button onClick="{{ nextCard }}" data-sfx="" aria-label="Next project" style="all:unset;cursor:pointer;width:46px;height:46px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;transition:background .25s,border-color .25s" style-hover="background:var(--ink);color:var(--bg);border-color:var(--ink)" style-active="transform:scale(.92)"><span lang="en">→</span><span lang="ar">←</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div ref="{{ trackRef }}" data-carousel="" style="display:flex;gap:clamp(16px,2.2vw,36px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:0 var(--pad) 8px;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain">
+
+    <!-- 01 Payroll -->
+    <article data-reveal="" style="flex:0 0 min(80vw,1040px);scroll-snap-align:start;display:flex;flex-direction:column;gap:22px">
+      <button onClick="{{ open0 }}" data-tilt-host="" data-sfx="" aria-label="Open Mudad Payroll case study" style="all:unset;cursor:pointer;display:block;position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:radial-gradient(120% 95% at 18% 8%,#4C8A74 0%,#1E4339 55%,#0F231E 100%);user-select:none">
+        <span dir="ltr" aria-hidden="true" style="position:absolute;top:-.12em;right:.04em;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(120px,20vw,300px);line-height:1;color:rgba(236,230,214,.07)">01</span>
+        <div data-tilt="" style="position:absolute;left:9%;right:9%;top:13%;bottom:-5%;border-radius:12px 12px 0 0;background:#0D1311;box-shadow:0 40px 90px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column">
+          <div dir="ltr" style="flex:none;height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#1A2220">
+            <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span><span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span><span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span>
+            <span style="margin:0 auto;padding:3px 14px;border-radius:6px;background:rgba(255,255,255,.07);font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.55)">Mudad · Payroll</span>
+          </div>
+          <div data-ripple="" style="position:relative;flex:1;overflow:hidden"><div data-pan="1.7" style="position:absolute;left:0;right:0;top:0;height:170%"><image-slot id="work-payroll" shape="rect" placeholder="Drop a Mudad Payroll screenshot (full-page works best)"></image-slot></div></div>
+        </div>
+        <span style="position:absolute;top:16px;inset-inline-start:16px;padding:7px 12px;border-radius:999px;background:rgba(10,20,18,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase"><span lang="en">Business thinking</span><span lang="ar">تفكير تجاري</span></span>
+        <span style="position:absolute;bottom:16px;inset-inline-end:16px;padding:10px 16px;border-radius:999px;background:rgba(10,20,18,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-size:13px;font-weight:600"><span lang="en">Read the case study ↗</span><span lang="ar">اقرأ دراسة الحالة ↖</span></span>
+      </button>
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:baseline">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red)">01</span>
+        <h3 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(30px,3.2vw,52px)"><span lang="en">Mudad Payroll</span><span lang="ar">مُدد: الرواتب</span></h3>
+        <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Masdr</span><span lang="ar">مصدر</span></span>
+      </div>
+      <p style="margin:0;max-width:40em;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:var(--muted);text-wrap:pretty">
+        <span lang="en">Payroll used to take three steps and a bit of hoping. We got it to two, added Autopayroll, moved the warnings to before you submit, and put salary financing right where cash gets tight.</span>
+        <span lang="ar">كانت مسيرة الرواتب ثلاث خطوات وشيئاً من الأمل. اختصرناها إلى خطوتين، وأضفنا الرواتب التلقائية، ونقلنا التنبيهات إلى ما قبل الإرسال، ووضعنا تمويل الرواتب في اللحظة التي تضيق فيها السيولة.</span>
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500">
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">CSAT 79% → 82%</span><span lang="ar">رضا العملاء: من 79% إلى 82%</span></span>
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">NPS 43 → 50.9</span><span lang="ar">NPS: من 43 إلى 50.9</span></span>
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">3 → 2 steps</span><span lang="ar">الخطوات: من 3 إلى 2</span></span>
+      </div>
+    </article>
+
+    <!-- 02 Subscriptions -->
+    <article data-reveal="" data-delay=".08" style="flex:0 0 min(80vw,1040px);scroll-snap-align:start;display:flex;flex-direction:column;gap:22px">
+      <button onClick="{{ open1 }}" data-tilt-host="" data-sfx="" aria-label="Open Mudad Subscriptions case study" style="all:unset;cursor:pointer;display:block;position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:radial-gradient(120% 95% at 82% 0%,#B3B8DC 0%,#6E7DB0 45%,#2C3A62 100%);user-select:none">
+        <span dir="ltr" aria-hidden="true" style="position:absolute;top:-.12em;right:.04em;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(120px,20vw,300px);line-height:1;color:rgba(255,255,255,.09)">02</span>
+        <div data-tilt="" style="position:absolute;left:8%;top:13%;width:63%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#EEF0F6;box-shadow:0 40px 90px rgba(18,24,60,.45),0 0 0 1px rgba(255,255,255,.4)">
+          <div data-ripple="" style="position:absolute;inset:0;overflow:hidden"><div data-pan="1.6" style="position:absolute;left:0;right:0;top:0;height:160%"><image-slot id="work-subs-1" shape="rect" placeholder="Drop the plans / billing screen"></image-slot></div></div>
+        </div>
+        <div data-tilt="" style="position:absolute;right:8%;bottom:9%;width:29%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.3);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 70px rgba(18,24,60,.5),0 0 0 1px rgba(255,255,255,.55);padding:8px">
+          <div style="position:relative;width:100%;height:100%;border-radius:10px;overflow:hidden"><image-slot id="work-subs-2" shape="rect" placeholder="Drop the renewal notice / proration modal"></image-slot></div>
+        </div>
+        <span style="position:absolute;top:16px;inset-inline-start:16px;padding:7px 12px;border-radius:999px;background:rgba(14,18,44,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase"><span lang="en">Strategy</span><span lang="ar">استراتيجية</span></span>
+        <span style="position:absolute;bottom:16px;inset-inline-start:16px;padding:10px 16px;border-radius:999px;background:rgba(14,18,44,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-size:13px;font-weight:600"><span lang="en">Read the case study ↗</span><span lang="ar">اقرأ دراسة الحالة ↖</span></span>
+      </button>
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:baseline">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red)">02</span>
+        <h3 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(30px,3.2vw,52px)"><span lang="en">Mudad Subscriptions</span><span lang="ar">مُدد: الاشتراكات</span></h3>
+        <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Masdr · Self-initiated</span><span lang="ar">مصدر · بمبادرة شخصية</span></span>
+      </div>
+      <p style="margin:0;max-width:40em;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:var(--muted);text-wrap:pretty">
+        <span lang="en">Nobody asked for this one. Renewals felt like a trap, so I rewrote the rules: you’re told before you’re charged, and upgrades or downgrades are prorated to the day.</span>
+        <span lang="ar">لم يطلب أحد هذا المشروع. كان التجديد يبدو كالفخ، فأعدت كتابة القواعد: تُنبَّه قبل أن يُخصم منك، والترقية أو التخفيض محسوبان بالأيام.</span>
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500">
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">Fair auto-renewal</span><span lang="ar">تجديد تلقائي عادل</span></span>
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">Prorated plan changes</span><span lang="ar">تغيير الباقة بالتناسب</span></span>
+      </div>
+    </article>
+
+    <!-- 03 Saned -->
+    <article data-reveal="" data-delay=".16" style="flex:0 0 min(80vw,1040px);scroll-snap-align:start;display:flex;flex-direction:column;gap:22px">
+      <button onClick="{{ open2 }}" data-tilt-host="" data-sfx="" aria-label="Open Saned Dispatch case study" style="all:unset;cursor:pointer;display:block;position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:radial-gradient(120% 100% at 28% 0%,#E9A27C 0%,#C2452F 50%,#5E1A13 100%);user-select:none">
+        <span dir="ltr" aria-hidden="true" style="position:absolute;top:-.12em;right:.04em;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(120px,20vw,300px);line-height:1;color:rgba(255,240,230,.09)">03</span>
+        <div data-tilt="" style="position:absolute;left:6%;right:6%;top:11%;bottom:11%;border-radius:12px;background:#121212;box-shadow:0 40px 90px rgba(60,10,5,.5),0 0 0 1px rgba(255,255,255,.1);overflow:hidden;display:flex;flex-direction:column">
+          <div dir="ltr" style="flex:none;height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#1D1D1D">
+            <span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span><span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span><span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span>
+            <span style="margin:0 auto;padding:3px 14px;border-radius:6px;background:rgba(255,255,255,.07);font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.55)">Saned · Dispatch</span>
+          </div>
+          <div data-ripple="" style="position:relative;flex:1;overflow:hidden"><div data-pan="1.4" style="position:absolute;left:0;right:0;top:0;height:140%"><image-slot id="work-saned" shape="rect" placeholder="Drop the Saned dispatch screen"></image-slot></div></div>
+        </div>
+        <span style="position:absolute;top:16px;inset-inline-start:16px;padding:7px 12px;border-radius:999px;background:rgba(40,8,4,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase"><span lang="en">Planning &amp; systems</span><span lang="ar">تخطيط وأنظمة</span></span>
+        <span style="position:absolute;bottom:16px;inset-inline-end:16px;padding:10px 16px;border-radius:999px;background:rgba(40,8,4,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-size:13px;font-weight:600"><span lang="en">Read the case study ↗</span><span lang="ar">اقرأ دراسة الحالة ↖</span></span>
+      </button>
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:baseline">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red)">03</span>
+        <h3 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(30px,3.2vw,52px)"><span lang="en">Saned Dispatch</span><span lang="ar">سانِد: التوزيع</span></h3>
+        <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Jahez</span><span lang="ar">جاهز</span></span>
+      </div>
+      <p style="margin:0;max-width:40em;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:var(--muted);text-wrap:pretty">
+        <span lang="en">Call-center agents were jumping between tabs to dispatch one order. I folded them into a single screen and added an audit log, so anyone can see who changed what and when.</span>
+        <span lang="ar">كان موظفو مركز الاتصال يتنقلون بين عدة تبويبات لتوزيع طلب واحد. جمعتها في شاشة واحدة وأضفت سجل تدقيق يوضح من غيّر ماذا ومتى.</span>
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500">
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">Tabs → one screen</span><span lang="ar">شاشة واحدة بدل التبويبات</span></span>
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">Audit log</span><span lang="ar">سجل تدقيق</span></span>
+      </div>
+    </article>
+
+    <!-- 04 One To X -->
+    <article data-reveal="" data-delay=".24" style="flex:0 0 min(80vw,1040px);scroll-snap-align:start;display:flex;flex-direction:column;gap:22px">
+      <button onClick="{{ open3 }}" data-tilt-host="" data-sfx="" aria-label="Open One To X case study" style="all:unset;cursor:pointer;display:block;position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:radial-gradient(110% 95% at 70% 8%,#F2CCC8 0%,#A2BE96 52%,#3B5E46 100%);user-select:none">
+        <span dir="ltr" aria-hidden="true" style="position:absolute;top:-.12em;left:.04em;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(120px,20vw,300px);line-height:1;color:rgba(255,255,255,.14)">04</span>
+        <div data-tilt="" style="position:absolute;left:52%;top:17%;width:20%;aspect-ratio:9/19.5;border-radius:30px;background:#111;padding:6px;box-shadow:0 30px 70px rgba(20,40,25,.45);opacity:.92">
+          <div data-ripple="" style="position:relative;width:100%;height:100%;border-radius:25px;overflow:hidden"><image-slot id="work-onetox-2" shape="rect" placeholder="Drop a second One To X screen"></image-slot></div>
+        </div>
+        <div data-tilt="" style="position:absolute;left:29%;top:9%;width:22%;aspect-ratio:9/19.5;border-radius:34px;background:#0E0E0E;padding:7px;box-shadow:0 40px 90px rgba(20,40,25,.55),0 0 0 1px rgba(255,255,255,.12)">
+          <div data-ripple="" style="position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden"><image-slot id="work-onetox-1" shape="rect" placeholder="Drop the batch-scan screen"></image-slot>
+            <span style="position:absolute;top:8px;left:50%;width:30%;height:14px;margin-left:-15%;border-radius:999px;background:#0E0E0E;pointer-events:none"></span>
+          </div>
+        </div>
+        <span style="position:absolute;top:16px;inset-inline-end:16px;padding:7px 12px;border-radius:999px;background:rgba(16,34,22,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase"><span lang="en">Visual &amp; product craft</span><span lang="ar">حِرفة بصرية</span></span>
+        <span style="position:absolute;bottom:16px;inset-inline-end:16px;padding:10px 16px;border-radius:999px;background:rgba(16,34,22,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#F2EDE1;font-size:13px;font-weight:600"><span lang="en">Read the case study ↗</span><span lang="ar">اقرأ دراسة الحالة ↖</span></span>
+      </button>
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:baseline">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red)">04</span>
+        <h3 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(30px,3.2vw,52px)">One To X</h3>
+        <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Co-founder</span><span lang="ar">شريك مؤسس</span></span>
+      </div>
+      <p style="margin:0;max-width:40em;font-size:clamp(15px,1.1vw,17px);line-height:1.6;color:var(--muted);text-wrap:pretty">
+        <span lang="en">A shared-expense app I’m co-founding. Batch receipt scanning used to take 30–50 seconds. Now it’s 15–20, and splitting the bill is the easy part of the night.</span>
+        <span lang="ar">تطبيق لتقسيم المصاريف المشتركة أشارك في تأسيسه. كان مسح الفواتير دفعة واحدة يستغرق 30–50 ثانية، وأصبح 15–20 ثانية، وصار تقسيم الحساب أسهل جزء في السهرة.</span>
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:500">
+        <span style="padding:7px 12px;border-radius:999px;border:1px solid var(--line)"><span lang="en">Batch scan 30–50s → 15–20s</span><span lang="ar">المسح الجماعي: من 30–50 إلى 15–20 ثانية</span></span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== PAST TEAMS ========== -->
+<section id="teams" data-screen-label="Past teams" style="position:relative;z-index:1;background:var(--sbg);padding:clamp(60px,8vw,110px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="padding:0 var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px 40px;margin-bottom:clamp(36px,4vw,56px)">
+    <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red)"><span lang="en">(02) Past teams</span><span lang="ar">(٠٢) فرق سابقة</span></span>
+      <h2 data-reveal="" style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(32px,3.4vw,56px)"><span lang="en">Teams I’ve shipped with</span><span lang="ar">فرق أطلقت معها منتجات</span></h2>
+    </div>
+    <p style="margin:0;font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.4vw,22px);color:var(--muted)"><span lang="en">Food delivery, national payroll, and now my own startup.</span><span lang="ar">توصيل الطعام، والرواتب على مستوى المملكة، والآن شركتي الناشئة.</span></p>
+  </div>
+  <div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)">
+    <div data-marquee="" dir="ltr" style="display:flex;width:max-content;will-change:transform">
+      <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="8">
+        <div style="flex:none;display:flex;align-items:center;gap:22px;height:110px;padding:0 clamp(36px,5vw,80px);border-right:1px solid var(--line)">
+          <sc-if value="{{ m.isLogo }}"><div role="img" aria-label="{{ m.name }}" style="flex:none;width:{{ m.w }}px;height:{{ m.h }}px;background:var(--ink);-webkit-mask:url({{ m.logo }}) center / contain no-repeat;mask:url({{ m.logo }}) center / contain no-repeat"></div></sc-if>
+          <sc-if value="{{ m.isWord }}"><div style="flex:none;font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:46px;letter-spacing:.01em;line-height:1;text-transform:uppercase">{{ m.word }}</div></sc-if>
+          <div style="display:flex;flex-direction:column;gap:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><span style="color:var(--ink)">{{ m.name }}</span><span>{{ m.yrs }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about" data-screen-label="About" style="position:relative;z-index:1;background:var(--sbg);padding:clamp(100px,13vw,190px) var(--pad) clamp(80px,10vw,150px)">
+  <span style="display:block;margin-bottom:28px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red)"><span lang="en">(03) About</span><span lang="ar">(٠٣) عنّي</span></span>
+  <p data-reveal="" style="margin:0 0 clamp(70px,9vw,140px);max-width:24em;font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.7vw,60px);line-height:1.12;letter-spacing:-.015em;text-wrap:pretty">
+    <span lang="en">I’m Salman. I started at Jahez designing for people who answer phones all day, spent two years on Mudad at Masdr (back when it was still GOSI Business Development), and now I’m co-founding One To X. I design in Arabic and English, so I’m used to thinking <em style="color:var(--red)">in both directions.</em></span>
+    <span lang="ar">أنا سلمان. بدأت في جاهز أصمّم لأشخاص يقضون يومهم على الهاتف، ثم قضيت سنتين على منصة مُدد في مصدر (حين كانت لا تزال تطوير أعمال التأمينات الاجتماعية)، والآن أشارك في تأسيس One To X. أصمّم بالعربية والإنجليزية، لذلك اعتدت التفكير <span style="color:var(--red)">في الاتجاهين.</span></span>
+  </p>
+
+  <div style="display:grid;grid-template-columns:var(--about);gap:clamp(36px,5vw,90px);align-items:start;margin-bottom:clamp(90px,11vw,170px)">
+    <div data-mask="" style="position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--bg2);max-width:440px;width:100%">
+      <div data-speed="-.4" style="position:absolute;inset:-8% 0;"><image-slot id="about-portrait" shape="rect" placeholder="Drop a portrait"></image-slot></div>
+      <div style="position:absolute;bottom:14px;inset-inline-end:14px;width:60px;height:60px;border-radius:10px;background:var(--red);color:#F4EEE2;display:grid;place-items:center;font-family:'Amiri',serif;font-weight:700;font-size:20px;transform:rotate(-6deg);filter:url(#ink);pointer-events:none">سلمان</div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <h3 style="margin:0 0 28px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);font-weight:400"><span lang="en">How I operate</span><span lang="ar">كيف أعمل</span></h3>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);padding-top:.5em">01</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">Follow the money through the flow.</span><span lang="ar">تتبّع المال داخل التجربة.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">Payroll and subscriptions taught me that every extra step costs someone real cash or real time. I map where that happens before I open Figma.</span><span lang="ar">علّمتني الرواتب والاشتراكات أن كل خطوة زائدة تكلّف أحدهم مالاً أو وقتاً. أحدد أين يحدث ذلك قبل أن أفتح فيغما.</span></p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);padding-top:.5em">02</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">Warn before, not after.</span><span lang="ar">نبّه قبل، لا بعد.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">The most useful error message shows up before you hit submit. That’s where Mudad’s pre-submission alerts came from.</span><span lang="ar">أنفع رسالة خطأ هي التي تظهر قبل أن تضغط إرسال. من هنا جاءت تنبيهات ما قبل الإرسال في مُدد.</span></p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);padding-top:.5em">03</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">One screen beats five tabs.</span><span lang="ar">شاشة واحدة أفضل من خمسة تبويبات.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">If someone needs a second monitor to do their job, that’s a design bug. Saned is the example I keep coming back to.</span><span lang="ar">إذا احتاج أحدهم شاشة ثانية ليؤدي عمله، فهذه مشكلة تصميم. سانِد هو المثال الذي أعود إليه دائماً.</span></p>
+        </div>
+      </div>
+      <div data-reveal="" style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+        <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);padding-top:.5em">04</span>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <h4 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(26px,2.4vw,40px)"><span lang="en">Read the numbers first.</span><span lang="ar">اقرأ الأرقام أولاً.</span></h4>
+          <p style="margin:0;max-width:36em;font-size:16px;line-height:1.6;color:var(--muted)"><span lang="en">I came up as a UX analyst, so I’d rather look at CSAT and NPS than argue about a redesign in a meeting.</span><span lang="ar">بدأت محللاً لتجربة المستخدم، لذا أفضّل النظر في رضا العملاء وNPS على الجدال حول إعادة التصميم في اجتماع.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:24px">
+    <h3 data-reveal="" style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(40px,5vw,84px)"><span lang="en">Where I’ve been</span><span lang="ar">أين عملت</span></h3>
+    <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Most recent first</span><span lang="ar">الأحدث أولاً</span></span>
+  </div>
+  <div role="list">
+    <div role="listitem" data-reveal="" data-sfx="" style="display:grid;grid-template-columns:var(--exp);gap:8px 24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line);transition:padding .4s cubic-bezier(.2,.8,.2,1),background .4s" style-hover="padding-inline:16px;background:var(--bg2)">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Nov 2025 — Present</span><span lang="ar">نوفمبر 2025 — الآن</span></span>
+      <span style="font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:1;font-size:clamp(26px,2.6vw,42px)">One To X</span>
+      <span style="font-size:16px"><span lang="en">Co-Founder &amp; Product Designer</span><span lang="ar">شريك مؤسس ومصمم منتجات</span></span>
+      <span aria-hidden="true" style="color:var(--red);font-size:12px">●</span>
+    </div>
+    <div role="listitem" data-reveal="" data-sfx="" style="display:grid;grid-template-columns:var(--exp);gap:8px 24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line);transition:padding .4s cubic-bezier(.2,.8,.2,1),background .4s" style-hover="padding-inline:16px;background:var(--bg2)">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">May 2025 — Nov 2025</span><span lang="ar">مايو 2025 — نوفمبر 2025</span></span>
+      <span style="font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:1;font-size:clamp(26px,2.6vw,42px)"><span lang="en">Masdr</span><span lang="ar">مصدر</span></span>
+      <span style="font-size:16px"><span lang="en">Senior Product Designer</span><span lang="ar">مصمم منتجات أول</span></span>
+      <span></span>
+    </div>
+    <div role="listitem" data-reveal="" data-sfx="" style="display:grid;grid-template-columns:var(--exp);gap:8px 24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line);transition:padding .4s cubic-bezier(.2,.8,.2,1),background .4s" style-hover="padding-inline:16px;background:var(--bg2)">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Oct 2023 — May 2025</span><span lang="ar">أكتوبر 2023 — مايو 2025</span></span>
+      <span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:1;font-size:clamp(26px,2.6vw,42px)"><span lang="en">Masdr</span><span lang="ar">مصدر</span></span><span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Formerly GOSI Business Development</span><span lang="ar">تطوير أعمال التأمينات الاجتماعية سابقاً</span></span></span>
+      <span style="font-size:16px"><span lang="en">Product Designer / UX Analyst</span><span lang="ar">مصمم منتجات / محلل تجربة مستخدم</span></span>
+      <span></span>
+    </div>
+    <div role="listitem" data-reveal="" data-sfx="" style="display:grid;grid-template-columns:var(--exp);gap:8px 24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:padding .4s cubic-bezier(.2,.8,.2,1),background .4s" style-hover="padding-inline:16px;background:var(--bg2)">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)"><span lang="en">Mar 2023 — Sep 2023</span><span lang="ar">مارس 2023 — سبتمبر 2023</span></span>
+      <span style="font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:1;font-size:clamp(26px,2.6vw,42px)"><span lang="en">Jahez</span><span lang="ar">جاهز</span></span>
+      <span style="font-size:16px"><span lang="en">Product Designer</span><span lang="ar">مصمم منتجات</span></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CAPABILITIES ========== -->
+<section id="skills" data-screen-label="Capabilities" style="position:relative;z-index:1;background:var(--sbg);padding:clamp(80px,10vw,150px) var(--pad);border-top:1px solid var(--line)">
+  <div style="display:grid;grid-template-columns:var(--hero);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(44px,5vw,80px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red)"><span lang="en">(04) Capabilities</span><span lang="ar">(٠٤) المهارات</span></span>
+      <h2 data-reveal="" style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(44px,6vw,100px);text-wrap:balance"><span lang="en">What you’d actually hire me for</span><span lang="ar">ما الذي ستوظّفني من أجله فعلاً</span></h2>
+    </div>
+    <p data-reveal="" data-delay=".1" style="margin:0;max-width:30em;font-size:clamp(16px,1.2vw,19px);line-height:1.55;color:var(--muted)"><span lang="en">Six things I’m reliably good at, each tied to something I shipped or proposed. No generic skill bars.</span><span lang="ar">ست مهارات أتقنها، وكل واحدة مرتبطة بشيء أطلقته أو اقترحته.</span></p>
+  </div>
+  <div style="display:grid;grid-template-columns:var(--cols);column-gap:clamp(20px,3vw,48px)">
+    <sc-for list="{{ skills }}" as="s" hint-placeholder-count="6">
+      <div data-reveal="" data-sfx="" style="position:relative;display:flex;flex-direction:column;gap:14px;padding:30px 0 40px;border-top:1px solid var(--ink)">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red)">{{ s.n }}</span>
+          <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ s.seen }}</span>
+        </div>
+        <h3 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(28px,2.4vw,40px)">{{ s.t }}</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ s.b }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ========== WORDS ========== -->
+<section id="words" data-screen-label="What colleagues say" style="position:relative;z-index:1;background:var(--sbg);padding:clamp(80px,10vw,150px) var(--pad) clamp(90px,11vw,170px);border-top:1px solid var(--line);overflow:hidden">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:clamp(50px,6vw,90px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red)"><span lang="en">(05) What colleagues say</span><span lang="ar">(٠٥) ماذا يقول زملائي</span></span>
+      <h2 data-reveal="" style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(44px,6vw,100px)"><span lang="en">In their words</span><span lang="ar">بكلماتهم</span></h2>
+    </div>
+    <span style="padding:6px 10px;border:1px dashed var(--muted);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Placeholder quotes · swap in real ones</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(56px,7vw,110px)">
+    <figure data-reveal="" style="margin:0;max-width:52em;display:flex;flex-direction:column;gap:24px">
+      <span aria-hidden="true" style="font-family:'Gloock',serif;font-size:clamp(90px,10vw,160px);line-height:.5;color:var(--red);height:.45em">“</span>
+      <blockquote style="margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,48px);line-height:1.18;letter-spacing:-.012em;text-wrap:pretty"><span lang="en">Salman would show up to sprint planning with the edge cases already written down. We stopped finding them in QA.</span><span lang="ar">كان سلمان يأتي إلى تخطيط السبرنت ومعه الحالات الحدّية مكتوبة. توقفنا عن اكتشافها في مرحلة الاختبار.</span></blockquote>
+      <figcaption style="display:flex;align-items:center;gap:14px"><span style="width:44px;height:44px;border-radius:50%;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)">EL</span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-weight:600;font-size:15px"><span lang="en">Teammate name</span><span lang="ar">اسم الزميل</span></span><span style="font-size:14px;color:var(--muted)"><span lang="en">Engineering Lead, Masdr</span><span lang="ar">قائد هندسي، مصدر</span></span></span></figcaption>
+    </figure>
+    <figure data-reveal="" style="margin:0;max-width:52em;align-self:flex-end;margin-inline-end:var(--q-off);display:flex;flex-direction:column;gap:24px">
+      <span aria-hidden="true" style="font-family:'Gloock',serif;font-size:clamp(90px,10vw,160px);line-height:.5;color:var(--red);height:.45em">“</span>
+      <blockquote style="margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,48px);line-height:1.18;letter-spacing:-.012em;text-wrap:pretty"><span lang="en">He asked to sit with our agents for a full shift before touching Saned. The one-screen idea came from watching them, not from the brief.</span><span lang="ar">طلب أن يجلس مع موظفينا لمناوبة كاملة قبل أن يلمس سانِد. فكرة الشاشة الواحدة جاءت من مراقبتهم، لا من الموجز.</span></blockquote>
+      <figcaption style="display:flex;align-items:center;gap:14px"><span style="width:44px;height:44px;border-radius:50%;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)">OM</span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-weight:600;font-size:15px"><span lang="en">Teammate name</span><span lang="ar">اسم الزميل</span></span><span style="font-size:14px;color:var(--muted)"><span lang="en">Operations Manager, Jahez</span><span lang="ar">مدير عمليات، جاهز</span></span></span></figcaption>
+    </figure>
+    <figure data-reveal="" style="margin:0;max-width:52em;margin-inline-start:var(--q-off);display:flex;flex-direction:column;gap:24px">
+      <span aria-hidden="true" style="font-family:'Gloock',serif;font-size:clamp(90px,10vw,160px);line-height:.5;color:var(--red);height:.45em">“</span>
+      <blockquote style="margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,48px);line-height:1.18;letter-spacing:-.012em;text-wrap:pretty"><span lang="en">Nobody assigned him subscriptions. He came back with a proration model and a prototype, and it changed how we talked about renewals.</span><span lang="ar">لم يكلّفه أحد بالاشتراكات. عاد بنموذج للتناسب ونموذج أولي، وغيّر طريقة حديثنا عن التجديد.</span></blockquote>
+      <figcaption style="display:flex;align-items:center;gap:14px"><span style="width:44px;height:44px;border-radius:50%;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)">PM</span><span style="display:flex;flex-direction:column;gap:3px"><span style="font-weight:600;font-size:15px"><span lang="en">Teammate name</span><span lang="ar">اسم الزميل</span></span><span style="font-size:14px;color:var(--muted)"><span lang="en">Product Manager, Masdr</span><span lang="ar">مدير منتج، مصدر</span></span></span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<footer id="contact" data-screen-label="Contact" style="position:relative;z-index:1;background:var(--foot-bg);color:var(--foot-ink);padding:clamp(110px,14vw,210px) var(--pad) 110px;overflow:hidden">
+  <span style="display:block;margin-bottom:32px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--foot-muted)"><span lang="en">(06) Contact</span><span lang="ar">(٠٦) تواصل</span></span>
+  <h2 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(52px,9vw,170px);text-wrap:balance">
+    <span data-reveal="" style="display:block"><span lang="en">Got a flow everyone hates?</span><span lang="ar">عندك تجربة يكرهها الجميع؟</span></span>
+    <a href="#" data-magnetic="" data-sfx="" data-reveal="" data-delay=".1" style="display:inline-block;color:var(--red);font-family:'Newsreader',serif;font-style:italic;font-weight:300;text-transform:none"><span lang="en">Let’s talk →</span><span lang="ar" style="font-family:'Amiri',serif;font-style:normal">لنتحدث ←</span></a>
+  </h2>
+  <div style="display:grid;grid-template-columns:var(--hero);gap:clamp(32px,5vw,80px);margin-top:clamp(60px,7vw,110px);align-items:end">
+    <p style="margin:0;max-width:28em;font-size:clamp(16px,1.2vw,19px);line-height:1.6;color:var(--foot-muted)"><span lang="en">I reply within a day or two, faster if it involves money moving somewhere.</span><span lang="ar">أرد خلال يوم أو يومين، وأسرع إن كان الأمر يتعلق بأموال تتحرك.</span></p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end">
+      <a href="#" data-sfx="" data-magnetic="" style="padding:14px 22px;border-radius:999px;border:1px solid currentColor;font-weight:600;font-size:15px">Email</a>
+      <a href="#" data-sfx="" data-magnetic="" style="padding:14px 22px;border-radius:999px;border:1px solid currentColor;font-weight:600;font-size:15px">LinkedIn</a>
+      <a href="#" data-sfx="" data-magnetic="" style="padding:14px 22px;border-radius:999px;border:1px solid currentColor;font-weight:600;font-size:15px">Read.cv</a>
+      <a href="#" data-sfx="" data-magnetic="" style="padding:14px 22px;border-radius:999px;border:1px solid currentColor;font-weight:600;font-size:15px">Dribbble</a>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:clamp(70px,8vw,120px);padding-top:24px;border-top:1px solid color-mix(in oklab,currentColor 22%,transparent);font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--foot-muted)">
+    <span><span lang="en">© 2026 Salman Binmandeel · Riyadh</span><span lang="ar">© 2026 سلمان بن منديل · الرياض</span></span>
+    <span><span lang="en">Made with ink, pond water and WebGL</span><span lang="ar">صُنع بالحبر وماء البركة وWebGL</span></span>
+    <button onClick="{{ go }}" data-target="#top" data-sfx="" style="all:unset;cursor:pointer" style-hover="color:var(--red)"><span lang="en">Back to top ↑</span><span lang="ar">إلى الأعلى ↑</span></button>
+  </div>
+</footer>
+
+<!-- ========== CASE STUDY OVERLAY ========== -->
+<sc-if value="{{ csOpen }}" hint-placeholder-val="{{ false }}">
+<div ref="{{ csRef }}" data-lenis-prevent="" role="dialog" aria-modal="true" aria-label="{{ cs.title }}" onScroll="{{ onCsScroll }}" style="position:fixed;inset:0;z-index:150;background:var(--bg);color:var(--ink);overflow-y:auto;overscroll-behavior:contain">
+  <div style="position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad);background:var(--glass);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--line)">
+    <button onClick="{{ closeCs }}" data-sfx="" style="all:unset;cursor:pointer;padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:600;transition:background .25s" style-hover="background:var(--line)" style-active="transform:scale(.95)"><span lang="en">← Close</span><span lang="ar">إغلاق →</span></button>
+    <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ cs.num }} / 04 · {{ cs.title }}</span>
+    <button onClick="{{ nextCs }}" data-sfx="" style="all:unset;cursor:pointer;padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600" style-active="transform:scale(.95)">{{ cs.nextLabel }}</button>
+  </div>
+  <div style="display:grid;grid-template-columns:var(--csgrid);gap:clamp(24px,4vw,64px);padding:0 var(--pad)">
+    <aside style="display:var(--rail);flex-direction:column;gap:2px;position:sticky;top:96px;align-self:start;padding-top:72px">
+      <span style="margin-bottom:12px;font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.onPage }}</span>
+      <sc-for list="{{ cs.sections }}" as="s" hint-placeholder-count="5">
+        <button onClick="{{ s.jump }}" data-sfx="" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:10px;padding:8px 0;font-size:14px;line-height:1.3;color:{{ s.color }};transition:color .3s">
+          <span style="flex:none;height:1px;width:{{ s.barW }};background:currentColor;transition:width .45s cubic-bezier(.2,.8,.2,1)"></span><span>{{ s.h }}</span>
+        </button>
+      </sc-for>
+    </aside>
+    <main style="min-width:0;padding:clamp(56px,8vw,120px) 0 180px">
+      <span data-cs-in="" style="display:inline-block;margin-bottom:22px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--red)">{{ cs.tag }}</span>
+      <h1 data-cs-in="" style="margin:0 0 28px;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(56px,8.5vw,150px)">{{ cs.title }}</h1>
+      <p data-cs-in="" style="margin:0 0 48px;max-width:26em;font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.3vw,36px);line-height:1.22;text-wrap:pretty">{{ cs.summary }}</p>
+      <div data-cs-in="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+        <div style="padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:6px"><span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.orgLabel }}</span><span style="font-size:16px">{{ cs.org }}</span></div>
+        <div style="padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:6px"><span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.roleLabel }}</span><span style="font-size:16px">{{ cs.role }}</span></div>
+        <sc-for list="{{ cs.metrics }}" as="m" hint-placeholder-count="2">
+          <div style="padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:6px"><span style="font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);line-height:1;font-size:clamp(26px,2.4vw,40px);color:var(--red)">{{ m.v }}</span><span style="font-size:14px;color:var(--muted)">{{ m.l }}</span></div>
+        </sc-for>
+      </div>
+      <sc-for list="{{ cs.sections }}" as="s" hint-placeholder-count="5">
+        <section data-cs-sec="" data-cs-in="" style="padding-top:clamp(70px,9vw,130px);display:flex;flex-direction:column;gap:22px">
+          <span dir="ltr" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red)">{{ s.num }}</span>
+          <h2 style="margin:0;font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(34px,4vw,64px)">{{ s.h }}</h2>
+          <p style="margin:0;max-width:34em;font-size:clamp(17px,1.3vw,20px);line-height:1.65;color:var(--muted);text-wrap:pretty">{{ s.p }}</p>
+          <sc-if value="{{ s.browser }}" hint-placeholder-val="{{ false }}">
+            <div data-tilt-host="" style="position:relative;margin-top:18px;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:{{ cs.bg }}">
+              <div data-tilt="" style="position:absolute;left:7%;right:7%;top:9%;bottom:-4%;border-radius:12px 12px 0 0;background:#0F1412;box-shadow:0 40px 90px rgba(0,0,0,.4);overflow:hidden;display:flex;flex-direction:column">
+                <div dir="ltr" style="flex:none;height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#1B2220"><span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span><span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span><span style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.22)"></span></div>
+                <div data-ripple="" style="position:relative;flex:1;overflow:hidden"><div data-pan="1.6" style="position:absolute;left:0;right:0;top:0;height:160%"><image-slot id="{{ s.slot }}" shape="rect" placeholder="{{ s.ph }}"></image-slot></div></div>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ s.phone }}" hint-placeholder-val="{{ false }}">
+            <div data-tilt-host="" style="position:relative;margin-top:18px;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:{{ cs.bg }};display:flex;justify-content:center;align-items:center;gap:5%">
+              <div data-tilt="" style="width:23%;aspect-ratio:9/19.5;border-radius:32px;background:#0E0E0E;padding:7px;box-shadow:0 40px 90px rgba(20,40,25,.5)"><div data-ripple="" style="position:relative;width:100%;height:100%;border-radius:26px;overflow:hidden"><image-slot id="{{ s.slot }}" shape="rect" placeholder="{{ s.ph }}"></image-slot></div></div>
+              <div data-tilt="" style="width:23%;aspect-ratio:9/19.5;border-radius:32px;background:#0E0E0E;padding:7px;box-shadow:0 40px 90px rgba(20,40,25,.5);transform:translateY(8%)"><div data-ripple="" style="position:relative;width:100%;height:100%;border-radius:26px;overflow:hidden"><image-slot id="{{ s.slot2 }}" shape="rect" placeholder="{{ s.ph }}"></image-slot></div></div>
+            </div>
+          </sc-if>
+        </section>
+      </sc-for>
+      <button onClick="{{ nextCs }}" data-sfx="" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:12px;margin-top:clamp(90px,11vw,160px);padding-top:28px;border-top:1px solid var(--ink);width:100%">
+        <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.nextKicker }}</span>
+        <span style="font-family:var(--display);font-weight:var(--dw);text-transform:var(--dcase);letter-spacing:var(--dtrack);line-height:var(--dlh);font-size:clamp(44px,6vw,100px)" style-hover="color:var(--red)">{{ cs.nextTitle }}</span>
+      </button>
+    </main>
+    <aside style="display:var(--rail);flex-direction:column;gap:12px;position:sticky;top:96px;align-self:start;padding-top:72px">
+      <span style="font-family:var(--mono);font-size:var(--monosz);letter-spacing:var(--track);text-transform:uppercase;color:var(--muted)">{{ cs.pageLabel }}</span>
+      <div ref="{{ miniRef }}" onClick="{{ miniClick }}" title="Jump" style="position:relative;width:112px;height:60vh;display:flex;flex-direction:column;gap:7px;padding:9px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);cursor:pointer;overflow:hidden">
+        <div style="flex:1.3;display:flex;flex-direction:column;gap:4px;min-height:0">
+          <span style="height:3px;width:40%;border-radius:2px;background:var(--red);opacity:.7"></span>
+          <span style="height:9px;width:85%;border-radius:2px;background:var(--ink);opacity:.55"></span>
+          <span style="height:3px;width:100%;border-radius:2px;background:var(--muted);opacity:.35"></span>
+          <span style="height:3px;width:70%;border-radius:2px;background:var(--muted);opacity:.35"></span>
+        </div>
+        <sc-for list="{{ cs.sections }}" as="s" hint-placeholder-count="5">
+          <div style="flex:{{ s.w }};display:flex;flex-direction:column;gap:3px;min-height:0;overflow:hidden">
+            <span style="flex:none;height:4px;width:55%;border-radius:2px;background:var(--ink);opacity:.5"></span>
+            <span style="flex:none;height:2px;width:100%;border-radius:2px;background:var(--muted);opacity:.35"></span>
+            <span style="flex:none;height:2px;width:80%;border-radius:2px;background:var(--muted);opacity:.35"></span>
+            <sc-if value="{{ s.mock }}"><span style="flex:1;min-height:6px;border-radius:3px;background:{{ cs.bg }};opacity:.85"></span></sc-if>
+          </div>
+        </sc-for>
+        <div ref="{{ indRef }}" style="position:absolute;left:3px;right:3px;top:3px;height:20%;border:1.5px solid var(--red);border-radius:7px;background:color-mix(in oklab,var(--red) 7%,transparent);pointer-events:none"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;direction&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;A · Ink &amp; Paper&quot;,&quot;B · Pond Light&quot;],&quot;default&quot;:&quot;A · Ink &amp; Paper&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const CASES = [
+  { key: 'payroll', frame: 'browser', bg: 'radial-gradient(120% 95% at 18% 8%,#4C8A74 0%,#1E4339 55%,#0F231E 100%)',
+    en: { tag: 'Business thinking', title: 'Mudad Payroll', org: 'Masdr', role: 'Product Designer, then Senior Product Designer',
+      summary: 'Mudad runs payroll for private-sector companies across Saudi. I worked on making payday less of a gamble: fewer steps, warnings before submission, and financing right where cash runs short.',
+      metrics: [{ v: '79% → 82%', l: 'CSAT' }, { v: '43 → 50.9', l: 'NPS' }, { v: '3 → 2', l: 'Steps to run payroll' }],
+      sections: [
+        { h: 'The setup', p: 'Payroll in Mudad touches salaries, compliance and the company’s bank balance all at once. When something goes wrong, it goes wrong on the day people expect to get paid.' },
+        { h: 'What was broken', p: 'Running payroll took three steps, and most problems only showed up after you’d submitted. By then, fixing them meant support tickets and late salaries.' },
+        { h: 'What I did', p: 'I folded the flow into two steps, added Autopayroll for companies that pay the same way every month, and moved the checks up front so alerts appear before submission instead of after.', mock: 1, ph: 'Drop the 2-step payroll flow' },
+        { h: 'The business bit', p: 'Salary financing sits inside the payroll flow, at the moment a company sees it can’t cover the run. That’s the one place the offer actually helps instead of feeling like an ad.', mock: 1, ph: 'Drop the salary financing screen' },
+        { h: 'What happened', p: 'CSAT went from 79% to 82% and NPS from 43 to 50.9. The step count went from three to two, which is honestly the number I’m proudest of.' }
+      ] },
+    ar: { tag: 'تفكير تجاري', title: 'مُدد: الرواتب', org: 'مصدر', role: 'مصمم منتجات، ثم مصمم منتجات أول',
+      summary: 'تدير مُدد رواتب منشآت القطاع الخاص في السعودية. عملت على جعل يوم الرواتب أقل مخاطرة: خطوات أقل، وتنبيهات قبل الإرسال، وتمويل في اللحظة التي تنقص فيها السيولة.',
+      metrics: [{ v: '79% ← 82%', l: 'رضا العملاء' }, { v: '43 ← 50.9', l: 'NPS' }, { v: '3 ← 2', l: 'خطوات مسيرة الرواتب' }],
+      sections: [
+        { h: 'السياق', p: 'مسيرة الرواتب في مُدد تمس الرواتب والامتثال ورصيد المنشأة في وقت واحد. وعندما يحدث خطأ، يحدث في اليوم الذي ينتظر فيه الناس رواتبهم.' },
+        { h: 'ما الذي كان معطّلاً', p: 'كانت المسيرة ثلاث خطوات، ومعظم المشاكل لا تظهر إلا بعد الإرسال. وحينها يعني إصلاحها تذاكر دعم ورواتب متأخرة.' },
+        { h: 'ما الذي فعلته', p: 'اختصرت التدفق إلى خطوتين، وأضفت الرواتب التلقائية للمنشآت التي تدفع بالطريقة نفسها كل شهر، ونقلت الفحوصات إلى البداية لتظهر التنبيهات قبل الإرسال لا بعده.', mock: 1, ph: 'Drop the 2-step payroll flow' },
+        { h: 'الجانب التجاري', p: 'تمويل الرواتب موجود داخل مسيرة الرواتب، في اللحظة التي ترى فيها المنشأة أنها لا تستطيع تغطية المسيرة. هذا هو المكان الوحيد الذي يكون فيه العرض مفيداً بدل أن يبدو إعلاناً.', mock: 1, ph: 'Drop the salary financing screen' },
+        { h: 'النتيجة', p: 'ارتفع رضا العملاء من 79% إلى 82%، وNPS من 43 إلى 50.9. وانخفض عدد الخطوات من ثلاث إلى اثنتين، وهو الرقم الذي أفخر به أكثر.' }
+      ] } },
+  { key: 'subs', frame: 'browser', bg: 'radial-gradient(120% 95% at 82% 0%,#B3B8DC 0%,#6E7DB0 45%,#2C3A62 100%)',
+    en: { tag: 'Strategy', title: 'Mudad Subscriptions', org: 'Masdr · self-initiated', role: 'Product Designer',
+      summary: 'Nobody assigned this one. Renewals felt like a trap to the companies paying for them, so I redesigned how auto-renewal, upgrades and downgrades work.',
+      metrics: [{ v: 'Fair', l: 'Auto-renewal, announced ahead' }, { v: 'Prorated', l: 'Upgrades & downgrades' }, { v: '0', l: 'People who asked me to' }],
+      sections: [
+        { h: 'Why I picked it up', p: 'While working on payroll I kept hearing the same complaint: a plan renewed, money moved, and the company found out from its bank statement.' },
+        { h: 'The rules came first', p: 'Before any screens, I wrote down what fair means here: you’re told before you’re charged, you only pay for the days you use, and switching plans mid-cycle never costs you twice.' },
+        { h: 'Upgrades and downgrades', p: 'Prorated both ways. Upgrade today and you pay the difference for the days left. Downgrade and the unused balance carries over. The screen shows the math, so nobody has to take my word for it.', mock: 1, ph: 'Drop the proration / plan change screen' },
+        { h: 'Auto-renewal', p: 'Renewal stays on by default, but it’s announced ahead of time with the exact amount and a one-tap way to change plan or stop.', mock: 1, ph: 'Drop the renewal notice' },
+        { h: 'Where it stands', p: 'It’s a self-initiated proposal. It’s here because it shows how I work without a brief: find the pain, set the rules, then design.' }
+      ] },
+    ar: { tag: 'استراتيجية', title: 'مُدد: الاشتراكات', org: 'مصدر · بمبادرة شخصية', role: 'مصمم منتجات',
+      summary: 'لم يكلّفني أحد بهذا المشروع. كان التجديد يبدو كالفخ للمنشآت التي تدفع، فأعدت تصميم طريقة عمل التجديد التلقائي والترقية والتخفيض.',
+      metrics: [{ v: 'عادل', l: 'تجديد تلقائي بإشعار مسبق' }, { v: 'بالتناسب', l: 'الترقية والتخفيض' }, { v: '0', l: 'عدد من طلب مني ذلك' }],
+      sections: [
+        { h: 'لماذا بدأت فيه', p: 'أثناء عملي على الرواتب كنت أسمع الشكوى نفسها: تجددت الباقة، وخُصم المبلغ، وعرفت المنشأة من كشف الحساب.' },
+        { h: 'القواعد أولاً', p: 'قبل أي شاشة، كتبت معنى العدل هنا: تُنبَّه قبل أن يُخصم منك، وتدفع فقط عن الأيام التي تستخدمها، وتغيير الباقة في منتصف الدورة لا يكلّفك مرتين.' },
+        { h: 'الترقية والتخفيض', p: 'بالتناسب في الاتجاهين. إن رقّيت اليوم تدفع الفرق عن الأيام المتبقية، وإن خفّضت يُرحَّل الرصيد غير المستخدم. الشاشة تعرض الحساب، فلا أحد يحتاج أن يصدّقني على كلمتي.', mock: 1, ph: 'Drop the proration / plan change screen' },
+        { h: 'التجديد التلقائي', p: 'يبقى التجديد مفعّلاً افتراضياً، لكنه يُعلن مسبقاً بالمبلغ الدقيق مع طريقة بنقرة واحدة لتغيير الباقة أو الإيقاف.', mock: 1, ph: 'Drop the renewal notice' },
+        { h: 'أين وصل', p: 'هو مقترح بمبادرة شخصية. وضعته هنا لأنه يوضح كيف أعمل دون موجز: أجد الألم، أضع القواعد، ثم أصمّم.' }
+      ] } },
+  { key: 'saned', frame: 'browser', bg: 'radial-gradient(120% 100% at 28% 0%,#E9A27C 0%,#C2452F 50%,#5E1A13 100%)',
+    en: { tag: 'Planning & systems', title: 'Saned Dispatch', org: 'Jahez', role: 'Product Designer',
+      summary: 'Saned is the tool Jahez’s call-center agents use to dispatch orders. Agents were jumping between tabs to handle one call, so I folded them into one screen and added an audit log.',
+      metrics: [{ v: 'Tabs → 1', l: 'Screen per call' }, { v: 'Audit log', l: 'Who changed what, and when' }],
+      sections: [
+        { h: 'The setup', p: 'When an order goes sideways, an agent is on the phone with someone hungry and impatient. Every second spent hunting for the right tab is a second the customer hears silence.' },
+        { h: 'Mapping the call', p: 'I mapped what agents actually look at during a call, in order. The information they needed was spread across separate tabs that didn’t talk to each other.' },
+        { h: 'One screen', p: 'Order, customer, courier and actions now live on one screen, laid out in the order a call unfolds. Nothing important hides behind a tab.', mock: 1, ph: 'Drop the single-screen dispatch view' },
+        { h: 'The audit log', p: 'Every change records who made it and when, so supervisors can see the history without asking around, and nobody gets blamed for an edit they didn’t make.', mock: 1, ph: 'Drop the audit log screen' },
+        { h: 'What I took from it', p: 'Internal tools deserve the same care as customer apps. The people using them just can’t switch to a competitor when it’s bad.' }
+      ] },
+    ar: { tag: 'تخطيط وأنظمة', title: 'سانِد: التوزيع', org: 'جاهز', role: 'مصمم منتجات',
+      summary: 'سانِد هي الأداة التي يستخدمها موظفو مركز الاتصال في جاهز لتوزيع الطلبات. كانوا يتنقلون بين تبويبات لمعالجة مكالمة واحدة، فجمعتها في شاشة واحدة وأضفت سجل تدقيق.',
+      metrics: [{ v: 'شاشة واحدة', l: 'لكل مكالمة' }, { v: 'سجل تدقيق', l: 'من غيّر ماذا ومتى' }],
+      sections: [
+        { h: 'السياق', p: 'عندما يتعثر طلب، يكون الموظف على الهاتف مع شخص جائع وقليل الصبر. كل ثانية في البحث عن التبويب الصحيح هي ثانية صمت يسمعها العميل.' },
+        { h: 'رسم خريطة المكالمة', p: 'رسمت ما ينظر إليه الموظفون فعلاً أثناء المكالمة وبالترتيب. كانت المعلومات التي يحتاجونها موزعة على تبويبات منفصلة لا تتواصل مع بعضها.' },
+        { h: 'شاشة واحدة', p: 'الطلب والعميل والمندوب والإجراءات أصبحت في شاشة واحدة، مرتبة بحسب تسلسل المكالمة. لا شيء مهم مخفي خلف تبويب.', mock: 1, ph: 'Drop the single-screen dispatch view' },
+        { h: 'سجل التدقيق', p: 'كل تغيير يُسجَّل باسم من قام به ووقته، فيرى المشرفون التاريخ دون أن يسألوا، ولا يُلام أحد على تعديل لم يقم به.', mock: 1, ph: 'Drop the audit log screen' },
+        { h: 'ما تعلمته', p: 'الأدوات الداخلية تستحق العناية نفسها التي تنالها تطبيقات العملاء. الفرق أن مستخدميها لا يستطيعون الانتقال إلى منافس عندما تكون سيئة.' }
+      ] } },
+  { key: 'onetox', frame: 'phone', bg: 'radial-gradient(110% 95% at 70% 8%,#F2CCC8 0%,#A2BE96 52%,#3B5E46 100%)',
+    en: { tag: 'Visual & product craft', title: 'One To X', org: 'One To X', role: 'Co-Founder & Product Designer',
+      summary: 'A shared-expense app I’m co-founding. The goal is simple: splitting the bill should be the easiest part of the night out.',
+      metrics: [{ v: '30–50s → 15–20s', l: 'Batch receipt scan' }],
+      sections: [
+        { h: 'Why we’re building it', p: 'Splitting costs with friends gets awkward because the math is tedious and nobody wants to be the one chasing money.' },
+        { h: 'Batch scanning', p: 'You can scan a stack of receipts in one go. We got it from 30–50 seconds down to 15–20, and each receipt shows its own progress so the screen never feels stuck.', mock: 1, ph: 'Drop a batch-scan screen' },
+        { h: 'Visual direction', p: 'Warm, calm, a little playful. Money apps tend to look like spreadsheets. This one should feel closer to the group chat where the plans got made.', mock: 1, ph: 'Drop a split / balance screen' },
+        { h: 'Wearing the co-founder title', p: 'I’m making product calls as well as design calls now, which mostly means saying no to features I’d love to design.' }
+      ] },
+    ar: { tag: 'حِرفة بصرية', title: 'One To X', org: 'One To X', role: 'شريك مؤسس ومصمم منتجات',
+      summary: 'تطبيق لتقسيم المصاريف المشتركة أشارك في تأسيسه. الهدف بسيط: أن يكون تقسيم الحساب أسهل جزء في السهرة.',
+      metrics: [{ v: '15–20 ثانية', l: 'المسح الجماعي للفواتير (كان 30–50)' }],
+      sections: [
+        { h: 'لماذا نبنيه', p: 'تقسيم المصاريف مع الأصدقاء محرج، لأن الحساب ممل ولا أحد يريد أن يكون الشخص الذي يلاحق المال.' },
+        { h: 'المسح الجماعي', p: 'يمكنك مسح مجموعة فواتير دفعة واحدة. خفّضنا الوقت من 30–50 ثانية إلى 15–20، ولكل فاتورة مؤشر تقدّم خاص بها حتى لا تبدو الشاشة عالقة.', mock: 1, ph: 'Drop a batch-scan screen' },
+        { h: 'الاتجاه البصري', p: 'دافئ وهادئ وفيه شيء من المرح. تطبيقات المال تشبه الجداول عادة، وهذا يجب أن يكون أقرب إلى مجموعة الدردشة التي اتُّفق فيها على الطلعة.', mock: 1, ph: 'Drop a split / balance screen' },
+        { h: 'دور الشريك المؤسس', p: 'أصبحت أتخذ قرارات المنتج إلى جانب قرارات التصميم، وهذا يعني غالباً أن أرفض ميزات كنت سأستمتع بتصميمها.' }
+      ] } }
+];
+
+const SKILLS = {
+  en: [
+    { t: 'Product strategy', b: 'Figuring out what’s worth building before anyone opens Figma. Salary financing ended up inside Mudad Payroll because that’s where companies actually run short.', seen: 'Mudad Payroll' },
+    { t: 'Flow surgery', b: 'Taking steps out instead of adding screens. Payroll went from three steps to two, and CSAT moved from 79% to 82%.', seen: 'Mudad Payroll' },
+    { t: 'Billing & pricing logic', b: 'Proration, renewals, downgrades mid-cycle. The edge cases that decide whether people trust you with their card.', seen: 'Subscriptions' },
+    { t: 'Ops & internal tools', b: 'Dense screens for people who use them for an entire shift. Fewer tabs, a clear history, faster calls.', seen: 'Saned' },
+    { t: 'Arabic-first interfaces', b: 'RTL layouts that don’t feel like a mirrored English site, with type that holds up in both scripts. Hit ع in the menu.', seen: 'This site' },
+    { t: 'Interaction & motion', b: 'Making waiting feel shorter. Batch scan in One To X dropped from 30–50 seconds to 15–20, and the motion covers the rest.', seen: 'One To X' }
+  ],
+  ar: [
+    { t: 'استراتيجية المنتج', b: 'أحدد ما يستحق البناء قبل أن يفتح أحد فيغما. وُضع تمويل الرواتب داخل مسيرة الرواتب لأن هناك تحديداً تنقص السيولة.', seen: 'مُدد: الرواتب' },
+    { t: 'جراحة التدفقات', b: 'أحذف خطوات بدل أن أضيف شاشات. انتقلت الرواتب من ثلاث خطوات إلى خطوتين، وارتفع رضا العملاء من 79% إلى 82%.', seen: 'مُدد: الرواتب' },
+    { t: 'منطق الفوترة والتسعير', b: 'التناسب، والتجديد، والتخفيض في منتصف الدورة. الحالات الحدّية التي تحدد إن كان الناس سيأتمنونك على بطاقتهم.', seen: 'الاشتراكات' },
+    { t: 'الأدوات الداخلية', b: 'شاشات كثيفة لأشخاص يستخدمونها طوال المناوبة. تبويبات أقل، وسجل واضح، ومكالمات أسرع.', seen: 'سانِد' },
+    { t: 'واجهات عربية أولاً', b: 'تخطيطات من اليمين لليسار لا تبدو كموقع إنجليزي معكوس، وخطوط تصمد في اللغتين. جرّب زر EN في القائمة.', seen: 'هذا الموقع' },
+    { t: 'التفاعل والحركة', b: 'أجعل الانتظار يبدو أقصر. انخفض المسح الجماعي في One To X من 30–50 ثانية إلى 15–20، والحركة تتكفّل بالباقي.', seen: 'One To X' }
+  ]
+};
+
+const TEAMS = [
+  { isLogo: true, logo: 'assets/jahez.svg', w: 118, h: 52, name: 'Jahez', yrs: '2023' },
+  { isLogo: true, logo: 'assets/masdr.svg', w: 42, h: 62, name: 'Masdr', yrs: '2025' },
+  { isWord: true, word: 'GOSI', name: 'GOSI Business Dev.', yrs: '2023–25' },
+  { isWord: true, word: 'One To X', name: 'Co-founder', yrs: '2025–' }
+];
+
+class Component extends DCLogic {
+  state = { dir: null, theme: null, lang: 'en', sound: false, cs: -1, sec: 0 };
+  rootRef = React.createRef(); trackRef = React.createRef(); csRef = React.createRef(); miniRef = React.createRef(); indRef = React.createRef();
+  shaders = {};
+
+  componentDidMount() {
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem('sb-portfolio-prefs') || '{}'); } catch (e) {}
+    this.setState({ dir: saved.dir || null, theme: saved.theme || null, lang: saved.lang || 'en' });
+    this._key = (e) => { if (e.key === 'Escape' && this.state.cs >= 0) this.closeCs(); };
+    addEventListener('keydown', this._key);
+    this.whenEngine(() => SiteEngine.init(this.rootRef.current, {}));
+  }
+  componentWillUnmount() { removeEventListener('keydown', this._key); Object.values(this.shaders).forEach((s) => s && s.h && s.h.dispose()); }
+
+  componentDidUpdate(pp, ps) {
+    if (pp.direction !== this.props.direction && this.state.dir) this.setState({ dir: null });
+    this.sync();
+    const S = window.SiteEngine;
+    if (!S || !S._inited) return;
+    if (ps.dir !== this.state.dir || ps.lang !== this.state.lang || pp.direction !== this.props.direction) {
+      requestAnimationFrame(() => { S.scan(); window.ScrollTrigger && ScrollTrigger.refresh(); });
+    }
+    if (ps.cs < 0 && this.state.cs >= 0 && this.csRef.current) {
+      S.overlayIn(this.csRef.current, this._cx || innerWidth / 2, this._cy || innerHeight / 2);
+      requestAnimationFrame(() => { S.scan(); this.onCsScroll(); });
+    } else if (ps.cs >= 0 && this.state.cs >= 0 && ps.cs !== this.state.cs && this.csRef.current) {
+      this.csRef.current.scrollTop = 0; S.csStagger(this.csRef.current); requestAnimationFrame(() => { S.scan(); this.onCsScroll(); });
+    } else if (ps.lang !== this.state.lang && this.state.cs >= 0) {
+      requestAnimationFrame(() => this.onCsScroll());
+    }
+  }
+
+  whenEngine(fn) {
+    const t = () => (window.SiteEngine && SiteEngine.ready() && SiteEngine.mountShader ? fn() : setTimeout(t, 60));
+    t();
+  }
+  dirKey() { return this.state.dir || ((this.props.direction || '').startsWith('B') ? 'b' : 'a'); }
+  themeKey() { return this.state.theme || (this.dirKey() === 'b' ? 'dark' : 'light'); }
+  sync() {
+    const d = document.documentElement, th = this.themeKey(), dk = this.dirKey(), lg = this.state.lang;
+    if (d.dataset.theme !== th) d.dataset.theme = th;
+    if (d.dataset.dir !== dk) d.dataset.dir = dk;
+    if (d.dataset.lang !== lg) d.dataset.lang = lg;
+    Object.values(this.shaders).forEach((s) => s && s.h && s.h.setTheme(th === 'dark' ? 1 : 0));
+    try { localStorage.setItem('sb-portfolio-prefs', JSON.stringify({ dir: this.state.dir, theme: this.state.theme, lang: lg })); } catch (e) {}
+  }
+
+  canvasRef(slot, mode) {
+    return (el) => {
+      const cur = this.shaders[slot];
+      if (cur && cur.el !== el) { cur.h && cur.h.dispose(); cur.dead = true; this.shaders[slot] = null; }
+      if (el && !this.shaders[slot]) {
+        const rec = (this.shaders[slot] = { el, h: null });
+        this.whenEngine(() => { if (!rec.dead) rec.h = SiteEngine.mountShader(el, { mode, theme: this.themeKey() === 'dark' ? 1 : 0 }); });
+      }
+    };
+  }
+  heroCanvas = this.canvasRef('hero', 0);
+  bgCanvas = this.canvasRef('bg', 1);
+
+  go = (e) => { const t = e.currentTarget.dataset.target; if (window.SiteEngine && SiteEngine.scrollTo) SiteEngine.scrollTo(t); else { const el = document.querySelector(t); el && window.scrollTo({ top: el.offsetTop, behavior: 'smooth' }); } };
+  setDir = (d) => { if (this.dirKey() === d) return; this.setState({ dir: d, theme: null }); window.scrollTo(0, 0); window.SiteEngine && SiteEngine.lenis && SiteEngine.lenis.scrollTo(0, { immediate: true }); };
+  pt(e) { const r = e.currentTarget.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2]; }
+  toggleTheme = (e) => {
+    const next = this.themeKey() === 'dark' ? 'light' : 'dark'; const [x, y] = this.pt(e);
+    const apply = () => { document.documentElement.dataset.theme = next; Object.values(this.shaders).forEach((s) => s && s.h && s.h.setTheme(next === 'dark' ? 1 : 0)); this.setState({ theme: next }); };
+    window.SiteEngine ? SiteEngine.themeTransition(x, y, apply) : apply();
+  };
+  toggleLang = (e) => {
+    const next = this.state.lang === 'en' ? 'ar' : 'en'; const [x, y] = this.pt(e);
+    const apply = () => { document.documentElement.dataset.lang = next; if (this.rootRef.current) this.rootRef.current.dir = next === 'ar' ? 'rtl' : 'ltr'; this.setState({ lang: next }); };
+    window.SiteEngine ? SiteEngine.themeTransition(x, y, apply) : apply();
+  };
+  toggleSound = () => { if (!window.SiteEngine) return; const on = SiteEngine.sound.toggle(); this.setState({ sound: on }); SiteEngine.bars(this.rootRef.current.querySelector('[data-bars]'), on); };
+
+  scrollCards(dir) {
+    const t = this.trackRef.current; if (!t) return;
+    const card = t.children[0]; const step = card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(t).columnGap || 24) : t.clientWidth * 0.8;
+    const rtl = this.state.lang === 'ar';
+    t.scrollBy({ left: step * dir * (rtl ? -1 : 1), behavior: 'smooth' });
+  }
+  prevCard = () => this.scrollCards(-1);
+  nextCard = () => this.scrollCards(1);
+
+  openCase(i, e) {
+    if (e && e.clientX) { this._cx = e.clientX; this._cy = e.clientY; } else { this._cx = innerWidth / 2; this._cy = innerHeight / 2; }
+    this.setState({ cs: i, sec: 0 });
+  }
+  open0 = (e) => this.openCase(0, e); open1 = (e) => this.openCase(1, e); open2 = (e) => this.openCase(2, e); open3 = (e) => this.openCase(3, e);
+  closeCs = () => { const el = this.csRef.current; if (el && window.SiteEngine) SiteEngine.overlayOut(el, () => this.setState({ cs: -1 })); else this.setState({ cs: -1 }); };
+  nextCs = () => this.setState((s) => ({ cs: (s.cs + 1) % CASES.length, sec: 0 }));
+
+  onCsScroll = () => {
+    const el = this.csRef.current, mini = this.miniRef.current, ind = this.indRef.current; if (!el) return;
+    const max = el.scrollHeight - el.clientHeight; const p = max > 0 ? el.scrollTop / max : 0;
+    if (mini && ind) {
+      const H = mini.clientHeight - 6; const h = Math.max(18, (el.clientHeight / el.scrollHeight) * H);
+      ind.style.height = h + 'px'; ind.style.top = 3 + p * (H - h) + 'px';
+    }
+    const secs = el.querySelectorAll('[data-cs-sec]'); let a = 0;
+    secs.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * 0.45) a = i; });
+    if (a !== this.state.sec) this.setState({ sec: a });
+  };
+  jumpTo(i) { const el = this.csRef.current; if (!el) return; const s = el.querySelectorAll('[data-cs-sec]')[i]; if (s) el.scrollTo({ top: s.offsetTop - 70, behavior: 'smooth' }); }
+  miniClick = (e) => { const el = this.csRef.current, m = this.miniRef.current; if (!el || !m) return; const r = m.getBoundingClientRect(); const p = (e.clientY - r.top) / r.height; el.scrollTo({ top: p * (el.scrollHeight - el.clientHeight), behavior: 'smooth' }); };
+
+  renderVals() {
+    const dk = this.dirKey(), lg = this.state.lang, ar = lg === 'ar';
+    const isA = dk === 'a';
+    const marquee = [...TEAMS, ...TEAMS, ...TEAMS, ...TEAMS];
+    const skills = SKILLS[lg].map((s, i) => ({ ...s, n: String(i + 1).padStart(2, '0') }));
+    let cs = null;
+    if (this.state.cs >= 0) {
+      const c = CASES[this.state.cs], d = c[lg], nx = CASES[(this.state.cs + 1) % CASES.length][lg];
+      let mi = 0;
+      cs = {
+        ...d, bg: c.bg, num: String(this.state.cs + 1).padStart(2, '0'),
+        nextTitle: nx.title, nextLabel: ar ? 'التالي ←' : 'Next →', nextKicker: ar ? 'المشروع التالي' : 'Next project',
+        onPage: ar ? 'في هذه الصفحة' : 'On this page', pageLabel: ar ? 'الصفحة' : 'Page',
+        orgLabel: ar ? 'الجهة' : 'Company', roleLabel: ar ? 'الدور' : 'Role',
+        sections: d.sections.map((s, i) => {
+          const active = i === this.state.sec; const m = !!s.mock; const k = m ? ++mi : 0;
+          return { ...s, num: String(i + 1).padStart(2, '0'), mock: m, w: m ? 2.6 : 1,
+            browser: m && c.frame === 'browser', phone: m && c.frame === 'phone',
+            slot: `cs-${c.key}-${k}`, slot2: `cs-${c.key}-${k}b`, ph: s.ph || 'Drop a screenshot',
+            color: active ? 'var(--ink)' : 'var(--muted)', barW: active ? '28px' : '10px', jump: () => this.jumpTo(i) };
+        })
+      };
+    }
+    return {
+      rootRef: this.rootRef, trackRef: this.trackRef, csRef: this.csRef, miniRef: this.miniRef, indRef: this.indRef,
+      heroCanvas: this.heroCanvas, bgCanvas: this.bgCanvas,
+      isA, isB: !isA, textDir: ar ? 'rtl' : 'ltr',
+      aBg: isA ? 'var(--ink)' : 'transparent', aInk: isA ? 'var(--bg)' : 'var(--ink)',
+      bBg: !isA ? 'var(--ink)' : 'transparent', bInk: !isA ? 'var(--bg)' : 'var(--ink)',
+      setA: () => this.setDir('a'), setB: () => this.setDir('b'),
+      go: this.go, toggleTheme: this.toggleTheme, toggleLang: this.toggleLang, toggleSound: this.toggleSound,
+      soundLabel: this.state.sound ? 'Mute sound' : 'Turn sound on',
+      prevCard: this.prevCard, nextCard: this.nextCard,
+      open0: this.open0, open1: this.open1, open2: this.open2, open3: this.open3,
+      marquee, skills,
+      csOpen: !!cs, cs: cs || { sections: [], metrics: [] },
+      closeCs: this.closeCs, nextCs: this.nextCs, onCsScroll: this.onCsScroll, miniClick: this.miniClick
+    };
+  }
+}
+</script>
+</body>
+</html>

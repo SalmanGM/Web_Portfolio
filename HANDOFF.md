@@ -29,7 +29,7 @@ Read this first in a new session. It records where the work stands, what has bee
 
 ## Next steps, in order
 
-1. **Study the reference sites** now that network access is open: lukebaffait.fr and toyfight.co/services (Playwright is preinstalled; capture mid-scroll frames and note the libraries used).
+1. **Reference sites — studied (28 Oct).** Write-up with frames, timings from their code and live demos: https://claude.ai/artifact/B9tDmC8DaTgHAr5BCZn24W. Both use GSAP + Lenis (nothing to install). ToyFight = lines rise out of an `overflow:hidden` mask, `translateY(105%)→0`, 1.2s expo-out (`cubic-bezier(.19,1,.22,1)`), 0.1s/line, plays once at 20% into view. Luke = each word `opacity 0 + blur → sharp`, scrubbed from `top 75%` to `top 60%`, no blur on touch; project list is scroll-active (row nearest centre) with a preview card and a ~2s title-flight open. Proposal: split `/lab/motion`'s reveal into a line rise (headings) and a scroll focus (prose); never split Arabic by character. Waiting on Salman's answer to board q9.
 2. **Get Salman's feedback on the device film** (scroll speed, hold time, blur, captions, background) and revise.
 3. **Figma:** ask for the Figma links (Autopayroll screens; Saned, Subscriptions, One To X). Make sleeker presentation versions, then build the clickable Autopayroll rebuild in `/lab/showcase`.
 4. **Layout options:** build 2–3 options for the hero and the three main sections side by side in a new `/lab/layout`, including a lukebaffait-style project list with hover preview and click transition.

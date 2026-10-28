@@ -42,7 +42,7 @@ Contact email and links (`src/content/site.ts`), chapter paintings and portrait 
 
 ## Video reference
 
-YouTube refuses downloads from the cloud session (HTTP 403), and getting around that would mean bypassing its bot check, which Claude won't do. To analyse the IStiszvY5h8 18:17–23:50 section, Salman uploads the clip (a screen recording is fine) into the session; Claude then extracts frames with ffmpeg.
+Salman uploaded the YouTube clip (IStiszvY5h8 18:17–23:50). Breakdown with frames, timings and a live sketch on Mudad content: https://claude.ai/artifact/MeygxHhJnVfq5xcBZdef7D. It's the AccessGrid site: a "story player" stage (tabs, scenes of 3–4 s, feature captions as the timeline), a card swap with glyph decode and a light band around the border, squares folding into a card, a four-beat device handoff (signal, blur out, outline only, content) and a scanned dot face. The designer's workflow: static frames in Figma → Figma MCP → Claude for motion → tuner panels. Open question on the board (q10): make the Mudad case study hero a story player, and add the handoff beats to the device film.
 
 ## Gotchas
 

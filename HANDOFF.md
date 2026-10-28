@@ -4,7 +4,7 @@ Read this first in a new session. It records where the work stands, what has bee
 
 ## Where things live
 
-- **Code:** this repo, branch `feat/nextjs-portfolio`. Next.js 16 + React 19, static export (`npm run build` → `out/`). See `README.md`.
+- **Code:** https://github.com/SalmanGM/Web_Portfolio, branch `feat/nextjs-portfolio` (the default branch). Next.js 16 + React 19, static export (`npm run build` → `out/`). See `README.md`.
 - **Shared board (tasks, questions, decisions):** https://claude.ai/artifact/K6vnM4krbAxPejSqsxY5bi — "Portfolio Studio". Collections in its database: `tasks`, `questions`, `decisions`. Read it with the Artifact / ArtifactData tools at the start of every session; it is the source of truth for status.
 - **Original design handoff:** `project/Salman Portfolio v6.dc.html` (prototype) and `chats/` (design transcripts). Not part of the build.
 - **Lab sandboxes:** `/lab`, `/lab/showcase` (Mudad device film, `?edit` for crop editor), `/lab/motion` (word reveal, blur on scroll).
@@ -34,7 +34,7 @@ Read this first in a new session. It records where the work stands, what has bee
 3. **Figma:** ask for the Figma links (Autopayroll screens; Saned, Subscriptions, One To X). Make sleeker presentation versions, then build the clickable Autopayroll rebuild in `/lab/showcase`.
 4. **Layout options:** build 2–3 options for the hero and the three main sections side by side in a new `/lab/layout`, including a lukebaffait-style project list with hover preview and click transition.
 5. **CV material:** Claude can't see other chats. Ask Salman to paste or upload his CV for hotspot copy and case study detail.
-6. **GitHub:** connect GitHub (claude.ai/connect-github), create a repo, push `feat/nextjs-portfolio`.
+6. **Deploy:** the code is on GitHub; next is hosting (Vercel/Netlify/GitHub Pages) and a domain.
 
 ## Still placeholder
 

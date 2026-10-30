@@ -44,6 +44,13 @@ Contact email and links (`src/content/site.ts`), chapter paintings and portrait 
 
 Salman uploaded the YouTube clip (IStiszvY5h8 18:17–23:50). Breakdown with frames, timings and a live sketch on Mudad content: https://claude.ai/artifact/MeygxHhJnVfq5xcBZdef7D. It's the AccessGrid site: a "story player" stage (tabs, scenes of 3–4 s, feature captions as the timeline), a card swap with glyph decode and a light band around the border, squares folding into a card, a four-beat device handoff (signal, blur out, outline only, content) and a scanned dot face. The designer's workflow: static frames in Figma → Figma MCP → Claude for motion → tuner panels. Open question on the board (q10): make the Mudad case study hero a story player, and add the handoff beats to the device film.
 
+## q10 prototypes (30 Oct)
+
+Salman asked to explore both q10 ideas as prototypes:
+- **A · Story player** at `/lab/story` (`src/components/lab/story-player.tsx`, scenes and captions in `src/content/story.ts`). Tabs Payroll / Financing / Early wage access, three illustrated scenes each (3.8 s + 0.42 s gap), captions as the timeline with fill rings, click to jump, pause button, pauses offscreen, static under reduced motion. Uses glyph decode, border band, squares folding into cards, and the four-beat handoff (sign, approve). Rates and amounts are placeholders.
+- **B · Device film handoff** at `/lab/showcase?t=handoff` (switch A · Blur / B · Handoff on the page). Between boards: tap pulse → old screen blurs out → window empties to an outline while it reshapes → new screen fills top-down. `DeviceFilm transition` prop.
+- Preview videos: `/mnt/project-files/motion/q10/` in the Claude project.
+
 ## Gotchas
 
 - `gsap.registerPlugin(ScrollTrigger)` runs at import in `src/lib/engine.ts`, because child components create ScrollTriggers in effects that run before their parents' effects.

@@ -1,5 +1,6 @@
 const LABS = [
   { href: '/lab/showcase/', name: 'Showcase', body: 'Interactive assets for the work: the Mudad Payroll device film first. Add ?edit to tune each shot’s crop.' },
+  { href: '/lab/story/', name: 'Story', body: 'Option A for the Mudad case study hero: a story player with tabs, illustrated scenes and captions as the timeline.' },
   { href: '/lab/motion/', name: 'Motion', body: 'Motion primitives on trial: word-by-word reveals, blur on scroll. Replay them here before they go on the page.' }
 ];
 

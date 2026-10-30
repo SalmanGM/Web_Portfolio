@@ -12,6 +12,7 @@ const EDIT_KEY = 'film-crops';
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+const seg = (v: number, a: number, b: number) => clamp((v - a) / (b - a), 0, 1);
 const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 const aspectOf = (c: Crop) => clamp(((c[2] - c[0]) * BOARD.w) / ((c[3] - c[1]) * BOARD.h), 1.15, 2.4);
 
@@ -26,12 +27,16 @@ function place(img: HTMLImageElement, c: Crop, cw: number, ch: number) {
   img.style.clipPath = `inset(${c[1] * 100}% ${(1 - c[2]) * 100}% ${(1 - c[3]) * 100}% ${c[0] * 100}%)`;
 }
 
+export type FilmTransition = 'blur' | 'handoff';
+
 /**
  * Scroll-driven "product film" of the Mudad Payroll screens. A clean browser window stays pinned
  * while the page scrolls; it reshapes to each shot, pans across a board for paired shots
- * (before/after, off/on) and blurs across to the next board otherwise.
+ * (before/after, off/on) and moves to the next board with either a blur, or the AccessGrid
+ * four-beat handoff: a tap pulse, the old screen blurs out, the window empties to an outline
+ * while it reshapes, then the new screen fills in from the top.
  */
-export function DeviceFilm({ editable = false }: { editable?: boolean }) {
+export function DeviceFilm({ editable = false, transition = 'blur' }: { editable?: boolean; transition?: FilmTransition }) {
   const [shots, setShots] = useState<Shot[]>(FILM);
   const [active, setActive] = useState(0);
   const [reduce, setReduce] = useState(false);
@@ -43,6 +48,9 @@ export function DeviceFilm({ editable = false }: { editable?: boolean }) {
   const imgA = useRef<HTMLImageElement>(null);
   const imgB = useRef<HTMLImageElement>(null);
   const bar = useRef<HTMLSpanElement>(null);
+  const pulse = useRef<HTMLElement>(null);
+  const mode = useRef(transition);
+  mode.current = transition;
   const progress = useRef(0);
   const shotsRef = useRef(shots);
   shotsRef.current = shots;
@@ -65,8 +73,10 @@ export function DeviceFilm({ editable = false }: { editable?: boolean }) {
     const f = clamp(progress.current, 0, 1) * N;
     let i = Math.floor(f), local = f - i;
     if (i >= N - 1) { i = N - 1; local = 0; }
-    const t = ease(clamp((local - HOLD) / (1 - HOLD), 0, 1));
+    const u = clamp((local - HOLD) / (1 - HOLD), 0, 1);
+    const t = ease(u);
     const a = list[i], b = list[Math.min(i + 1, N - 1)];
+    const handoff = mode.current === 'handoff' && a.fig !== b.fig && u > 0;
 
     // Window size: fit the shot's aspect into the space above the caption.
     const narrow = st.clientWidth < 760;
@@ -74,13 +84,29 @@ export function DeviceFilm({ editable = false }: { editable?: boolean }) {
     const maxH = st.clientHeight * (narrow ? 0.46 : 0.56) - CHROME;
     const size = (c: Crop) => { const r = aspectOf(c), cw = Math.min(maxW, maxH * r); return [cw, cw / r]; };
     const [aw, ah] = size(a.crop), [bw, bh] = size(b.crop);
-    const cw = lerp(aw, bw, t), ch = lerp(ah, bh, t);
+    // In a handoff the window only reshapes while it's empty (beat 3).
+    const k = handoff ? ease(seg(u, 0.36, 0.7)) : t;
+    const cw = lerp(aw, bw, k), ch = lerp(ah, bh, k);
     w.style.width = cw + 'px';
     w.style.height = ch + CHROME + 'px';
 
     const hold = 1 + 0.02 * clamp(local / HOLD, 0, 1); // slow push-in while a shot holds
     if (ia.dataset.fig !== a.fig) { ia.src = figSrc(a.fig); ia.dataset.fig = a.fig; }
-    if (a.fig === b.fig || t === 0) {
+    const e = handoff ? seg(u, 0.28, 0.42) - seg(u, 0.78, 1) : 0;
+    w.style.setProperty('--e', String(e));
+    if (pulse.current) {
+      const p = handoff ? seg(u, 0, 0.2) : 1;
+      pulse.current.style.cssText = `opacity:${p < 1 ? 0.85 * (1 - p) : 0};transform:translate(-50%,-50%) scale(${1 + p * 1.6})`;
+    }
+    if (handoff) {
+      // 1 tap pulse (above) → 2 blur out → 3 empty outline, window reshapes → 4 new screen fills top-down.
+      const out = seg(u, 0.1, 0.36), fill = ease(seg(u, 0.66, 1));
+      if (ib.dataset.fig !== b.fig) { ib.src = figSrc(b.fig); ib.dataset.fig = b.fig; }
+      place(ia, a.crop, cw, ch);
+      place(ib, b.crop, cw, ch);
+      A.style.cssText = `opacity:${1 - out};filter:blur(${out * 12}px);transform:scale(${hold * (1 - 0.05 * out)})`;
+      B.style.cssText = `opacity:${fill};filter:none;transform:translateY(${(1 - fill) * 18}px);clip-path:inset(0 0 ${(1 - fill) * 100}% 0)`;
+    } else if (a.fig === b.fig || t === 0) {
       // Same board: one layer, the camera pans between the two crops.
       const c = a.crop.map((v, k) => lerp(v, b.crop[k], t)) as Crop;
       place(ia, c, cw, ch);
@@ -95,7 +121,7 @@ export function DeviceFilm({ editable = false }: { editable?: boolean }) {
       B.style.cssText = `opacity:${t};filter:blur(${(1 - t) * 14}px);transform:scale(${1.04 - 0.04 * t})`;
     }
     if (bar.current) bar.current.style.transform = `scaleX(${clamp(progress.current, 0, 1)})`;
-    const now = t < 0.5 ? i : Math.min(i + 1, N - 1);
+    const now = (handoff ? u < 0.5 : t < 0.5) ? i : Math.min(i + 1, N - 1);
     if (now !== activeRef.current) { activeRef.current = now; setActive(now); }
   }, []);
 
@@ -113,7 +139,7 @@ export function DeviceFilm({ editable = false }: { editable?: boolean }) {
     return () => { trig.kill(); ro.disconnect(); };
   }, [reduce, render]);
 
-  useEffect(() => { render(); }, [shots, render]);
+  useEffect(() => { render(); }, [shots, transition, render]);
 
   // Preload every board once, so a blur never waits on the network.
   useEffect(() => { [...new Set(FILM.map((s) => s.fig))].forEach((f) => { const im = new Image(); im.src = figSrc(f); }); }, []);
@@ -159,7 +185,7 @@ export function DeviceFilm({ editable = false }: { editable?: boolean }) {
           </span>
         </div>
 
-        <div ref={win} className="film-window">
+        <div ref={win} className="film-window" data-ho={transition === 'handoff' ? '' : undefined}>
           <div className="film-chrome" aria-hidden="true">
             <span className="film-dots"><i /><i /><i /></span>
             <span className="film-url" dir="ltr">
@@ -171,6 +197,7 @@ export function DeviceFilm({ editable = false }: { editable?: boolean }) {
           <div className="film-view">
             <div ref={layerA} className="film-layer"><img ref={imgA} alt="" draggable={false} /></div>
             <div ref={layerB} className="film-layer"><img ref={imgB} alt="" draggable={false} /></div>
+            <i ref={pulse} className="film-pulse" aria-hidden="true" />
             {shot.chip && <span key={shot.id} className="film-chip mono"><L en={shot.chip.en} ar={shot.chip.ar} /></span>}
           </div>
         </div>

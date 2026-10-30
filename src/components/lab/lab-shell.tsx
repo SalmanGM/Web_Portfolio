@@ -6,6 +6,7 @@ import { savePrefs, type Lang, type Theme } from '@/lib/prefs';
 
 const LABS = [
   { href: '/lab/showcase/', label: 'Showcase' },
+  { href: '/lab/story/', label: 'Story' },
   { href: '/lab/motion/', label: 'Motion' }
 ];
 
